@@ -15,6 +15,7 @@
 		50C569691FD6F59500D88607 /* questions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50C569681FD6F59500D88607 /* questions.txt */; };
 		50C5696B1FD6F61F00D88607 /* explanations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50C5696A1FD6F61F00D88607 /* explanations.txt */; };
 		50C5696D1FD6F64400D88607 /* engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696C1FD6F64400D88607 /* engine.swift */; };
+		50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696E1FD6FF2800D88607 /* questionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		50C569681FD6F59500D88607 /* questions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = questions.txt; sourceTree = "<group>"; };
 		50C5696A1FD6F61F00D88607 /* explanations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = explanations.txt; sourceTree = "<group>"; };
 		50C5696C1FD6F64400D88607 /* engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engine.swift; sourceTree = "<group>"; };
+		50C5696E1FD6FF2800D88607 /* questionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				50C569381FD6EADD00D88607 /* AppDelegate.swift */,
 				50C5693A1FD6EADD00D88607 /* ViewController.swift */,
 				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
+				50C5696E1FD6FF2800D88607 /* questionViewController.swift */,
 				50C5693F1FD6EADD00D88607 /* Assets.xcassets */,
 				50C569411FD6EADD00D88607 /* LaunchScreen.storyboard */,
 				50C569681FD6F59500D88607 /* questions.txt */,
@@ -149,6 +152,7 @@
 			files = (
 				50C5693B1FD6EADD00D88607 /* ViewController.swift in Sources */,
 				50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */,
+				50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */,
 				50C5696D1FD6F64400D88607 /* engine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

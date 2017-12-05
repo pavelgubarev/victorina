@@ -19,8 +19,14 @@ class engineClass {
     var questions = [question]()
     var explanations = [String]()
     
+    var currentQuestion : Int = 0
+    
     init() {
         loadQuestions()
+    }
+    
+    func getCurrentQuestion() -> question {
+        return questions[currentQuestion]
     }
     
     func loadQuestions() {
