@@ -12,6 +12,9 @@
 		50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C5693C1FD6EADD00D88607 /* Main.storyboard */; };
 		50C569401FD6EADD00D88607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C5693F1FD6EADD00D88607 /* Assets.xcassets */; };
 		50C569431FD6EADD00D88607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C569411FD6EADD00D88607 /* LaunchScreen.storyboard */; };
+		50C569691FD6F59500D88607 /* questions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50C569681FD6F59500D88607 /* questions.txt */; };
+		50C5696B1FD6F61F00D88607 /* explanations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50C5696A1FD6F61F00D88607 /* explanations.txt */; };
+		50C5696D1FD6F64400D88607 /* engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696C1FD6F64400D88607 /* engine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		50C5693F1FD6EADD00D88607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50C569421FD6EADD00D88607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50C569441FD6EADD00D88607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C569681FD6F59500D88607 /* questions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = questions.txt; sourceTree = "<group>"; };
+		50C5696A1FD6F61F00D88607 /* explanations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = explanations.txt; sourceTree = "<group>"; };
+		50C5696C1FD6F64400D88607 /* engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
 				50C5693F1FD6EADD00D88607 /* Assets.xcassets */,
 				50C569411FD6EADD00D88607 /* LaunchScreen.storyboard */,
+				50C569681FD6F59500D88607 /* questions.txt */,
+				50C5696A1FD6F61F00D88607 /* explanations.txt */,
+				50C5696C1FD6F64400D88607 /* engine.swift */,
 				50C569441FD6EADD00D88607 /* Info.plist */,
 			);
 			path = victorinaDrink;
@@ -124,7 +133,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C569431FD6EADD00D88607 /* LaunchScreen.storyboard in Resources */,
+				50C5696B1FD6F61F00D88607 /* explanations.txt in Resources */,
 				50C569401FD6EADD00D88607 /* Assets.xcassets in Resources */,
+				50C569691FD6F59500D88607 /* questions.txt in Resources */,
 				50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +149,7 @@
 			files = (
 				50C5693B1FD6EADD00D88607 /* ViewController.swift in Sources */,
 				50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */,
+				50C5696D1FD6F64400D88607 /* engine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
