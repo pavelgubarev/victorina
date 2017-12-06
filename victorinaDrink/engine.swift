@@ -13,6 +13,8 @@ import Foundation
 struct question {
     var text : String = ""
     var answers : [String] = [String]()
+    
+    var explanations : [String]
 }
 
 class engineClass {
@@ -64,6 +66,9 @@ class engineClass {
             }
         }
         
+    }
+    
+    func acceptSelectedAnswer(answerNumber: Int) {
     }
     
     func loadExplanations() {
