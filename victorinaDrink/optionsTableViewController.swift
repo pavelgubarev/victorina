@@ -55,6 +55,11 @@ class optionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         engine.acceptSelectedAnswer(answerNumber: indexPath.row)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "Answer")
+        self.present(viewController, animated: true, completion: nil)
+
     }
 
     /*

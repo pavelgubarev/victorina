@@ -7,20 +7,21 @@
 //
 
 import Foundation
-
+import UIKit
 
 
 struct question {
     var text : String = ""
     var answers : [String] = [String]()
     
-    var explanations : [String]
+    var explanations = [String]()
 }
 
 class engineClass {
     var questions = [question]()
     var explanations = [String]()
-    
+    var answers = [Int]()
+    var correctAnswers = [Int]()
     var currentQuestion : Int = 0
     
     init() {
@@ -60,7 +61,14 @@ class engineClass {
                 if answerNumber == 0 {
                     questions[qNumber].text = line
                 } else {
-                    questions[qNumber].answers.append(line)
+                    
+                    let answerArr = line.components(separatedBy: "|")
+                    
+                    if answerArr[0] == "+" {
+                        correctAnswers.append(answerNumber - 1)
+                    }
+                    
+                    questions[qNumber].answers.append(answerArr[1])
                 }
                 answerNumber = answerNumber + 1
             }
@@ -69,6 +77,8 @@ class engineClass {
     }
     
     func acceptSelectedAnswer(answerNumber: Int) {
+        answers.append(answerNumber)
+        
     }
     
     func loadExplanations() {

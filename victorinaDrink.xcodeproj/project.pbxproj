@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C824C1FD835DF00C10BDE /* optionCell.swift */; };
 		505C824F1FD8367400C10BDE /* optionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C824E1FD8367400C10BDE /* optionsTableViewController.swift */; };
+		505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C82501FD84FBB00C10BDE /* answerViewController.swift */; };
 		50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C569381FD6EADD00D88607 /* AppDelegate.swift */; };
 		50C5693B1FD6EADD00D88607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5693A1FD6EADD00D88607 /* ViewController.swift */; };
 		50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C5693C1FD6EADD00D88607 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		505C824C1FD835DF00C10BDE /* optionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionCell.swift; sourceTree = "<group>"; };
 		505C824E1FD8367400C10BDE /* optionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionsTableViewController.swift; sourceTree = "<group>"; };
+		505C82501FD84FBB00C10BDE /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
 		50C569351FD6EADD00D88607 /* victorinaDrink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victorinaDrink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C569381FD6EADD00D88607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C5693A1FD6EADD00D88607 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				50C569681FD6F59500D88607 /* questions.txt */,
 				50C5696A1FD6F61F00D88607 /* explanations.txt */,
 				50C5696C1FD6F64400D88607 /* engine.swift */,
+				505C82501FD84FBB00C10BDE /* answerViewController.swift */,
 				50C569441FD6EADD00D88607 /* Info.plist */,
 			);
 			path = victorinaDrink;
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */,
 				505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */,
 				50C5693B1FD6EADD00D88607 /* ViewController.swift in Sources */,
 				50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */,
