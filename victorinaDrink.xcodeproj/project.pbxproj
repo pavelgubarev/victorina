@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C824C1FD835DF00C10BDE /* optionCell.swift */; };
-		505C824F1FD8367400C10BDE /* optionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C824E1FD8367400C10BDE /* optionsTableViewController.swift */; };
 		505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C82501FD84FBB00C10BDE /* answerViewController.swift */; };
 		50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C569381FD6EADD00D88607 /* AppDelegate.swift */; };
 		50C5693B1FD6EADD00D88607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5693A1FD6EADD00D88607 /* ViewController.swift */; };
@@ -19,11 +18,12 @@
 		50C5696B1FD6F61F00D88607 /* explanations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50C5696A1FD6F61F00D88607 /* explanations.txt */; };
 		50C5696D1FD6F64400D88607 /* engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696C1FD6F64400D88607 /* engine.swift */; };
 		50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696E1FD6FF2800D88607 /* questionViewController.swift */; };
+		97DFCA18B6EC693710C22BC8 /* Pods_victorinaDrink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FB5EE510AE133AABA0F1DA5 /* Pods-victorinaDrink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-victorinaDrink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-victorinaDrink/Pods-victorinaDrink.debug.xcconfig"; sourceTree = "<group>"; };
 		505C824C1FD835DF00C10BDE /* optionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionCell.swift; sourceTree = "<group>"; };
-		505C824E1FD8367400C10BDE /* optionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionsTableViewController.swift; sourceTree = "<group>"; };
 		505C82501FD84FBB00C10BDE /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
 		50C569351FD6EADD00D88607 /* victorinaDrink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victorinaDrink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C569381FD6EADD00D88607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		50C5696A1FD6F61F00D88607 /* explanations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = explanations.txt; sourceTree = "<group>"; };
 		50C5696C1FD6F64400D88607 /* engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engine.swift; sourceTree = "<group>"; };
 		50C5696E1FD6FF2800D88607 /* questionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
+		95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_victorinaDrink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB696D4562F0BC9A09A2F4E8 /* Pods-victorinaDrink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-victorinaDrink.release.xcconfig"; path = "Pods/Target Support Files/Pods-victorinaDrink/Pods-victorinaDrink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97DFCA18B6EC693710C22BC8 /* Pods_victorinaDrink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1041A0A167C78BFE631FCF25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FB5EE510AE133AABA0F1DA5 /* Pods-victorinaDrink.debug.xcconfig */,
+				DB696D4562F0BC9A09A2F4E8 /* Pods-victorinaDrink.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		50C5692C1FD6EADD00D88607 = {
 			isa = PBXGroup;
 			children = (
 				50C569371FD6EADD00D88607 /* victorinaDrink */,
 				50C569361FD6EADD00D88607 /* Products */,
+				1041A0A167C78BFE631FCF25 /* Pods */,
+				EB38CDB8F6B6D21BCE9E5427 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,7 +86,6 @@
 				50C5693A1FD6EADD00D88607 /* ViewController.swift */,
 				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
 				505C824C1FD835DF00C10BDE /* optionCell.swift */,
-				505C824E1FD8367400C10BDE /* optionsTableViewController.swift */,
 				50C5696E1FD6FF2800D88607 /* questionViewController.swift */,
 				50C5693F1FD6EADD00D88607 /* Assets.xcassets */,
 				50C569411FD6EADD00D88607 /* LaunchScreen.storyboard */,
@@ -85,6 +98,14 @@
 			path = victorinaDrink;
 			sourceTree = "<group>";
 		};
+		EB38CDB8F6B6D21BCE9E5427 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50C569471FD6EADD00D88607 /* Build configuration list for PBXNativeTarget "victorinaDrink" */;
 			buildPhases = (
+				4BB38BAB1A36FBC15E72843D /* [CP] Check Pods Manifest.lock */,
 				50C569311FD6EADD00D88607 /* Sources */,
 				50C569321FD6EADD00D88607 /* Frameworks */,
 				50C569331FD6EADD00D88607 /* Resources */,
+				49786D99DB661FC24274D176 /* [CP] Embed Pods Frameworks */,
+				03347EF83B7DB25E0F3ECBC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +178,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03347EF83B7DB25E0F3ECBC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-victorinaDrink/Pods-victorinaDrink-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49786D99DB661FC24274D176 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-victorinaDrink/Pods-victorinaDrink-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-victorinaDrink/Pods-victorinaDrink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BB38BAB1A36FBC15E72843D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-victorinaDrink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50C569311FD6EADD00D88607 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -164,7 +242,6 @@
 				50C5693B1FD6EADD00D88607 /* ViewController.swift in Sources */,
 				50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */,
 				50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */,
-				505C824F1FD8367400C10BDE /* optionsTableViewController.swift in Sources */,
 				50C5696D1FD6F64400D88607 /* engine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +377,7 @@
 		};
 		50C569481FD6EADD00D88607 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FB5EE510AE133AABA0F1DA5 /* Pods-victorinaDrink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -315,6 +393,7 @@
 		};
 		50C569491FD6EADD00D88607 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB696D4562F0BC9A09A2F4E8 /* Pods-victorinaDrink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
