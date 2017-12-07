@@ -62,7 +62,7 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "Answer")
-        self.present(viewController, animated: true, completion: nil)
+        self.present(viewController, animated: false, completion: nil)
         
     }
    
