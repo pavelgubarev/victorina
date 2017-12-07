@@ -69,13 +69,10 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-//        tableView.reloadData()
+
         self.view.layoutIfNeeded()
 
         let height = tableView.contentSize.height
-
-        print(height)
 
         dynamicTVHeight.constant = height
         self.view.layoutIfNeeded()

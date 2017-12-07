@@ -23,6 +23,9 @@ class engineClass {
     var correctAnswers = [Int]()
     var currentQuestionNumber : Int = 0
     var numberOfCorrectAnswersSoFar = 0
+    var currentLevel = 1
+    
+    var sessionManager : SessionManager!
 
     init() {
         loadQuestions()
@@ -114,15 +117,22 @@ class engineClass {
   
     func goToNextQuestion() {
         currentQuestionNumber = currentQuestionNumber + 1
-        
-        if currentQuestionNumber == 8 {
-            showResultsForTheLevel()
-        }
+      
         
     }
     
+    func isLevelOver() -> Bool {
+        
+        print("currentQuestionNumber", currentQuestionNumber)
+        
+        return currentQuestionNumber + 1 == 7
+    }
+    
     func showResultsForTheLevel() {
+        currentLevel += 1
         sendResultsForTheLevel()
+        
+      
     }
     
     func gotoNextLelel() {
@@ -130,6 +140,29 @@ class engineClass {
     }
     
     func sendResultsForTheLevel() {
+        
+        let configuration = URLSessionConfiguration.default
+        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
+        
+        var parametres = Parameters()
+        
+        var i = 0
+        for answer in answers {
+            i += 1
+            var value = "\(answer),"
+            let wascorrect = answer == correctAnswers[i-1] ? "YES" : "NO"
+            value += wascorrect
+            parametres["q\(i)"] = value
+        }
+        
+        sessionManager =  Alamofire.SessionManager(configuration: configuration)
+        
+        sessionManager.request("https://pohmelje.ru/victorina/", method: .post, parameters: parametres).responseString { response in
+            
+            print(response)
+            
+        }
+
         
     }
     

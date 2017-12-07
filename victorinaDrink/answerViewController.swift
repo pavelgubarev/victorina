@@ -32,15 +32,33 @@ class answerViewController: UIViewController {
 
     // MARK: - Navigation
 
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if (segue.identifier == "nextQuestion")  {
+            engine.goToNextQuestion()
+        }
+    }
     
-  print(segue.identifier)
- if (segue.identifier == "nextQuestion")
- {
- engine.goToNextQuestion()
- }
- }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        print("shouldPerformSegue", engine.isLevelOver())
+        
+        var shouldWe = true
+        if (identifier == "nextQuestion")  {
+            shouldWe = !engine.isLevelOver()
+        }
+        
+        if (!shouldWe) {
+            engine.showResultsForTheLevel()
+            
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let mainViewController = storyBoard.instantiateViewController(withIdentifier: "levelResults")
+            self.show(mainViewController, sender: self)
+        }
+        
+        return shouldWe
+    }
 
 }
