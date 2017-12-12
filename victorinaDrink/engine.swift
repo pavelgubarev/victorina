@@ -25,6 +25,8 @@ class engineClass {
     var numberOfCorrectAnswersSoFar = 0
     var currentLevel = 1
     
+    let numberOfQuestionsInLevel = 7
+    
     var sessionManager : SessionManager!
 
     init() {
@@ -129,15 +131,11 @@ class engineClass {
     }
     
     func showResultsForTheLevel() {
-        currentLevel += 1
         sendResultsForTheLevel()
         
       
     }
     
-    func gotoNextLelel() {
-        
-    }
     
     func sendResultsForTheLevel() {
         
@@ -164,6 +162,18 @@ class engineClass {
         }
 
         
+    }
+    
+    func resetAnswers() {
+        numberOfCorrectAnswersSoFar = 0
+
+    }
+    
+
+    func nextLevel() {
+        resetAnswers()
+        currentLevel += 1
+
     }
     
 }

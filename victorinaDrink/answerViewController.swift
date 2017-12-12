@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SpriteKit
 
 class answerViewController: UIViewController {
 
     @IBOutlet weak var correctOrNotLabel: UILabel!
     
     @IBOutlet weak var explanationView: UIWebView!
+    
+    
+    @IBOutlet weak var skView: SKView!
     
     
     override func viewDidLoad() {
@@ -28,7 +32,9 @@ class answerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        skView.presentScene(<#T##scene: SKScene?##SKScene?#>)
+    }
 
     // MARK: - Navigation
 
