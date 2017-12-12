@@ -12,9 +12,8 @@ import SpriteKit
 class answerViewController: UIViewController {
 
     @IBOutlet weak var correctOrNotLabel: UILabel!
-    
-    @IBOutlet weak var explanationView: UIWebView!
-    
+ 
+    @IBOutlet weak var explanationLabel: UILabel!
     
     @IBOutlet weak var skView: SKView!
     
@@ -24,7 +23,27 @@ class answerViewController: UIViewController {
 
         correctOrNotLabel.text = engine.wasAnswerCorrect() ? "Верно!" : "Неверно!"
         
-        explanationView.loadHTMLString(engine.explanationForCurrentQuestion(), baseURL: URL(string: "")  )
+        explanationLabel.text = engine.explanationForCurrentQuestion()
+        
+        explanationLabel.sizeToFit()
+        
+        
+        
+    }
+    @IBAction func gotoSite(_ sender: Any) {
+        UIApplication.shared.open(NSURL(string: "https://pohmelje.ru")! as URL, options: [:], completionHandler: nil)
+    }
+    
+    func makePad() {
+        let pad = UIView()
+        pad.frame = explanationLabel.frame.insetBy(dx: -10.0, dy: -10.0)
+        
+        pad.backgroundColor = .white
+        
+        pad.layer.cornerRadius = 10
+        
+        self.view.addSubview(pad)
+        self.view.bringSubview(toFront: explanationLabel)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,8 +51,24 @@ class answerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.view.layoutIfNeeded()
+        
+        makePad()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        skView.presentScene(<#T##scene: SKScene?##SKScene?#>)
+        
+        
+        let scene = kefirFalling(fileNamed: "kefirfalling")!
+        
+        scene.scaleMode = .aspectFit
+        
+        skView.backgroundColor = UIColor.clear
+        
+        skView.presentScene(scene)
     }
 
     // MARK: - Navigation
@@ -48,8 +83,6 @@ class answerViewController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        print("shouldPerformSegue", engine.isLevelOver())
         
         var shouldWe = true
         if (identifier == "nextQuestion")  {
@@ -66,5 +99,7 @@ class answerViewController: UIViewController {
         
         return shouldWe
     }
+    
+    
 
 }
