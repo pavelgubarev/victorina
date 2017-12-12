@@ -6,13 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Light</string>
-        </array>
         <array key="Menlo.ttc">
             <string>Menlo-Regular</string>
         </array>
@@ -73,11 +69,11 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPN-qC-vwz">
                                 <rect key="frame" x="20" y="30" width="280" height="198"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="25"/>
                                 </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="bottom" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sfA-wp-ekb">
@@ -100,12 +96,12 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лучшая закуска – фрукты, виноград или квашеная капуста. Они помогают перерабатывать алкоголь" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9y8-Hd-rBX">
                                                             <rect key="frame" x="10" y="10" width="260" height="14"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="0.79395869006849318" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="9y8-Hd-rBX" secondAttribute="trailing" constant="10" id="1ey-ee-zaK"/>
                                                         <constraint firstItem="9y8-Hd-rBX" firstAttribute="leading" secondItem="9dP-n9-lnt" secondAttribute="leading" constant="10" id="6g2-Ss-Qbh"/>
@@ -233,14 +229,17 @@
                                 <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </skView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Верно!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXj-v7-S65">
-                                <rect key="frame" x="46" y="55" width="232" height="84"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
+                                <rect key="frame" x="25" y="55" width="275" height="88.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="76"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vaf-7J-i69">
                                 <rect key="frame" x="91" y="499" width="138" height="49"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.53598565924657537" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.79759738869863017" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="5er-w7-bb7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Дальше">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -255,7 +254,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCA-Au-vpn">
-                                <rect key="frame" x="20" y="175" width="280" height="218"/>
+                                <rect key="frame" x="20" y="175.5" width="280" height="218"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Плотная и жирная закуска утяжеляет похмелье. Наш эксперт-токсиколог своими глазами видел, что большинство смертельных случаев от передозировки алкоголя происходит именно с людьми, которые переедают за столом. Но совсем без закуски — тоже не лучший вариант.</string>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
@@ -268,11 +267,15 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-y5-IHO">
-                                <rect key="frame" x="91" y="413" width="138" height="32"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="20" y="398.5" width="134" height="32"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="bWH-TQ-EKQ"/>
+                                    <constraint firstAttribute="width" constant="134" id="jfM-Hn-6oU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Узнать больше">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -286,7 +289,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="xUd-y5-IHO" secondAttribute="trailing" constant="75" id="3N6-4P-DE7"/>
                             <constraint firstItem="MKU-xw-yBF" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" id="B6I-vT-tQo"/>
                             <constraint firstAttribute="trailing" secondItem="MKU-xw-yBF" secondAttribute="trailing" id="FFb-f0-wQI"/>
                             <constraint firstAttribute="trailing" secondItem="gCA-Au-vpn" secondAttribute="trailing" constant="20" id="I1R-YX-2wy"/>
@@ -296,12 +298,12 @@
                             <constraint firstItem="gCA-Au-vpn" firstAttribute="centerX" secondItem="bKC-q3-1hh" secondAttribute="centerX" id="Oz9-LF-cac"/>
                             <constraint firstItem="xJH-f7-PXd" firstAttribute="top" secondItem="RNd-f3-dsq" secondAttribute="bottom" id="Pgb-kH-g5U"/>
                             <constraint firstItem="MKU-xw-yBF" firstAttribute="top" secondItem="bKC-q3-1hh" secondAttribute="top" id="QYK-we-7Wa"/>
+                            <constraint firstItem="xUd-y5-IHO" firstAttribute="leading" secondItem="gCA-Au-vpn" secondAttribute="leading" id="TMF-Oe-Joc"/>
                             <constraint firstItem="RNd-f3-dsq" firstAttribute="top" secondItem="bKC-q3-1hh" secondAttribute="top" id="YMV-g5-VJJ"/>
                             <constraint firstItem="vXj-v7-S65" firstAttribute="centerX" secondItem="bKC-q3-1hh" secondAttribute="centerX" constant="2" id="fyD-OU-2jz"/>
                             <constraint firstAttribute="trailing" secondItem="RNd-f3-dsq" secondAttribute="trailing" id="gmA-u0-HKT"/>
-                            <constraint firstItem="xUd-y5-IHO" firstAttribute="top" secondItem="gCA-Au-vpn" secondAttribute="bottom" constant="20" id="hKv-A2-7bL"/>
+                            <constraint firstItem="xUd-y5-IHO" firstAttribute="top" secondItem="gCA-Au-vpn" secondAttribute="bottom" constant="5" id="hKv-A2-7bL"/>
                             <constraint firstItem="xJH-f7-PXd" firstAttribute="top" secondItem="MKU-xw-yBF" secondAttribute="bottom" id="mTz-Ae-EzI"/>
-                            <constraint firstItem="xUd-y5-IHO" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leadingMargin" constant="75" id="phH-ZR-jjH"/>
                             <constraint firstAttribute="trailing" secondItem="Vaf-7J-i69" secondAttribute="trailing" constant="91" id="q0k-aR-aK7"/>
                             <constraint firstItem="xJH-f7-PXd" firstAttribute="top" secondItem="Vaf-7J-i69" secondAttribute="bottom" constant="20" id="rtu-hh-S7C"/>
                             <constraint firstItem="Vaf-7J-i69" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" constant="91" id="t2u-3b-AXt"/>
@@ -312,6 +314,7 @@
                     <connections>
                         <outlet property="correctOrNotLabel" destination="vXj-v7-S65" id="ipw-W6-nJq"/>
                         <outlet property="explanationLabel" destination="gCA-Au-vpn" id="gUu-Vy-KFG"/>
+                        <outlet property="learnMoreButton" destination="xUd-y5-IHO" id="4X1-AD-ZrB"/>
                         <outlet property="skView" destination="RNd-f3-dsq" id="Hhw-fV-Ik8"/>
                     </connections>
                 </viewController>

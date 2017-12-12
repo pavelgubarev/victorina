@@ -17,16 +17,37 @@ class kefirFalling: SKScene {
         
         let kefirSprite = self.childNode(withName: "kefir")!
         
-        for _ in 0...50 {
+            
+        
+        let makeNewKefir = SKAction.run(
+         {
             
             let newKefir = kefirSprite.copy() as! SKNode
             
             newKefir.physicsBody!.affectedByGravity = true
-            
+            newKefir.physicsBody!.pinned = false
+
             self.addChild(newKefir)
             
             
-        }
+        })
+        
+        let dropKefir = SKAction.repeat(SKAction.sequence([
+            SKAction.wait(forDuration: 0.3),
+            makeNewKefir
+            ]), count: 60)
+        
+        let releaseKefir = SKAction.run( { self.childNode(withName: "bottom")!.removeFromParent() })
+        
+        let stopScene = SKAction.run({ self.removeAllChildren() })
+        
+        self.run(SKAction.sequence([dropKefir,
+                                    SKAction.wait(forDuration: 2),
+                                    releaseKefir,
+                                    SKAction.wait(forDuration: 3),
+                                    stopScene]))
+        
+
         
     }
 

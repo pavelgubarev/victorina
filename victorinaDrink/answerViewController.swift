@@ -17,6 +17,7 @@ class answerViewController: UIViewController {
     
     @IBOutlet weak var skView: SKView!
     
+    @IBOutlet weak var learnMoreButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,10 @@ class answerViewController: UIViewController {
     
     func makePad() {
         let pad = UIView()
-        pad.frame = explanationLabel.frame.insetBy(dx: -10.0, dy: -10.0)
+        var padFrame = explanationLabel.frame.insetBy(dx: -10.0, dy: -10.0)
+        
+        padFrame.size = CGSize(width: padFrame.size.width, height: padFrame.size.height + 36)
+        pad.frame = padFrame
         
         pad.backgroundColor = .white
         
@@ -44,6 +48,8 @@ class answerViewController: UIViewController {
         
         self.view.addSubview(pad)
         self.view.bringSubview(toFront: explanationLabel)
+        
+        self.view.bringSubview(toFront: learnMoreButton)
     }
 
     override func didReceiveMemoryWarning() {
