@@ -13,12 +13,12 @@ import Alamofire
 struct question {
     var text : String = ""
     var answers : [String] = [String]()
-    var explanations = [String]()
 }
 
 class engineClass {
     var questions = [question]()
     var explanations = [String]()
+    var links = [String]()
     var answers = [Int]()
     var correctAnswers = [Int]()
     var currentQuestionNumber : Int = 0
@@ -88,9 +88,16 @@ class engineClass {
                 let data = try String(contentsOfFile: path, encoding: .utf8)
                 let myStrings = data.components(separatedBy: .newlines)
                 
+                var i = 0
                 for line in myStrings {
                     if line.count > 0 {
-                        explanations.append(line)
+                        if i % 2 == 0 {
+                            explanations.append(line)
+                        }
+                        else {
+                            links.append(line)
+                        }
+                        i = i + 1
                     }
                 }
                 
@@ -116,7 +123,11 @@ class engineClass {
     func explanationForCurrentQuestion() -> String {
         return explanations[currentQuestionNumber]
     }
-  
+    
+    func linkForCurrentQuestion() -> String {
+        return links[currentQuestionNumber]
+    }
+
     func goToNextQuestion() {
         currentQuestionNumber = currentQuestionNumber + 1
       

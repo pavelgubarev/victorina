@@ -31,7 +31,7 @@ class answerViewController: UIViewController {
         
     }
     @IBAction func gotoSite(_ sender: Any) {
-        UIApplication.shared.open(NSURL(string: "https://pohmelje.ru")! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(NSURL(string: engine.linkForCurrentQuestion())! as URL, options: [:], completionHandler: nil)
     }
     
     func makePad() {
