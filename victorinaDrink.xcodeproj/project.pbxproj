@@ -12,6 +12,7 @@
 		500B95E61FE0053B0038B00A /* kefirFalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B95E51FE0053B0038B00A /* kefirFalling.swift */; };
 		505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C824C1FD835DF00C10BDE /* optionCell.swift */; };
 		505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C82501FD84FBB00C10BDE /* answerViewController.swift */; };
+		5070014C1FE159E600D66E8D /* glasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070014B1FE159E600D66E8D /* glasses.swift */; };
 		50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C569381FD6EADD00D88607 /* AppDelegate.swift */; };
 		50C5693B1FD6EADD00D88607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5693A1FD6EADD00D88607 /* ViewController.swift */; };
 		50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C5693C1FD6EADD00D88607 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		500B95E51FE0053B0038B00A /* kefirFalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kefirFalling.swift; sourceTree = "<group>"; };
 		505C824C1FD835DF00C10BDE /* optionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionCell.swift; sourceTree = "<group>"; };
 		505C82501FD84FBB00C10BDE /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
+		5070014B1FE159E600D66E8D /* glasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glasses.swift; sourceTree = "<group>"; };
 		50C569351FD6EADD00D88607 /* victorinaDrink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victorinaDrink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C569381FD6EADD00D88607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C5693A1FD6EADD00D88607 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5070014D1FE15A2000D66E8D /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				50E838D71FE08363008BF624 /* glasses.sks */,
+				5070014B1FE159E600D66E8D /* glasses.swift */,
+				500B95E31FDFFD8A0038B00A /* kefirfalling.sks */,
+				500B95E51FE0053B0038B00A /* kefirFalling.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		50C5692C1FD6EADD00D88607 = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +107,7 @@
 				50C5693A1FD6EADD00D88607 /* ViewController.swift */,
 				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
 				500B95E11FDFF8560038B00A /* levelResultViewController.swift */,
-				500B95E31FDFFD8A0038B00A /* kefirfalling.sks */,
-				50E838D71FE08363008BF624 /* glasses.sks */,
-				500B95E51FE0053B0038B00A /* kefirFalling.swift */,
+				5070014D1FE15A2000D66E8D /* Animations */,
 				505C824C1FD835DF00C10BDE /* optionCell.swift */,
 				50C5696E1FD6FF2800D88607 /* questionViewController.swift */,
 				50C5693F1FD6EADD00D88607 /* Assets.xcassets */,
@@ -254,6 +265,7 @@
 				505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */,
 				505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */,
 				50C5693B1FD6EADD00D88607 /* ViewController.swift in Sources */,
+				5070014C1FE159E600D66E8D /* glasses.swift in Sources */,
 				500B95E61FE0053B0038B00A /* kefirFalling.swift in Sources */,
 				500B95E21FDFF8560038B00A /* levelResultViewController.swift in Sources */,
 				50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */,

@@ -46,9 +46,7 @@ class kefirFalling: SKScene {
                                     releaseKefir,
                                     SKAction.wait(forDuration: 3),
                                     stopScene]))
-        
-
-        
     }
+    
 
 }

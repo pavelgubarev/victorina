@@ -35,7 +35,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Начать"/>
                                 <connections>
-                                    <segue destination="g9P-rL-M4O" kind="show" id="Pf1-vN-Z3k"/>
+                                    <segue destination="g9P-rL-M4O" kind="show" animates="NO" id="Pf1-vN-Z3k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,10 +92,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dP-n9-lnt">
-                                                    <rect key="frame" x="0.0" y="10" width="280" height="34"/>
+                                                    <rect key="frame" x="0.0" y="10" width="335" height="34"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лучшая закуска – фрукты, виноград или квашеная капуста. Они помогают перерабатывать алкоголь" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9y8-Hd-rBX">
-                                                            <rect key="frame" x="10" y="10" width="260" height="14"/>
+                                                            <rect key="frame" x="10" y="10" width="315" height="14"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -172,12 +172,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="SHb-Il-svZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="SHb-Il-svZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш результат: 7 из 8!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjy-81-2ho">
-                                <rect key="frame" x="50.5" y="76" width="220" height="72"/>
+                                <rect key="frame" x="50" y="76" width="220" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="PRE-do-XFR"/>
                                 </constraints>
@@ -200,8 +199,12 @@
                         <constraints>
                             <constraint firstItem="zjy-81-2ho" firstAttribute="top" secondItem="RB3-bj-aVe" secondAttribute="bottom" constant="56" id="2vL-JN-HPq"/>
                             <constraint firstItem="zjy-81-2ho" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="NwX-Qa-7hn"/>
+                            <constraint firstItem="SHb-Il-svZ" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leading" id="RQi-Me-X3A"/>
+                            <constraint firstAttribute="trailing" secondItem="SHb-Il-svZ" secondAttribute="trailing" id="T80-Xm-Ypg"/>
                             <constraint firstItem="bDg-1F-1C2" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="VwG-3W-r3d"/>
                             <constraint firstItem="fLU-zh-L2N" firstAttribute="top" secondItem="bDg-1F-1C2" secondAttribute="bottom" constant="39" id="YtA-xd-FLo"/>
+                            <constraint firstItem="SHb-Il-svZ" firstAttribute="top" secondItem="yjd-6r-qYO" secondAttribute="top" id="gDS-9E-dRG"/>
+                            <constraint firstItem="fLU-zh-L2N" firstAttribute="top" secondItem="SHb-Il-svZ" secondAttribute="bottom" id="gFM-cN-Fsf"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -228,9 +231,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </skView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Верно!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXj-v7-S65">
-                                <rect key="frame" x="25" y="55" width="275" height="88.5"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="76"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неверно!" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vXj-v7-S65">
+                                <rect key="frame" x="0.0" y="55" width="320" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="fNj-gJ-Wy0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="77"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -254,7 +260,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCA-Au-vpn">
-                                <rect key="frame" x="20" y="175.5" width="280" height="218"/>
+                                <rect key="frame" x="20" y="175" width="280" height="218"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Плотная и жирная закуска утяжеляет похмелье. Наш эксперт-токсиколог своими глазами видел, что большинство смертельных случаев от передозировки алкоголя происходит именно с людьми, которые переедают за столом. Но совсем без закуски — тоже не лучший вариант.</string>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
@@ -267,7 +273,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-y5-IHO">
-                                <rect key="frame" x="20" y="398.5" width="134" height="32"/>
+                                <rect key="frame" x="20" y="398" width="134" height="32"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="bWH-TQ-EKQ"/>
@@ -291,22 +297,23 @@
                         <constraints>
                             <constraint firstItem="MKU-xw-yBF" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" id="B6I-vT-tQo"/>
                             <constraint firstAttribute="trailing" secondItem="MKU-xw-yBF" secondAttribute="trailing" id="FFb-f0-wQI"/>
+                            <constraint firstAttribute="trailing" secondItem="vXj-v7-S65" secondAttribute="trailing" id="FdY-1h-EEG"/>
                             <constraint firstAttribute="trailing" secondItem="gCA-Au-vpn" secondAttribute="trailing" constant="20" id="I1R-YX-2wy"/>
                             <constraint firstItem="RNd-f3-dsq" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" id="JZU-mw-IkL"/>
                             <constraint firstItem="gCA-Au-vpn" firstAttribute="centerY" secondItem="bKC-q3-1hh" secondAttribute="centerY" id="LMb-GA-cRz"/>
                             <constraint firstItem="gCA-Au-vpn" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" constant="20" id="M6X-7n-NTp"/>
                             <constraint firstItem="gCA-Au-vpn" firstAttribute="centerX" secondItem="bKC-q3-1hh" secondAttribute="centerX" id="Oz9-LF-cac"/>
-                            <constraint firstItem="xJH-f7-PXd" firstAttribute="top" secondItem="RNd-f3-dsq" secondAttribute="bottom" id="Pgb-kH-g5U"/>
                             <constraint firstItem="MKU-xw-yBF" firstAttribute="top" secondItem="bKC-q3-1hh" secondAttribute="top" id="QYK-we-7Wa"/>
                             <constraint firstItem="xUd-y5-IHO" firstAttribute="leading" secondItem="gCA-Au-vpn" secondAttribute="leading" id="TMF-Oe-Joc"/>
                             <constraint firstItem="RNd-f3-dsq" firstAttribute="top" secondItem="bKC-q3-1hh" secondAttribute="top" id="YMV-g5-VJJ"/>
-                            <constraint firstItem="vXj-v7-S65" firstAttribute="centerX" secondItem="bKC-q3-1hh" secondAttribute="centerX" constant="2" id="fyD-OU-2jz"/>
                             <constraint firstAttribute="trailing" secondItem="RNd-f3-dsq" secondAttribute="trailing" id="gmA-u0-HKT"/>
                             <constraint firstItem="xUd-y5-IHO" firstAttribute="top" secondItem="gCA-Au-vpn" secondAttribute="bottom" constant="5" id="hKv-A2-7bL"/>
                             <constraint firstItem="xJH-f7-PXd" firstAttribute="top" secondItem="MKU-xw-yBF" secondAttribute="bottom" id="mTz-Ae-EzI"/>
                             <constraint firstAttribute="trailing" secondItem="Vaf-7J-i69" secondAttribute="trailing" constant="91" id="q0k-aR-aK7"/>
                             <constraint firstItem="xJH-f7-PXd" firstAttribute="top" secondItem="Vaf-7J-i69" secondAttribute="bottom" constant="20" id="rtu-hh-S7C"/>
                             <constraint firstItem="Vaf-7J-i69" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" constant="91" id="t2u-3b-AXt"/>
+                            <constraint firstAttribute="bottom" secondItem="RNd-f3-dsq" secondAttribute="bottom" id="vDS-R8-k5P"/>
+                            <constraint firstItem="vXj-v7-S65" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" id="ypR-Cr-VHh"/>
                             <constraint firstItem="vXj-v7-S65" firstAttribute="top" secondItem="Uk1-Rf-o0I" secondAttribute="bottom" constant="35" id="zBA-XQ-x9R"/>
                         </constraints>
                     </view>
@@ -320,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNY-FE-g0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2371.875" y="-133.09859154929578"/>
+            <point key="canvasLocation" x="2370.4000000000001" y="-133.74384236453201"/>
         </scene>
     </scenes>
     <resources>

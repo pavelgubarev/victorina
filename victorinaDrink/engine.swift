@@ -25,7 +25,7 @@ class engineClass {
     var numberOfCorrectAnswersSoFar = 0
     var currentLevel = 1
     
-    let numberOfQuestionsInLevel = 7
+    let numberOfQuestionsPerLevel = 7
     
     var sessionManager : SessionManager!
 
@@ -138,7 +138,7 @@ class engineClass {
         
         print("currentQuestionNumber", currentQuestionNumber)
         
-        return currentQuestionNumber + 1 == 7
+        return (currentQuestionNumber + 1) % numberOfQuestionsPerLevel == 0
     }
     
     func showResultsForTheLevel() {
@@ -164,11 +164,13 @@ class engineClass {
             parametres["q\(i)"] = value
         }
         
+        print(parametres)
+        
         sessionManager =  Alamofire.SessionManager(configuration: configuration)
         
         sessionManager.request("https://pohmelje.ru/victorina/", method: .post, parameters: parametres).responseString { response in
             
-            print(response)
+            //print(response)
             
         }
 
@@ -184,6 +186,8 @@ class engineClass {
     func nextLevel() {
         resetAnswers()
         currentLevel += 1
+        
+        self.goToNextQuestion()
 
     }
     

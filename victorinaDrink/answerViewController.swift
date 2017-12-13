@@ -19,6 +19,10 @@ class answerViewController: UIViewController {
     
     @IBOutlet weak var learnMoreButton: UIButton!
     
+    var kefirScene : SKScene!
+    
+    var glassesScene : SKScene!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +32,14 @@ class answerViewController: UIViewController {
         
         explanationLabel.sizeToFit()
         
+        kefirScene = kefirFalling(fileNamed: "kefirfalling")!
+        kefirScene.scaleMode = .aspectFit
+
+        glassesScene = glasses(fileNamed: "glasses")!
+        glassesScene.scaleMode = .aspectFit
         
+        skView.backgroundColor = UIColor.clear
+
         
     }
     @IBAction func gotoSite(_ sender: Any) {
@@ -67,14 +78,10 @@ class answerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        
-        let scene = kefirFalling(fileNamed: "kefirfalling")!
-        
-        scene.scaleMode = .aspectFit
-        
-        skView.backgroundColor = UIColor.clear
+        let scene = engine.wasAnswerCorrect() ? glassesScene.copy() as! SKScene : kefirScene.copy() as! SKScene
         
         skView.presentScene(scene)
+        
     }
 
     // MARK: - Navigation
@@ -106,6 +113,9 @@ class answerViewController: UIViewController {
         return shouldWe
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        skView.removeFromSuperview()
+    }
     
 
 }
