@@ -17,7 +17,7 @@
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Main" customClass="ViewController" customModule="victorinaDrink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Main" customClass="startPageViewController" customModule="victorinaDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p97-O9-FG4"/>
                         <viewControllerLayoutGuide type="bottom" id="ac5-jc-xYT"/>
@@ -29,14 +29,31 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="PWi-tr-BVo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwK-Ff-WtA">
-                                <rect key="frame" x="98" y="375" width="178" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Начать"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwK-Ff-WtA">
+                                <rect key="frame" x="80.5" y="430" width="159" height="64"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="44"/>
+                                <state key="normal" title="Начать">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="g9P-rL-M4O" kind="show" animates="NO" id="Pf1-vN-Z3k"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-kW-u0b">
+                                <rect key="frame" x="16" y="141" width="139" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <state key="normal" title="О приложении">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-LI-x5K">
+                                <rect key="frame" x="16" y="179" width="139" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <state key="normal" title="Ай Похмелье">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,13 +61,44 @@
                             <constraint firstItem="PWi-tr-BVo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0Nb-wW-XQc"/>
                             <constraint firstItem="PWi-tr-BVo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MW4-ML-BnY"/>
                             <constraint firstAttribute="trailing" secondItem="PWi-tr-BVo" secondAttribute="trailing" id="Pv3-hL-hXc"/>
+                            <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="zwK-Ff-WtA" secondAttribute="bottom" constant="74" id="Qt2-JY-RbU"/>
+                            <constraint firstItem="zwK-Ff-WtA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y6E-fw-oc5"/>
                             <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="PWi-tr-BVo" secondAttribute="bottom" id="ga2-H0-c6o"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="7.6461769115442282"/>
+            <point key="canvasLocation" x="682.5" y="7.394366197183099"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xMd-aH-lQK">
+            <objects>
+                <viewController id="njB-57-hvs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Lo-hT-1fn"/>
+                        <viewControllerLayoutGuide type="bottom" id="zV4-Pc-cpq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LAc-2m-T8g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DR5-eg-5c8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DR5-eg-5c8" firstAttribute="leading" secondItem="LAc-2m-T8g" secondAttribute="leading" id="0Iw-Jf-b2d"/>
+                            <constraint firstItem="DR5-eg-5c8" firstAttribute="top" secondItem="LAc-2m-T8g" secondAttribute="top" id="3bH-W6-lJp"/>
+                            <constraint firstItem="zV4-Pc-cpq" firstAttribute="top" secondItem="DR5-eg-5c8" secondAttribute="bottom" id="jVc-MZ-sfu"/>
+                            <constraint firstAttribute="trailing" secondItem="DR5-eg-5c8" secondAttribute="trailing" id="nSj-6g-JKq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdT-mH-82q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="783"/>
         </scene>
         <!--Question-->
         <scene sceneID="AC5-CQ-jN1">
@@ -92,10 +140,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dP-n9-lnt">
-                                                    <rect key="frame" x="0.0" y="10" width="335" height="34"/>
+                                                    <rect key="frame" x="0.0" y="10" width="280" height="34"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лучшая закуска – фрукты, виноград или квашеная капуста. Они помогают перерабатывать алкоголь" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9y8-Hd-rBX">
-                                                            <rect key="frame" x="10" y="10" width="315" height="14"/>
+                                                            <rect key="frame" x="10" y="10" width="260" height="14"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -176,11 +224,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш результат: 7 из 8!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjy-81-2ho">
-                                <rect key="frame" x="50" y="76" width="220" height="72"/>
+                                <rect key="frame" x="50" y="76" width="220" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="PRE-do-XFR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -192,6 +240,16 @@
                                 </state>
                                 <connections>
                                     <segue destination="g9P-rL-M4O" kind="show" identifier="nextLevel" id="gTW-zW-qVu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZP-e0-onY">
+                                <rect key="frame" x="124" y="269" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Главная">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="bTM-Ba-dEp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -207,6 +265,10 @@
                             <constraint firstItem="fLU-zh-L2N" firstAttribute="top" secondItem="SHb-Il-svZ" secondAttribute="bottom" id="gFM-cN-Fsf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextLevelButton" destination="bDg-1F-1C2" id="7QY-4D-lXx"/>
+                        <outlet property="yourResultLabel" destination="zjy-81-2ho" id="2bC-3J-oo7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhE-Iv-WFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,7 +294,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </skView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неверно!" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vXj-v7-S65">
-                                <rect key="frame" x="0.0" y="55" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="30" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="fNj-gJ-Wy0"/>
                                 </constraints>
@@ -314,7 +376,7 @@
                             <constraint firstItem="Vaf-7J-i69" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" constant="91" id="t2u-3b-AXt"/>
                             <constraint firstAttribute="bottom" secondItem="RNd-f3-dsq" secondAttribute="bottom" id="vDS-R8-k5P"/>
                             <constraint firstItem="vXj-v7-S65" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" id="ypR-Cr-VHh"/>
-                            <constraint firstItem="vXj-v7-S65" firstAttribute="top" secondItem="Uk1-Rf-o0I" secondAttribute="bottom" constant="35" id="zBA-XQ-x9R"/>
+                            <constraint firstItem="vXj-v7-S65" firstAttribute="top" secondItem="Uk1-Rf-o0I" secondAttribute="bottom" constant="10" id="zBA-XQ-x9R"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -334,6 +396,6 @@
         <image name="background" width="562" height="1218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VBE-O5-u9f"/>
+        <segue reference="gTW-zW-qVu"/>
     </inferredMetricsTieBreakers>
 </document>

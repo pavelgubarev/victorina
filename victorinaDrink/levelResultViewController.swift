@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import StoreKit
 
 class levelResultViewController: UIViewController {
 
+    @IBOutlet weak var yourResultLabel: UILabel!
+    
+    @IBOutlet weak var nextLevelButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        yourResultLabel.text = "Ваш результат: \(engine.numberOfCorrectAnswersSoFar) из 8"
 
-        // Do any additional setup after loading the view.
+        if (!engine.isThereNextLevel()) {
+            nextLevelButton.removeFromSuperview()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,5 +39,20 @@ class levelResultViewController: UIViewController {
 
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+         if (!engine.isThereNextLevel()) {
+            askForReviews()
+        }
+    }
 
+    func askForReviews() {
+        
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        } else {
+            // Fallback on earlier versions
+        }
+        
+    }
 }

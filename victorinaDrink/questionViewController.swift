@@ -21,7 +21,7 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         
         super.viewDidLoad()
-        
+                
         questionText.text = engine.getCurrentQuestion().text
         
         // Do any additional setup after loading the view.
