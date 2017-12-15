@@ -78,15 +78,18 @@
                             <constraint firstAttribute="trailing" secondItem="S6t-QV-Z2X" secondAttribute="trailing" id="z2X-Zm-0iu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="skView" destination="S6t-QV-Z2X" id="bFr-c6-KRf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="682.5" y="7.394366197183099"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="xMd-aH-lQK">
             <objects>
-                <viewController id="njB-57-hvs" sceneMemberID="viewController">
+                <viewController id="njB-57-hvs" customClass="aboutViewController" customModule="victorinaDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Lo-hT-1fn"/>
                         <viewControllerLayoutGuide type="bottom" id="zV4-Pc-cpq"/>
@@ -137,6 +140,9 @@
                                 <state key="normal" title="С чего мы взяли, что самые умные?">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="gotoSite:" destination="njB-57-hvs" eventType="touchUpInside" id="G3i-FK-1Ym"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYe-Cq-ey3">
                                 <rect key="frame" x="26" y="65" width="83" height="40"/>

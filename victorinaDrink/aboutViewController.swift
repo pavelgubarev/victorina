@@ -1,28 +1,18 @@
 //
-//  startPageViewController.swift
+//  aboutViewController.swift
 //  victorinaDrink
 //
-//  Created by Павел Губарев on 14/12/2017.
+//  Created by Павел Губарев on 15/12/2017.
 //  Copyright © 2017 Pavel Gubarev. All rights reserved.
 //
 
 import UIKit
-import SpriteKit
 
-var engine : engineClass!
-
-class startPageViewController: UIViewController {
-    
-    @IBOutlet weak var skView: SKView!
-    
-    @IBAction func backToMain(unwindSegue: UIStoryboardSegue) {}
+class aboutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        engine = engineClass()
-        
-        skView.backgroundColor = UIColor.clear
+
         // Do any additional setup after loading the view.
     }
 
@@ -31,15 +21,13 @@ class startPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    override func viewDidAppear(_ animated: Bool) {
-        let scene = SKScene(fileNamed: "kefirfallingStart")!
-        scene.scaleMode = .aspectFit
-        
-
-        skView.presentScene(scene)
+    @IBAction func gotoSite(_ sender: Any) {
+        UIApplication.shared.open(NSURL(string: "https://pohmelje.ru/experts/#science")! as URL, options: [:], completionHandler: nil)
     }
     
+ 
+    
+
     /*
     // MARK: - Navigation
 

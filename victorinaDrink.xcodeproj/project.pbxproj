@@ -12,6 +12,8 @@
 		500B95E61FE0053B0038B00A /* kefirFalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B95E51FE0053B0038B00A /* kefirFalling.swift */; };
 		505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C824C1FD835DF00C10BDE /* optionCell.swift */; };
 		505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C82501FD84FBB00C10BDE /* answerViewController.swift */; };
+		5061AC601FE3E06D00A88C8C /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */; };
+		5061AC621FE3E32900A88C8C /* kefirFallingStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061AC611FE3E32900A88C8C /* kefirFallingStart.swift */; };
 		5070014C1FE159E600D66E8D /* glasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070014B1FE159E600D66E8D /* glasses.swift */; };
 		50C481981FE2E1E300A74B41 /* kefirfallingStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50C481971FE2E1E300A74B41 /* kefirfallingStart.sks */; };
 		50C4819A1FE2E21F00A74B41 /* startPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C481991FE2E21F00A74B41 /* startPageViewController.swift */; };
@@ -34,6 +36,8 @@
 		500B95E51FE0053B0038B00A /* kefirFalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kefirFalling.swift; sourceTree = "<group>"; };
 		505C824C1FD835DF00C10BDE /* optionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionCell.swift; sourceTree = "<group>"; };
 		505C82501FD84FBB00C10BDE /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
+		5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
+		5061AC611FE3E32900A88C8C /* kefirFallingStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kefirFallingStart.swift; sourceTree = "<group>"; };
 		5070014B1FE159E600D66E8D /* glasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glasses.swift; sourceTree = "<group>"; };
 		50C481971FE2E1E300A74B41 /* kefirfallingStart.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = kefirfallingStart.sks; sourceTree = "<group>"; };
 		50C481991FE2E21F00A74B41 /* startPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = startPageViewController.swift; path = victorinaDrink/startPageViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -81,6 +85,7 @@
 				500B95E31FDFFD8A0038B00A /* kefirfalling.sks */,
 				50C481971FE2E1E300A74B41 /* kefirfallingStart.sks */,
 				500B95E51FE0053B0038B00A /* kefirFalling.swift */,
+				5061AC611FE3E32900A88C8C /* kefirFallingStart.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
 				5070014D1FE15A2000D66E8D /* Animations */,
 				505C824C1FD835DF00C10BDE /* optionCell.swift */,
+				5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */,
 				50C5696E1FD6FF2800D88607 /* questionViewController.swift */,
 				50C481991FE2E21F00A74B41 /* startPageViewController.swift */,
 				505C82501FD84FBB00C10BDE /* answerViewController.swift */,
@@ -270,7 +276,9 @@
 				505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */,
 				50C4819A1FE2E21F00A74B41 /* startPageViewController.swift in Sources */,
 				5070014C1FE159E600D66E8D /* glasses.swift in Sources */,
+				5061AC601FE3E06D00A88C8C /* aboutViewController.swift in Sources */,
 				500B95E61FE0053B0038B00A /* kefirFalling.swift in Sources */,
+				5061AC621FE3E32900A88C8C /* kefirFallingStart.swift in Sources */,
 				500B95E21FDFF8560038B00A /* levelResultViewController.swift in Sources */,
 				50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */,
 				50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */,
