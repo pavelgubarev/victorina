@@ -34,7 +34,7 @@ class startPageViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         let scene = SKScene(fileNamed: "kefirfallingStart")!
-        scene.scaleMode = .aspectFit
+        scene.scaleMode = .aspectFill
         
 
         skView.presentScene(scene)

@@ -67,13 +67,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PWi-tr-BVo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0Nb-wW-XQc"/>
-                            <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="S6t-QV-Z2X" secondAttribute="bottom" id="BwF-Kp-jED"/>
+                            <constraint firstAttribute="bottom" secondItem="S6t-QV-Z2X" secondAttribute="bottom" id="BwF-Kp-jED"/>
                             <constraint firstItem="S6t-QV-Z2X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GfG-Co-ROU"/>
                             <constraint firstItem="PWi-tr-BVo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MW4-ML-BnY"/>
                             <constraint firstAttribute="trailing" secondItem="PWi-tr-BVo" secondAttribute="trailing" id="Pv3-hL-hXc"/>
                             <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="zwK-Ff-WtA" secondAttribute="bottom" constant="74" id="Qt2-JY-RbU"/>
                             <constraint firstItem="zwK-Ff-WtA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y6E-fw-oc5"/>
-                            <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="PWi-tr-BVo" secondAttribute="bottom" id="ga2-H0-c6o"/>
+                            <constraint firstAttribute="bottom" secondItem="PWi-tr-BVo" secondAttribute="bottom" id="ga2-H0-c6o"/>
                             <constraint firstItem="S6t-QV-Z2X" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iAQ-50-vyK"/>
                             <constraint firstAttribute="trailing" secondItem="S6t-QV-Z2X" secondAttribute="trailing" id="z2X-Zm-0iu"/>
                         </constraints>
@@ -107,14 +107,14 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="49" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zif-td-ikL">
                                         <rect key="frame" x="0.0" y="10" width="258" height="732.5"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <mutableString key="text">Вопросы составлены на основе статей сайта похмелье.рф. Строго научно, проверено практикой! Мы в теме 8 лет. Наши специалисты:
+                                        <string key="text">Вопросы составлены на основе статей сайта похмелье.рф. Строго научно, проверено практикой! Мы в теме 8 лет. Наши специалисты:
 
 1. Научный редактор – эксперт сайта Похмелье.РФ Станислав Радченко. Врач-терапевт (Казанский ГМИ, 1989 г.), врач-кибернетик (Российский ГМУ, 1998 г.), кандидат медицинских наук. Специалист по моделированию острых и хронических отравлений.
 
 2. Токсиколог Ольга Калашникова. Врач анестезиолог-реаниматолог высшей категории, токсиколог, заведующая анестезиолого-реанимационным отделением.
 
 3. Психиатр-нарколог Кирсанов Максим Витальевич. Рязанский Государственный Медицинский Университет им. ак. И. П. Павлова. Психотерапевт, врачом-психиатр, психиатр-нарколог.
-</mutableString>
+</string>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -165,7 +165,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="91l-El-eJK" secondAttribute="trailing" constant="10" id="QSX-33-JXL"/>
                             <constraint firstItem="91l-El-eJK" firstAttribute="top" secondItem="AMK-fP-R8g" secondAttribute="bottom" constant="10" id="Zfe-HM-Y6U"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AMK-fP-R8g" secondAttribute="trailing" constant="10" id="hXH-so-5kA"/>
-                            <constraint firstItem="zV4-Pc-cpq" firstAttribute="top" secondItem="DR5-eg-5c8" secondAttribute="bottom" id="jVc-MZ-sfu"/>
+                            <constraint firstAttribute="bottom" secondItem="DR5-eg-5c8" secondAttribute="bottom" id="jVc-MZ-sfu"/>
                             <constraint firstAttribute="trailing" secondItem="DR5-eg-5c8" secondAttribute="trailing" id="nSj-6g-JKq"/>
                             <constraint firstItem="zV4-Pc-cpq" firstAttribute="top" secondItem="91l-El-eJK" secondAttribute="bottom" constant="10" id="sgk-Gw-UT4"/>
                             <constraint firstItem="yYe-Cq-ey3" firstAttribute="leading" secondItem="LAc-2m-T8g" secondAttribute="leadingMargin" constant="10" id="ySM-Q1-mzf"/>
@@ -340,7 +340,7 @@
                             <constraint firstItem="bDg-1F-1C2" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="VwG-3W-r3d"/>
                             <constraint firstItem="fLU-zh-L2N" firstAttribute="top" secondItem="bDg-1F-1C2" secondAttribute="bottom" constant="39" id="YtA-xd-FLo"/>
                             <constraint firstItem="SHb-Il-svZ" firstAttribute="top" secondItem="yjd-6r-qYO" secondAttribute="top" id="gDS-9E-dRG"/>
-                            <constraint firstItem="fLU-zh-L2N" firstAttribute="top" secondItem="SHb-Il-svZ" secondAttribute="bottom" id="gFM-cN-Fsf"/>
+                            <constraint firstAttribute="bottom" secondItem="SHb-Il-svZ" secondAttribute="bottom" id="gFM-cN-Fsf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -376,7 +376,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="fNj-gJ-Wy0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="77"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -400,10 +400,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCA-Au-vpn">
-                                <rect key="frame" x="20" y="175" width="280" height="218"/>
+                                <rect key="frame" x="20" y="197" width="280" height="175"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Плотная и жирная закуска утяжеляет похмелье. Наш эксперт-токсиколог своими глазами видел, что большинство смертельных случаев от передозировки алкоголя происходит именно с людьми, которые переедают за столом. Но совсем без закуски — тоже не лучший вариант.</string>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -413,7 +413,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-y5-IHO">
-                                <rect key="frame" x="20" y="398" width="134" height="32"/>
+                                <rect key="frame" x="20" y="377" width="134" height="32"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="bWH-TQ-EKQ"/>
@@ -448,7 +448,7 @@
                             <constraint firstItem="RNd-f3-dsq" firstAttribute="top" secondItem="bKC-q3-1hh" secondAttribute="top" id="YMV-g5-VJJ"/>
                             <constraint firstAttribute="trailing" secondItem="RNd-f3-dsq" secondAttribute="trailing" id="gmA-u0-HKT"/>
                             <constraint firstItem="xUd-y5-IHO" firstAttribute="top" secondItem="gCA-Au-vpn" secondAttribute="bottom" constant="5" id="hKv-A2-7bL"/>
-                            <constraint firstItem="xJH-f7-PXd" firstAttribute="top" secondItem="MKU-xw-yBF" secondAttribute="bottom" id="mTz-Ae-EzI"/>
+                            <constraint firstAttribute="bottom" secondItem="MKU-xw-yBF" secondAttribute="bottom" id="mTz-Ae-EzI"/>
                             <constraint firstAttribute="trailing" secondItem="Vaf-7J-i69" secondAttribute="trailing" constant="91" id="q0k-aR-aK7"/>
                             <constraint firstItem="xJH-f7-PXd" firstAttribute="top" secondItem="Vaf-7J-i69" secondAttribute="bottom" constant="20" id="rtu-hh-S7C"/>
                             <constraint firstItem="Vaf-7J-i69" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" constant="91" id="t2u-3b-AXt"/>

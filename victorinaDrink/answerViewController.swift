@@ -33,10 +33,10 @@ class answerViewController: UIViewController {
         explanationLabel.sizeToFit()
         
         kefirScene = kefirFalling(fileNamed: "kefirfalling")!
-        kefirScene.scaleMode = .aspectFit
+        kefirScene.scaleMode = .aspectFill
 
         glassesScene = glasses(fileNamed: "glasses")!
-        glassesScene.scaleMode = .aspectFit
+        glassesScene.scaleMode = .aspectFill
         
         skView.backgroundColor = UIColor.clear
 
