@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -29,6 +30,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="PWi-tr-BVo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6t-QV-Z2X">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </skView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwK-Ff-WtA">
                                 <rect key="frame" x="80.5" y="430" width="159" height="64"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="44"/>
@@ -46,6 +51,9 @@
                                 <state key="normal" title="О приложении">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="njB-57-hvs" kind="show" id="ywf-Vq-sEu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-LI-x5K">
                                 <rect key="frame" x="16" y="179" width="139" height="30"/>
@@ -59,11 +67,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PWi-tr-BVo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0Nb-wW-XQc"/>
+                            <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="S6t-QV-Z2X" secondAttribute="bottom" id="BwF-Kp-jED"/>
+                            <constraint firstItem="S6t-QV-Z2X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GfG-Co-ROU"/>
                             <constraint firstItem="PWi-tr-BVo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MW4-ML-BnY"/>
                             <constraint firstAttribute="trailing" secondItem="PWi-tr-BVo" secondAttribute="trailing" id="Pv3-hL-hXc"/>
                             <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="zwK-Ff-WtA" secondAttribute="bottom" constant="74" id="Qt2-JY-RbU"/>
                             <constraint firstItem="zwK-Ff-WtA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y6E-fw-oc5"/>
                             <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="PWi-tr-BVo" secondAttribute="bottom" id="ga2-H0-c6o"/>
+                            <constraint firstItem="S6t-QV-Z2X" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iAQ-50-vyK"/>
+                            <constraint firstAttribute="trailing" secondItem="S6t-QV-Z2X" secondAttribute="trailing" id="z2X-Zm-0iu"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -86,19 +98,79 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DR5-eg-5c8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMK-fP-R8g">
+                                <rect key="frame" x="26" y="120" width="268" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="49" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zif-td-ikL">
+                                        <rect key="frame" x="0.0" y="10" width="258" height="732.5"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <mutableString key="text">Вопросы составлены на основе статей сайта похмелье.рф. Строго научно, проверено практикой! Мы в теме 8 лет. Наши специалисты:
+
+1. Научный редактор – эксперт сайта Похмелье.РФ Станислав Радченко. Врач-терапевт (Казанский ГМИ, 1989 г.), врач-кибернетик (Российский ГМУ, 1998 г.), кандидат медицинских наук. Специалист по моделированию острых и хронических отравлений.
+
+2. Токсиколог Ольга Калашникова. Врач анестезиолог-реаниматолог высшей категории, токсиколог, заведующая анестезиолого-реанимационным отделением.
+
+3. Психиатр-нарколог Кирсанов Максим Витальевич. Рязанский Государственный Медицинский Университет им. ак. И. П. Павлова. Психотерапевт, врачом-психиатр, психиатр-нарколог.
+</mutableString>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Zif-td-ikL" firstAttribute="width" secondItem="AMK-fP-R8g" secondAttribute="width" constant="-10" id="8iM-VM-CuI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zif-td-ikL" secondAttribute="bottom" constant="8" id="96f-Sg-WUB"/>
+                                    <constraint firstAttribute="height" constant="400" id="Lt1-7R-0wa"/>
+                                    <constraint firstItem="Zif-td-ikL" firstAttribute="leading" secondItem="AMK-fP-R8g" secondAttribute="leading" id="Q4d-HH-H4P"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zif-td-ikL" secondAttribute="trailing" constant="8" id="bmd-Qo-6hB"/>
+                                    <constraint firstItem="Zif-td-ikL" firstAttribute="top" secondItem="AMK-fP-R8g" secondAttribute="top" constant="10" id="g64-Hh-hHM"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91l-El-eJK">
+                                <rect key="frame" x="26" y="530" width="268" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="С чего мы взяли, что самые умные?">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYe-Cq-ey3">
+                                <rect key="frame" x="26" y="65" width="83" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Главная">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="esm-hO-H9z" kind="unwind" unwindAction="backToMainWithUnwindSegue:" id="sIS-Jd-FUb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DR5-eg-5c8" firstAttribute="leading" secondItem="LAc-2m-T8g" secondAttribute="leading" id="0Iw-Jf-b2d"/>
+                            <constraint firstItem="AMK-fP-R8g" firstAttribute="leading" secondItem="LAc-2m-T8g" secondAttribute="leadingMargin" constant="10" id="0PI-2I-cRX"/>
                             <constraint firstItem="DR5-eg-5c8" firstAttribute="top" secondItem="LAc-2m-T8g" secondAttribute="top" id="3bH-W6-lJp"/>
+                            <constraint firstItem="91l-El-eJK" firstAttribute="leading" secondItem="LAc-2m-T8g" secondAttribute="leadingMargin" constant="10" id="FyS-Lz-EDD"/>
+                            <constraint firstItem="AMK-fP-R8g" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0Lo-hT-1fn" secondAttribute="bottom" constant="10" id="G87-x5-7pe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="91l-El-eJK" secondAttribute="trailing" constant="10" id="QSX-33-JXL"/>
+                            <constraint firstItem="91l-El-eJK" firstAttribute="top" secondItem="AMK-fP-R8g" secondAttribute="bottom" constant="10" id="Zfe-HM-Y6U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AMK-fP-R8g" secondAttribute="trailing" constant="10" id="hXH-so-5kA"/>
                             <constraint firstItem="zV4-Pc-cpq" firstAttribute="top" secondItem="DR5-eg-5c8" secondAttribute="bottom" id="jVc-MZ-sfu"/>
                             <constraint firstAttribute="trailing" secondItem="DR5-eg-5c8" secondAttribute="trailing" id="nSj-6g-JKq"/>
+                            <constraint firstItem="zV4-Pc-cpq" firstAttribute="top" secondItem="91l-El-eJK" secondAttribute="bottom" constant="10" id="sgk-Gw-UT4"/>
+                            <constraint firstItem="yYe-Cq-ey3" firstAttribute="leading" secondItem="LAc-2m-T8g" secondAttribute="leadingMargin" constant="10" id="ySM-Q1-mzf"/>
+                            <constraint firstItem="AMK-fP-R8g" firstAttribute="top" secondItem="yYe-Cq-ey3" secondAttribute="bottom" constant="15" id="yjf-XT-K1i"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdT-mH-82q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="esm-hO-H9z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="683" y="783"/>
+            <point key="canvasLocation" x="682.5" y="782.74647887323943"/>
         </scene>
         <!--Question-->
         <scene sceneID="AC5-CQ-jN1">
@@ -396,6 +468,6 @@
         <image name="background" width="562" height="1218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gTW-zW-qVu"/>
+        <segue reference="Pf1-vN-Z3k"/>
     </inferredMetricsTieBreakers>
 </document>
