@@ -15,6 +15,15 @@ class startPageViewController: UIViewController {
     
     @IBOutlet weak var skView: SKView!
     
+    @IBAction func ayPohmelje(_ sender: Any) {
+        
+        if let url = URL(string: "itms-apps://itunes.apple.com/app/id476347173"),
+            UIApplication.shared.canOpenURL(url)
+        { 
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            
+        }
+    }
     @IBAction func backToMain(unwindSegue: UIStoryboardSegue) {}
 
     override func viewDidLoad() {

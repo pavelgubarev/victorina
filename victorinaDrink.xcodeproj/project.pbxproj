@@ -10,6 +10,7 @@
 		500B95E21FDFF8560038B00A /* levelResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B95E11FDFF8560038B00A /* levelResultViewController.swift */; };
 		500B95E41FDFFD8A0038B00A /* kefirfalling.sks in Resources */ = {isa = PBXBuildFile; fileRef = 500B95E31FDFFD8A0038B00A /* kefirfalling.sks */; };
 		500B95E61FE0053B0038B00A /* kefirFalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B95E51FE0053B0038B00A /* kefirFalling.swift */; };
+		505871EC1FE4387F0046F0B2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505871ED1FE4387F0046F0B2 /* Alamofire.framework */; };
 		505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C824C1FD835DF00C10BDE /* optionCell.swift */; };
 		505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C82501FD84FBB00C10BDE /* answerViewController.swift */; };
 		5061AC601FE3E06D00A88C8C /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */; };
@@ -25,8 +26,9 @@
 		50C5696B1FD6F61F00D88607 /* explanations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50C5696A1FD6F61F00D88607 /* explanations.txt */; };
 		50C5696D1FD6F64400D88607 /* engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696C1FD6F64400D88607 /* engine.swift */; };
 		50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696E1FD6FF2800D88607 /* questionViewController.swift */; };
+		50E1761D1FE81B5B006FCF0C /* explanations.json in Resources */ = {isa = PBXBuildFile; fileRef = 50E1761C1FE81B5B006FCF0C /* explanations.json */; };
+		50E1761F1FE83B47006FCF0C /* question.json in Resources */ = {isa = PBXBuildFile; fileRef = 50E1761E1FE83B47006FCF0C /* question.json */; };
 		50E838D81FE08363008BF624 /* glasses.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50E838D71FE08363008BF624 /* glasses.sks */; };
-		97DFCA18B6EC693710C22BC8 /* Pods_victorinaDrink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 		500B95E11FDFF8560038B00A /* levelResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = levelResultViewController.swift; sourceTree = "<group>"; };
 		500B95E31FDFFD8A0038B00A /* kefirfalling.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = kefirfalling.sks; sourceTree = "<group>"; };
 		500B95E51FE0053B0038B00A /* kefirFalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kefirFalling.swift; sourceTree = "<group>"; };
+		505871ED1FE4387F0046F0B2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505C824C1FD835DF00C10BDE /* optionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionCell.swift; sourceTree = "<group>"; };
 		505C82501FD84FBB00C10BDE /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
 		5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +54,8 @@
 		50C5696A1FD6F61F00D88607 /* explanations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = explanations.txt; sourceTree = "<group>"; };
 		50C5696C1FD6F64400D88607 /* engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engine.swift; sourceTree = "<group>"; };
 		50C5696E1FD6FF2800D88607 /* questionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
+		50E1761C1FE81B5B006FCF0C /* explanations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = explanations.json; sourceTree = "<group>"; };
+		50E1761E1FE83B47006FCF0C /* question.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = question.json; sourceTree = "<group>"; };
 		50E838D71FE08363008BF624 /* glasses.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = glasses.sks; sourceTree = "<group>"; };
 		95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_victorinaDrink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB696D4562F0BC9A09A2F4E8 /* Pods-victorinaDrink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-victorinaDrink.release.xcconfig"; path = "Pods/Target Support Files/Pods-victorinaDrink/Pods-victorinaDrink.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97DFCA18B6EC693710C22BC8 /* Pods_victorinaDrink.framework in Frameworks */,
+				505871EC1FE4387F0046F0B2 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +128,9 @@
 				50C5693F1FD6EADD00D88607 /* Assets.xcassets */,
 				50C569411FD6EADD00D88607 /* LaunchScreen.storyboard */,
 				50C569681FD6F59500D88607 /* questions.txt */,
+				50E1761E1FE83B47006FCF0C /* question.json */,
 				50C5696A1FD6F61F00D88607 /* explanations.txt */,
+				50E1761C1FE81B5B006FCF0C /* explanations.json */,
 				50C5696C1FD6F64400D88607 /* engine.swift */,
 				50C569441FD6EADD00D88607 /* Info.plist */,
 			);
@@ -133,6 +140,7 @@
 		EB38CDB8F6B6D21BCE9E5427 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				505871ED1FE4387F0046F0B2 /* Alamofire.framework */,
 				95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */,
 			);
 			name = Frameworks;
@@ -201,11 +209,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C481981FE2E1E300A74B41 /* kefirfallingStart.sks in Resources */,
+				50E1761D1FE81B5B006FCF0C /* explanations.json in Resources */,
 				50C569431FD6EADD00D88607 /* LaunchScreen.storyboard in Resources */,
 				50E838D81FE08363008BF624 /* glasses.sks in Resources */,
 				50C5696B1FD6F61F00D88607 /* explanations.txt in Resources */,
 				50C569401FD6EADD00D88607 /* Assets.xcassets in Resources */,
 				500B95E41FDFFD8A0038B00A /* kefirfalling.sks in Resources */,
+				50E1761F1FE83B47006FCF0C /* question.json in Resources */,
 				50C569691FD6F59500D88607 /* questions.txt in Resources */,
 				50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */,
 			);
@@ -425,10 +435,10 @@
 				INFOPLIST_FILE = victorinaDrink/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pavelgubarev.victorinaDrink;
+				PRODUCT_BUNDLE_IDENTIFIER = victorinaDrink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -442,10 +452,10 @@
 				INFOPLIST_FILE = victorinaDrink/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pavelgubarev.victorinaDrink;
+				PRODUCT_BUNDLE_IDENTIFIER = victorinaDrink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

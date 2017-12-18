@@ -40,7 +40,7 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        let count = engine.getCurrentQuestion().answers.count
+        let count = engine.getCurrentQuestion().options.count
         
         return count
         
@@ -50,9 +50,15 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "optionCellID", for: indexPath) as! optionCell
         
-        let text = engine.getCurrentQuestion().answers[indexPath.row]
+        let text = engine.getCurrentQuestion().options[indexPath.row].text
         
         cell.optionLabel.text = text
+        
+        let selectedView = UIView()
+        selectedView.frame = selectedView.frame.insetBy(dx: 0, dy: 10)
+        selectedView.layer.cornerRadius = 10
+        selectedView.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+        cell.selectedBackgroundView = selectedView
         
         return cell
     }

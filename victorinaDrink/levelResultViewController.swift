@@ -15,6 +15,7 @@ class levelResultViewController: UIViewController {
     
     @IBOutlet weak var nextLevelButton: UIButton!
     
+    @IBOutlet weak var comingSoon: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,11 @@ class levelResultViewController: UIViewController {
 
         if (!engine.isThereNextLevel()) {
             nextLevelButton.removeFromSuperview()
-        }
+            
+        } else {
+                comingSoon.removeFromSuperview()
+            }
+        
     }
 
     override func didReceiveMemoryWarning() {

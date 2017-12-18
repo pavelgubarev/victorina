@@ -28,7 +28,7 @@ class answerViewController: UIViewController {
 
         correctOrNotLabel.text = engine.wasAnswerCorrect() ? "Верно!" : "Неверно!"
         
-        explanationLabel.text = engine.explanationForCurrentQuestion()
+        explanationLabel.text = engine.shortExplanationForCurrentQuestion()
         
         explanationLabel.sizeToFit()
         
@@ -43,7 +43,7 @@ class answerViewController: UIViewController {
         
     }
     @IBAction func gotoSite(_ sender: Any) {
-        UIApplication.shared.open(NSURL(string: engine.linkForCurrentQuestion())! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open( engine.linkForCurrentQuestion(), options: [:], completionHandler: nil)
     }
     
     func makePad() {

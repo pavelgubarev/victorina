@@ -10,15 +10,39 @@ import Foundation
 import UIKit
 import Alamofire
 
+struct option {
+    var text : String = ""
+    var isCorrect : Bool = false
+}
+
 struct question {
     var text : String = ""
-    var answers : [String] = [String]()
+    var options = [option]()
+}
+
+struct explanation {
+    var shortText : String = ""
+    var link : URL!
+}
+
+extension explanation {
+    init?(json: [String: Any]) {
+        
+        
+        
+        guard let shortDescription = json["Short Description"] as? String,
+            let link = json["Link"] as?  String
+            else {
+                return nil
+        }
+        self.shortText = shortDescription
+        self.link = URL(string: link)
+    }
 }
 
 class engineClass {
     var questions = [question]()
-    var explanations = [String]()
-    var links = [String]()
+    var explanations = [explanation]()
     var answers = [Int]()
     var correctAnswers = [Int]()
     var currentQuestionNumber : Int = 0
@@ -64,53 +88,101 @@ class engineClass {
         var qNumber = 0
         var answerNumber = 0
         
+        var qJson = [Any]()
+        var qDicOptions = [[String:Any]]()
+        
+        var previousLine : String = ""
+
         for line in fromStrings {
+            
+
             if line.count == 0 {
                 let newQuestion = question()
+                
+                
                 questions.append(newQuestion)
                 qNumber = questions.count - 1
                 answerNumber = 0
+                
             } else {
                 if answerNumber == 0 {
                     questions[qNumber].text = line
+                    
+                    
+
+                    var qDic = [String : Any]()
+                    
+                    qDic["text"] = previousLine
+                    qDic["options"] = qDicOptions
+                    
+                    qDicOptions = [[String:Any]]()
+                    previousLine = line
+                    
+                    qJson.append(qDic)
+                    
+                    
                 } else {
                     
                     let answerArr = line.components(separatedBy: "|")
                     
-                    if answerArr[0] == "+" {
-                        correctAnswers.append(answerNumber - 1)
-                    }
+                    var dOption = option()
                     
-                    questions[qNumber].answers.append(answerArr[1])
+                    dOption.isCorrect = answerArr[0] == "+" ? true : false
+                    dOption.text = answerArr[1]
+                    
+                    var dic = [String: Any]()
+                    
+                    dic["isCorrect"] = dOption.isCorrect
+                    dic["text"] = dOption.text
+                    
+                    qDicOptions.append(dic)
+                    
+                    questions[qNumber].options.append(dOption)
                 }
                 answerNumber = answerNumber + 1
             }
         }
         
+        do {
+            
+            //Convert to Data
+            let jsonData = try JSONSerialization.data(withJSONObject: qJson, options: JSONSerialization.WritingOptions.prettyPrinted)
+            
+            //Convert back to string. Usually only do this for debugging
+            if let JSONString = String(data: jsonData, encoding: String.Encoding.utf8) {
+                print(JSONString)
+            }
+            
+            //In production, you usually want to try and cast as the root data structure. Here we are casting as a dictionary. If the root object is an array cast as [Any].
+            var json = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]
+            
+            
+        } catch {
+            print(error)
+        }
+        
     }
     
+   
+    
     func loadExplanations() {
-        if let path = Bundle.main.path(forResource: "explanations", ofType: "txt") {
+        if let path = Bundle.main.path(forResource: "explanations", ofType: "json") {
             do {
-                let data = try String(contentsOfFile: path, encoding: .utf8)
-                let myStrings = data.components(separatedBy: .newlines)
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 
-                var i = 0
-                for line in myStrings {
-                    if line.count > 0 {
-                        if i % 2 == 0 {
-                            explanations.append(line)
-                        }
-                        else {
-                            links.append(line)
-                        }
-                        i = i + 1
+                let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String:Any]]
+                
+                for oneObj in json! {
+                    if let oneExplanation = explanation(json: oneObj) {
+                        explanations.append(oneExplanation)
                     }
                 }
                 
             } catch {
                 print(error)
             }
+        } else {
+            print("Invalid filename/path.")
         }
     }
     
@@ -127,12 +199,12 @@ class engineClass {
         return answers[currentQuestionNumber] == correctAnswers[currentQuestionNumber]
     }
     
-    func explanationForCurrentQuestion() -> String {
-        return explanations[currentQuestionNumber]
+    func shortExplanationForCurrentQuestion() -> String {
+        return explanations[currentQuestionNumber].shortText
     }
     
-    func linkForCurrentQuestion() -> String {
-        return links[currentQuestionNumber]
+    func linkForCurrentQuestion() -> URL {
+        return explanations[currentQuestionNumber].link
     }
 
     func goToNextQuestion() {
@@ -143,7 +215,7 @@ class engineClass {
     
     func isLevelOver() -> Bool {
         
-        print("currentQuestionNumber", currentQuestionNumber)
+      //  print("currentQuestionNumber", currentQuestionNumber)
         
         return (currentQuestionNumber + 1) % numberOfQuestionsPerLevel == 0
     }
@@ -171,15 +243,15 @@ class engineClass {
             parameters["q\(i)"] = value
         }
         
-        parameters["correct_answers"] = engine.correctAnswers
+        parameters["correct_answers"] = "\(engine.numberOfCorrectAnswersSoFar)"
         
-        print(parameters)
+//print(parameters)
         
         sessionManager =  Alamofire.SessionManager(configuration: configuration)
         
         sessionManager.request("https://pohmelje.ru/victorina/", method: .post, parameters: parameters).responseString { response in
             
-            //print(response)
+           // print(response)
             
         }
 

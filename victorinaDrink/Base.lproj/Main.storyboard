@@ -52,7 +52,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="njB-57-hvs" kind="show" id="ywf-Vq-sEu"/>
+                                    <segue destination="njB-57-hvs" kind="show" animates="NO" id="ywf-Vq-sEu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-LI-x5K">
@@ -62,6 +62,9 @@
                                 <state key="normal" title="Ай Похмелье">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="ayPohmelje:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aK8-et-5BC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -210,7 +213,7 @@
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="optionCellID" id="0SB-HI-DmN" customClass="optionCell" customModule="victorinaDrink" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="optionCellID" id="0SB-HI-DmN" customClass="optionCell" customModule="victorinaDrink" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0SB-HI-DmN" id="ZE8-w3-jOS">
@@ -317,33 +320,45 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="g9P-rL-M4O" kind="show" identifier="nextLevel" id="gTW-zW-qVu"/>
+                                    <segue destination="g9P-rL-M4O" kind="show" identifier="nextLevel" animates="NO" id="gTW-zW-qVu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZP-e0-onY">
-                                <rect key="frame" x="124" y="269" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZP-e0-onY">
+                                <rect key="frame" x="132" y="269" width="57" height="30"/>
                                 <state key="normal" title="Главная">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="bTM-Ba-dEp"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="bTM-Ba-dEp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Больше вопросов и ответов в скором апдейте приложения. Оставайтесь с нами!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-lL-PBq">
+                                <rect key="frame" x="50" y="388.5" width="220" height="79.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zjy-81-2ho" firstAttribute="top" secondItem="RB3-bj-aVe" secondAttribute="bottom" constant="56" id="2vL-JN-HPq"/>
+                            <constraint firstItem="4ZP-e0-onY" firstAttribute="centerY" secondItem="yjd-6r-qYO" secondAttribute="centerY" id="BqA-E0-4RX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sVG-lL-PBq" secondAttribute="trailing" constant="34" id="GHa-6E-ZrI"/>
                             <constraint firstItem="zjy-81-2ho" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="NwX-Qa-7hn"/>
+                            <constraint firstItem="sVG-lL-PBq" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="RJl-FM-Aau"/>
                             <constraint firstItem="SHb-Il-svZ" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leading" id="RQi-Me-X3A"/>
                             <constraint firstAttribute="trailing" secondItem="SHb-Il-svZ" secondAttribute="trailing" id="T80-Xm-Ypg"/>
                             <constraint firstItem="bDg-1F-1C2" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="VwG-3W-r3d"/>
                             <constraint firstItem="fLU-zh-L2N" firstAttribute="top" secondItem="bDg-1F-1C2" secondAttribute="bottom" constant="39" id="YtA-xd-FLo"/>
                             <constraint firstItem="SHb-Il-svZ" firstAttribute="top" secondItem="yjd-6r-qYO" secondAttribute="top" id="gDS-9E-dRG"/>
                             <constraint firstAttribute="bottom" secondItem="SHb-Il-svZ" secondAttribute="bottom" id="gFM-cN-Fsf"/>
+                            <constraint firstItem="sVG-lL-PBq" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leadingMargin" constant="34" id="siI-Qh-uK4"/>
+                            <constraint firstItem="4ZP-e0-onY" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="tXU-1R-pQT"/>
+                            <constraint firstAttribute="bottom" secondItem="sVG-lL-PBq" secondAttribute="bottom" constant="100" id="ttZ-gp-jCx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="comingSoon" destination="sVG-lL-PBq" id="mLt-SL-tQk"/>
                         <outlet property="nextLevelButton" destination="bDg-1F-1C2" id="7QY-4D-lXx"/>
                         <outlet property="yourResultLabel" destination="zjy-81-2ho" id="2bC-3J-oo7"/>
                     </connections>
@@ -474,6 +489,6 @@
         <image name="background" width="562" height="1218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pf1-vN-Z3k"/>
+        <segue reference="gTW-zW-qVu"/>
     </inferredMetricsTieBreakers>
 </document>

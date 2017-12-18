@@ -23,4 +23,9 @@ class optionCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func layoutSubviews() {
+        self.selectedBackgroundView?.frame = CGRect(x: 0, y: 10, width: self.frame.size.width, height: self.frame.size.height - 10)
+    }
+    
+   
 }
