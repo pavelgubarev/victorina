@@ -16,8 +16,8 @@
 		5061AC601FE3E06D00A88C8C /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */; };
 		5061AC621FE3E32900A88C8C /* kefirFallingStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061AC611FE3E32900A88C8C /* kefirFallingStart.swift */; };
 		5070014C1FE159E600D66E8D /* glasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070014B1FE159E600D66E8D /* glasses.swift */; };
+		508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508448FD1FE83ED000A26F92 /* startPageViewController.swift */; };
 		50C481981FE2E1E300A74B41 /* kefirfallingStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50C481971FE2E1E300A74B41 /* kefirfallingStart.sks */; };
-		50C4819A1FE2E21F00A74B41 /* startPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C481991FE2E21F00A74B41 /* startPageViewController.swift */; };
 		50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C569381FD6EADD00D88607 /* AppDelegate.swift */; };
 		50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C5693C1FD6EADD00D88607 /* Main.storyboard */; };
 		50C569401FD6EADD00D88607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C5693F1FD6EADD00D88607 /* Assets.xcassets */; };
@@ -27,7 +27,9 @@
 		50C5696D1FD6F64400D88607 /* engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696C1FD6F64400D88607 /* engine.swift */; };
 		50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696E1FD6FF2800D88607 /* questionViewController.swift */; };
 		50E1761D1FE81B5B006FCF0C /* explanations.json in Resources */ = {isa = PBXBuildFile; fileRef = 50E1761C1FE81B5B006FCF0C /* explanations.json */; };
-		50E1761F1FE83B47006FCF0C /* question.json in Resources */ = {isa = PBXBuildFile; fileRef = 50E1761E1FE83B47006FCF0C /* question.json */; };
+		50E1761F1FE83B47006FCF0C /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 50E1761E1FE83B47006FCF0C /* questions.json */; };
+		50E176231FE83C14006FCF0C /* explanations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176221FE83C14006FCF0C /* explanations.swift */; };
+		50E176251FE83C29006FCF0C /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176241FE83C29006FCF0C /* questions.swift */; };
 		50E838D81FE08363008BF624 /* glasses.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50E838D71FE08363008BF624 /* glasses.sks */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +44,8 @@
 		5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
 		5061AC611FE3E32900A88C8C /* kefirFallingStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kefirFallingStart.swift; sourceTree = "<group>"; };
 		5070014B1FE159E600D66E8D /* glasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glasses.swift; sourceTree = "<group>"; };
+		508448FD1FE83ED000A26F92 /* startPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startPageViewController.swift; sourceTree = "<group>"; };
 		50C481971FE2E1E300A74B41 /* kefirfallingStart.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = kefirfallingStart.sks; sourceTree = "<group>"; };
-		50C481991FE2E21F00A74B41 /* startPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = startPageViewController.swift; path = victorinaDrink/startPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		50C569351FD6EADD00D88607 /* victorinaDrink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victorinaDrink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C569381FD6EADD00D88607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C5693D1FD6EADD00D88607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,7 +57,9 @@
 		50C5696C1FD6F64400D88607 /* engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engine.swift; sourceTree = "<group>"; };
 		50C5696E1FD6FF2800D88607 /* questionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
 		50E1761C1FE81B5B006FCF0C /* explanations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = explanations.json; sourceTree = "<group>"; };
-		50E1761E1FE83B47006FCF0C /* question.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = question.json; sourceTree = "<group>"; };
+		50E1761E1FE83B47006FCF0C /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		50E176221FE83C14006FCF0C /* explanations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = explanations.swift; sourceTree = "<group>"; };
+		50E176241FE83C29006FCF0C /* questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
 		50E838D71FE08363008BF624 /* glasses.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = glasses.sks; sourceTree = "<group>"; };
 		95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_victorinaDrink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB696D4562F0BC9A09A2F4E8 /* Pods-victorinaDrink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-victorinaDrink.release.xcconfig"; path = "Pods/Target Support Files/Pods-victorinaDrink/Pods-victorinaDrink.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +99,18 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		508448FC1FE83E4800A26F92 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				50C5696E1FD6FF2800D88607 /* questionViewController.swift */,
+				508448FD1FE83ED000A26F92 /* startPageViewController.swift */,
+				505C82501FD84FBB00C10BDE /* answerViewController.swift */,
+				500B95E11FDFF8560038B00A /* levelResultViewController.swift */,
+				5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		50C5692C1FD6EADD00D88607 = {
 			isa = PBXGroup;
 			children = (
@@ -116,25 +132,31 @@
 		50C569371FD6EADD00D88607 /* victorinaDrink */ = {
 			isa = PBXGroup;
 			children = (
+				50C5693F1FD6EADD00D88607 /* Assets.xcassets */,
 				50C569381FD6EADD00D88607 /* AppDelegate.swift */,
 				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
-				5070014D1FE15A2000D66E8D /* Animations */,
 				505C824C1FD835DF00C10BDE /* optionCell.swift */,
-				5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */,
-				50C5696E1FD6FF2800D88607 /* questionViewController.swift */,
-				50C481991FE2E21F00A74B41 /* startPageViewController.swift */,
-				505C82501FD84FBB00C10BDE /* answerViewController.swift */,
-				500B95E11FDFF8560038B00A /* levelResultViewController.swift */,
-				50C5693F1FD6EADD00D88607 /* Assets.xcassets */,
+				508448FC1FE83E4800A26F92 /* ViewControllers */,
 				50C569411FD6EADD00D88607 /* LaunchScreen.storyboard */,
-				50C569681FD6F59500D88607 /* questions.txt */,
-				50E1761E1FE83B47006FCF0C /* question.json */,
-				50C5696A1FD6F61F00D88607 /* explanations.txt */,
-				50E1761C1FE81B5B006FCF0C /* explanations.json */,
+				5070014D1FE15A2000D66E8D /* Animations */,
+				50E176201FE83BDC006FCF0C /* Sources */,
 				50C5696C1FD6F64400D88607 /* engine.swift */,
+				50E176221FE83C14006FCF0C /* explanations.swift */,
+				50E176241FE83C29006FCF0C /* questions.swift */,
 				50C569441FD6EADD00D88607 /* Info.plist */,
 			);
 			path = victorinaDrink;
+			sourceTree = "<group>";
+		};
+		50E176201FE83BDC006FCF0C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				50C569681FD6F59500D88607 /* questions.txt */,
+				50E1761E1FE83B47006FCF0C /* questions.json */,
+				50C5696A1FD6F61F00D88607 /* explanations.txt */,
+				50E1761C1FE81B5B006FCF0C /* explanations.json */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		EB38CDB8F6B6D21BCE9E5427 /* Frameworks */ = {
@@ -215,7 +237,7 @@
 				50C5696B1FD6F61F00D88607 /* explanations.txt in Resources */,
 				50C569401FD6EADD00D88607 /* Assets.xcassets in Resources */,
 				500B95E41FDFFD8A0038B00A /* kefirfalling.sks in Resources */,
-				50E1761F1FE83B47006FCF0C /* question.json in Resources */,
+				50E1761F1FE83B47006FCF0C /* questions.json in Resources */,
 				50C569691FD6F59500D88607 /* questions.txt in Resources */,
 				50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */,
 			);
@@ -284,7 +306,9 @@
 			files = (
 				505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */,
 				505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */,
-				50C4819A1FE2E21F00A74B41 /* startPageViewController.swift in Sources */,
+				50E176251FE83C29006FCF0C /* questions.swift in Sources */,
+				50E176231FE83C14006FCF0C /* explanations.swift in Sources */,
+				508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */,
 				5070014C1FE159E600D66E8D /* glasses.swift in Sources */,
 				5061AC601FE3E06D00A88C8C /* aboutViewController.swift in Sources */,
 				500B95E61FE0053B0038B00A /* kefirFalling.swift in Sources */,

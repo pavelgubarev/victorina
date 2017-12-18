@@ -26,7 +26,7 @@ class answerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        correctOrNotLabel.text = engine.wasAnswerCorrect() ? "Верно!" : "Неверно!"
+        correctOrNotLabel.text = engine.wasAnswerCorrect(forQuestion: engine.currentQuestionNumber) ? "Верно!" : "Неверно!"
         
         explanationLabel.text = engine.shortExplanationForCurrentQuestion()
         
@@ -78,7 +78,7 @@ class answerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        let scene = engine.wasAnswerCorrect() ? glassesScene.copy() as! SKScene : kefirScene.copy() as! SKScene
+        let scene = engine.wasAnswerCorrect(forQuestion: engine.currentQuestionNumber) ? glassesScene.copy() as! SKScene : kefirScene.copy() as! SKScene
         
         skView.presentScene(scene)
         
