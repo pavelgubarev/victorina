@@ -6,7 +6,6 @@ target 'victorinaDrink' do
   use_frameworks!
 
  pod 'Alamofire', '~> 4.6'
-
   # Pods for victorinaDrink
 
 end

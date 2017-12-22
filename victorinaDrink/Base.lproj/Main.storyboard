@@ -338,6 +338,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrc-Ms-oCI">
+                                <rect key="frame" x="117.5" y="320" width="85" height="30"/>
+                                <state key="normal" title="Поделиться">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="share:" destination="1Bj-bC-SsQ" eventType="touchUpInside" id="tPd-Jd-Aki"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -349,9 +358,11 @@
                             <constraint firstItem="SHb-Il-svZ" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leading" id="RQi-Me-X3A"/>
                             <constraint firstAttribute="trailing" secondItem="SHb-Il-svZ" secondAttribute="trailing" id="T80-Xm-Ypg"/>
                             <constraint firstItem="bDg-1F-1C2" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="VwG-3W-r3d"/>
+                            <constraint firstItem="vrc-Ms-oCI" firstAttribute="top" secondItem="4ZP-e0-onY" secondAttribute="bottom" constant="21" id="Y5A-C4-UaO"/>
                             <constraint firstItem="fLU-zh-L2N" firstAttribute="top" secondItem="bDg-1F-1C2" secondAttribute="bottom" constant="39" id="YtA-xd-FLo"/>
                             <constraint firstItem="SHb-Il-svZ" firstAttribute="top" secondItem="yjd-6r-qYO" secondAttribute="top" id="gDS-9E-dRG"/>
                             <constraint firstAttribute="bottom" secondItem="SHb-Il-svZ" secondAttribute="bottom" id="gFM-cN-Fsf"/>
+                            <constraint firstItem="vrc-Ms-oCI" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="mDz-vB-zn5"/>
                             <constraint firstItem="sVG-lL-PBq" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leadingMargin" constant="34" id="siI-Qh-uK4"/>
                             <constraint firstItem="4ZP-e0-onY" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="tXU-1R-pQT"/>
                             <constraint firstAttribute="bottom" secondItem="sVG-lL-PBq" secondAttribute="bottom" constant="100" id="ttZ-gp-jCx"/>

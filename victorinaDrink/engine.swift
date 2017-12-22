@@ -11,7 +11,6 @@ import UIKit
 import Alamofire
 
 
-
 class engineClass {
     var questions = [question]()
     var explanations = [explanation]()
@@ -20,7 +19,7 @@ class engineClass {
     var numberOfCorrectAnswersSoFar = 0
     var currentLevel = 1
     
-    let numberOfQuestionsPerLevel = 7
+    let numberOfQuestionsPerLevel = 2
     
     let numberOfLevels = 2
     
@@ -39,6 +38,14 @@ class engineClass {
                 
         return questions[currentQuestionNumber]
     }
+    
+    func openShareLink() {
+        
+        let url = URL(string: "https://www.facebook.com/sharer/sharer.php?u=https:/pohmelje.ru")!
+        
+         UIApplication.shared.open( url, options: [:], completionHandler: nil)
+    }
+
     
     func loadQuestions() {
         if let path = Bundle.main.path(forResource: "questions", ofType: "json") {

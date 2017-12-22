@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 
+
 class levelResultViewController: UIViewController {
 
     @IBOutlet weak var yourResultLabel: UILabel!
@@ -17,10 +18,16 @@ class levelResultViewController: UIViewController {
     
     @IBOutlet weak var comingSoon: UILabel!
     
+  
+    @IBAction func share(_ sender: Any) {
+        
+        engine.openShareLink()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        yourResultLabel.text = "Ваш результат: \(engine.numberOfCorrectAnswersSoFar) из 8"
+        yourResultLabel.text = "Ваш результат: \(engine.numberOfCorrectAnswersSoFar) из 7"
 
         if (!engine.isThereNextLevel()) {
             nextLevelButton.removeFromSuperview()
@@ -29,7 +36,11 @@ class levelResultViewController: UIViewController {
                 comingSoon.removeFromSuperview()
             }
         
+       
+        
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
