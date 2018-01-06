@@ -12,23 +12,64 @@ import Alamofire
 
 
 class engineClass {
-    var questions = [question]()
-    var explanations = [explanation]()
-    var answers = [Int]()
-    var currentQuestionNumber : Int = 0
-    var numberOfCorrectAnswersSoFar = 0
-    var currentLevel = 1
     
-    let numberOfQuestionsPerLevel = 2
+    var comparisonData : NSDictionary?
+
+    let numberOfQuestionsPerLevel = 7
     
     let numberOfLevels = 2
+
+    var questions = [question]()
+    
+    var explanations = [explanation]()
+    
+    var currentUsersAnswers = [Int:[Int]]()
+    
+    var currentQuestionNumber : Int = 0
+    
+    var numberOfCorrectAnswersSoFar = 0
+    
+    var lastOptionChosen : Int = 0
+    
+    var currentLevel = 1
+    
+    var passedLevels = 0
     
     var sessionManager : SessionManager!
 
+    func initUsersAnswers() {
+        for i in 1...numberOfLevels {
+            currentUsersAnswers[i] = [Int]()
+        }
+    }
+    
     init() {
         loadQuestions()
         loadExplanations()
+        
+        loadComparison()
     }
+    
+    func goToLevel2() {
+        currentLevel = 2
+        
+        currentQuestionNumber = numberOfQuestionsPerLevel * (currentLevel - 1)
+    }
+    
+    func accessToLevel2() -> Bool {
+        return engine.passedLevels > 0
+    }
+    
+    func wereAllQuestionsAnswered() -> Bool {
+        return numberOfCorrectAnswersSoFar == numberOfQuestionsPerLevel
+    }
+    
+    func resetLevels() {
+        let userDefaults = UserDefaults.standard
+        self.passedLevels = 0
+        userDefaults.set(0, forKey: "passedLevels")
+    }
+
     
     func isThereNextLevel() -> Bool {
         return currentLevel + 1 == numberOfLevels
@@ -39,71 +80,47 @@ class engineClass {
         return questions[currentQuestionNumber]
     }
     
-    func openShareLink() {
+    func shareFB() {
         
-        let url = URL(string: "https://www.facebook.com/sharer/sharer.php?u=https:/pohmelje.ru")!
+        let url = URL(string: "https://www.facebook.com/sharer/sharer.php?u=https://pohmelje.ru/victorinaShare/")!
         
          UIApplication.shared.open( url, options: [:], completionHandler: nil)
     }
-
     
-    func loadQuestions() {
-        if let path = Bundle.main.path(forResource: "questions", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                
-                let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String:Any]]
-                
-                for oneObj in json! {
-                    if let oneExplanation = question(json: oneObj) {
-                        questions.append(oneExplanation)
-                    }
-                }
-                
-            } catch {
-                print(error)
-            }
-        } else {
-            print("Invalid filename/path.")
-        }
-        
+    
+
+
+
+    func saveData() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(self.passedLevels, forKey: "passedLevels")
     }
     
+    func loadData() {
+        let userDefaults = UserDefaults.standard
+
+        self.passedLevels = userDefaults.integer(forKey: "passedLevels")
+    }
    
     
-    func loadExplanations() {
-        if let path = Bundle.main.path(forResource: "explanations", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                
-                let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String:Any]]
-                
-                for oneObj in json! {
-                    if let oneExplanation = explanation(json: oneObj) {
-                        explanations.append(oneExplanation)
-                    }
-                }
-                
-            } catch {
-                print(error)
-            }
-        } else {
-            print("Invalid filename/path.")
-        }
-    }
-    
-    func acceptSelectedAnswer(answerNumber: Int) {
-        answers.append(answerNumber)
+    func acceptSelectedAnswer(optionChosen: Int) {
         
-        if wasAnswerCorrect(forQuestion: currentQuestionNumber) {
+        lastOptionChosen = optionChosen
+        
+        currentUsersAnswers[currentLevel]!.append(optionChosen)
+        
+        if wasAnswerCorrect(forQuestion: currentQuestionNumber, optionChosen: lastOptionChosen) {
             numberOfCorrectAnswersSoFar += 1
         }
         
     }
     
-    func wasAnswerCorrect(forQuestion questionNumber : Int) -> Bool {
-        return questions[questionNumber].options[answers[questionNumber]].isCorrect
+    func wasAnswerCorrect(forQuestion questionNumber : Int, optionChosen: Int) -> Bool {
+        
+        return questions[questionNumber].options[optionChosen].isCorrect
     }
+    
+    
     
     func shortExplanationForCurrentQuestion() -> String {
         return explanations[currentQuestionNumber].shortText
@@ -121,15 +138,25 @@ class engineClass {
     
     func isLevelOver() -> Bool {
         
-      //  print("currentQuestionNumber", currentQuestionNumber)
-        
         return (currentQuestionNumber + 1) % numberOfQuestionsPerLevel == 0
     }
     
     func showResultsForTheLevel() {
         sendResultsForTheLevel()
         
-      
+        updateLevelPassedAndSave()
+        
+    }
+    
+    func updateLevelPassedAndSave() {
+        
+        if wereAllQuestionsAnswered() {
+            
+            passedLevels = currentLevel
+            
+            saveData()
+        }
+        
     }
     
     
@@ -141,12 +168,14 @@ class engineClass {
         var parameters = Parameters()
         
         var i = 0
-        for answer in answers {
+        for answer in currentUsersAnswers[currentLevel]! {
             var value = "\(answer),"
-            let wascorrect = engine.wasAnswerCorrect(forQuestion: i) ? "YES" : "NO"
+            let wascorrect = engine.wasAnswerCorrect(forQuestion: i, optionChosen: answer) ? "YES" : "NO"
             i += 1
+            
+            let qNumberToSend = i + currentLevel * numberOfQuestionsPerLevel
             value += wascorrect
-            parameters["q\(i)"] = value
+            parameters["q\(qNumberToSend)"] = value
         }
         
         parameters["correct_answers"] = "\(engine.numberOfCorrectAnswersSoFar)"
@@ -166,10 +195,21 @@ class engineClass {
     
     func resetAnswers() {
         numberOfCorrectAnswersSoFar = 0
-
     }
     
-
+    func resetGame() {
+        resetAnswers()
+        initUsersAnswers()
+        currentQuestionNumber = 0
+    }
+    
+    
+    func restartLevel() {
+        resetAnswers()
+        currentUsersAnswers[currentLevel] = [Int]()
+        currentQuestionNumber = (currentLevel - 1) * numberOfQuestionsPerLevel
+    }
+    
     func nextLevel() {
         resetAnswers()
         currentLevel += 1

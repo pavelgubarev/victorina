@@ -9,11 +9,20 @@
 import UIKit
 import SpriteKit
 
-var engine : engineClass!
 
 class startPageViewController: UIViewController {
     
+    let dev = false
+    
     @IBOutlet weak var skView: SKView!
+    
+    @IBAction func resetLevels(_ sender: Any) {
+        engine.resetLevels()
+    }
+    
+    @IBOutlet weak var resetButton: UIButton!
+    
+    @IBOutlet weak var level2Button: UIButton!
     
     @IBAction func ayPohmelje(_ sender: Any) {
         
@@ -29,10 +38,14 @@ class startPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        engine = engineClass()
+        level2Button.alpha = engine.accessToLevel2() ? 1 : 0.3
         
         skView.backgroundColor = UIColor.clear
         // Do any additional setup after loading the view.
+        
+        if !dev {
+            resetButton.removeFromSuperview()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,6 +60,29 @@ class startPageViewController: UIViewController {
         
         
         skView.presentScene(scene)
+       
+        engine.resetGame()
+        
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        var shouldWe = true
+        if identifier == "gotoLevel2" {
+            shouldWe = engine.accessToLevel2()
+        }
+        
+        return shouldWe
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "nextQuestion")  {
+            engine.goToNextQuestion()
+        }
+        if (segue.identifier == "gotoLevel2")  {
+            engine.goToLevel2()
+        }
     }
     
     /*

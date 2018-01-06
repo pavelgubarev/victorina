@@ -1,3 +1,5 @@
+import Foundation
+
 struct option {
     var text : String = ""
     var isCorrect : Bool = false
@@ -24,4 +26,30 @@ extension question {
         }
         self.text = text
     }
+}
+
+extension engineClass {
+    
+    func loadQuestions() {
+        if let path = Bundle.main.path(forResource: "questions", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                
+                let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String:Any]]
+                
+                for oneObj in json! {
+                    if let oneQuestion = question(json: oneObj) {
+                        questions.append(oneQuestion)
+                    }
+                }
+                
+            } catch {
+                print(error)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        
+    }
+    
 }

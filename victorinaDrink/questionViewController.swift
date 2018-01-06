@@ -64,7 +64,7 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        engine.acceptSelectedAnswer(answerNumber: indexPath.row)
+        engine.acceptSelectedAnswer(optionChosen: indexPath.row)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "Answer")

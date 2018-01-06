@@ -41,7 +41,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="g9P-rL-M4O" kind="show" animates="NO" id="Pf1-vN-Z3k"/>
+                                    <segue destination="g9P-rL-M4O" kind="show" identifier="gotoQuestion" animates="NO" id="Pf1-vN-Z3k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-kW-u0b">
@@ -66,22 +66,44 @@
                                     <action selector="ayPohmelje:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aK8-et-5BC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIk-Id-WIE">
+                                <rect key="frame" x="113.5" y="516" width="93" height="32"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <state key="normal" title="Уровень 2">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="g9P-rL-M4O" kind="show" identifier="gotoLevel2" id="NxG-kG-fN8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzg-f0-am4">
+                                <rect key="frame" x="16" y="14" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="reset"/>
+                                <connections>
+                                    <action selector="resetLevels:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aXl-Vi-ofp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PWi-tr-BVo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0Nb-wW-XQc"/>
+                            <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="lIk-Id-WIE" secondAttribute="bottom" constant="20" id="0dh-fG-EUR"/>
                             <constraint firstAttribute="bottom" secondItem="S6t-QV-Z2X" secondAttribute="bottom" id="BwF-Kp-jED"/>
                             <constraint firstItem="S6t-QV-Z2X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GfG-Co-ROU"/>
                             <constraint firstItem="PWi-tr-BVo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MW4-ML-BnY"/>
                             <constraint firstAttribute="trailing" secondItem="PWi-tr-BVo" secondAttribute="trailing" id="Pv3-hL-hXc"/>
                             <constraint firstItem="ac5-jc-xYT" firstAttribute="top" secondItem="zwK-Ff-WtA" secondAttribute="bottom" constant="74" id="Qt2-JY-RbU"/>
                             <constraint firstItem="zwK-Ff-WtA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y6E-fw-oc5"/>
+                            <constraint firstItem="lIk-Id-WIE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YyW-xs-eEe"/>
                             <constraint firstAttribute="bottom" secondItem="PWi-tr-BVo" secondAttribute="bottom" id="ga2-H0-c6o"/>
                             <constraint firstItem="S6t-QV-Z2X" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iAQ-50-vyK"/>
                             <constraint firstAttribute="trailing" secondItem="S6t-QV-Z2X" secondAttribute="trailing" id="z2X-Zm-0iu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="level2Button" destination="lIk-Id-WIE" id="xiu-N4-WZ7"/>
+                        <outlet property="resetButton" destination="Tzg-f0-am4" id="MFg-LA-SFc"/>
                         <outlet property="skView" destination="S6t-QV-Z2X" id="bFr-c6-KRf"/>
                     </connections>
                 </viewController>
@@ -323,8 +345,30 @@
                                     <segue destination="g9P-rL-M4O" kind="show" identifier="nextLevel" animates="NO" id="gTW-zW-qVu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Больше вопросов и ответов в скором апдейте приложения. Оставайтесь с нами!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-lL-PBq">
+                                <rect key="frame" x="50" y="393.5" width="220" height="79.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чтобы попасть на следующий уровень, ответьте верно на все вопросы." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sP4-hq-YXq">
+                                <rect key="frame" x="50" y="393" width="220" height="79.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgh-3c-PSg">
+                                <rect key="frame" x="68" y="160" width="184" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Пройти заново">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="g9P-rL-M4O" kind="show" identifier="restartLevel" id="kWL-96-7rd"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZP-e0-onY">
-                                <rect key="frame" x="132" y="269" width="57" height="30"/>
+                                <rect key="frame" x="131.5" y="215" width="57" height="30"/>
                                 <state key="normal" title="Главная">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -332,45 +376,69 @@
                                     <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="bTM-Ba-dEp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Больше вопросов и ответов в скором апдейте приложения. Оставайтесь с нами!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-lL-PBq">
-                                <rect key="frame" x="50" y="388.5" width="220" height="79.5"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поздравляем! Теперь вы умеете пить грамотно!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rj2-8t-YtE">
+                                <rect key="frame" x="16" y="262" width="288" height="44.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrc-Ms-oCI">
-                                <rect key="frame" x="117.5" y="320" width="85" height="30"/>
-                                <state key="normal" title="Поделиться">
+                                <rect key="frame" x="23" y="314.5" width="119" height="30"/>
+                                <state key="normal" title="Поделиться в FB">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="share:" destination="1Bj-bC-SsQ" eventType="touchUpInside" id="tPd-Jd-Aki"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkT-ib-rJY">
+                                <rect key="frame" x="164" y="314.5" width="140" height="30"/>
+                                <state key="normal" title="Поделиться почтой">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareByMail:" destination="1Bj-bC-SsQ" eventType="touchUpInside" id="4lf-ZB-6Mf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zjy-81-2ho" firstAttribute="top" secondItem="RB3-bj-aVe" secondAttribute="bottom" constant="56" id="2vL-JN-HPq"/>
-                            <constraint firstItem="4ZP-e0-onY" firstAttribute="centerY" secondItem="yjd-6r-qYO" secondAttribute="centerY" id="BqA-E0-4RX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sP4-hq-YXq" secondAttribute="trailing" constant="34" id="9cW-xm-vOm"/>
+                            <constraint firstItem="rj2-8t-YtE" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leadingMargin" id="Fgs-E0-4hI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sVG-lL-PBq" secondAttribute="trailing" constant="34" id="GHa-6E-ZrI"/>
                             <constraint firstItem="zjy-81-2ho" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="NwX-Qa-7hn"/>
                             <constraint firstItem="sVG-lL-PBq" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="RJl-FM-Aau"/>
                             <constraint firstItem="SHb-Il-svZ" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leading" id="RQi-Me-X3A"/>
+                            <constraint firstItem="rj2-8t-YtE" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="SwO-iz-miT"/>
                             <constraint firstAttribute="trailing" secondItem="SHb-Il-svZ" secondAttribute="trailing" id="T80-Xm-Ypg"/>
+                            <constraint firstItem="Hgh-3c-PSg" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="Uwa-aQ-Upm"/>
                             <constraint firstItem="bDg-1F-1C2" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="VwG-3W-r3d"/>
-                            <constraint firstItem="vrc-Ms-oCI" firstAttribute="top" secondItem="4ZP-e0-onY" secondAttribute="bottom" constant="21" id="Y5A-C4-UaO"/>
+                            <constraint firstItem="sP4-hq-YXq" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leadingMargin" constant="34" id="XIK-Rd-guq"/>
+                            <constraint firstItem="Hgh-3c-PSg" firstAttribute="top" secondItem="zjy-81-2ho" secondAttribute="bottom" constant="30" id="XIe-hE-yCP"/>
                             <constraint firstItem="fLU-zh-L2N" firstAttribute="top" secondItem="bDg-1F-1C2" secondAttribute="bottom" constant="39" id="YtA-xd-FLo"/>
+                            <constraint firstItem="bDg-1F-1C2" firstAttribute="top" secondItem="sP4-hq-YXq" secondAttribute="bottom" constant="9.5" id="e4Q-TK-ABW"/>
                             <constraint firstItem="SHb-Il-svZ" firstAttribute="top" secondItem="yjd-6r-qYO" secondAttribute="top" id="gDS-9E-dRG"/>
                             <constraint firstAttribute="bottom" secondItem="SHb-Il-svZ" secondAttribute="bottom" id="gFM-cN-Fsf"/>
-                            <constraint firstItem="vrc-Ms-oCI" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="mDz-vB-zn5"/>
+                            <constraint firstItem="rj2-8t-YtE" firstAttribute="trailing" secondItem="yjd-6r-qYO" secondAttribute="trailingMargin" id="l0f-yP-ahj"/>
+                            <constraint firstItem="vrc-Ms-oCI" firstAttribute="top" secondItem="rj2-8t-YtE" secondAttribute="bottom" constant="8" id="n3c-o3-9r0"/>
+                            <constraint firstItem="rj2-8t-YtE" firstAttribute="centerY" secondItem="yjd-6r-qYO" secondAttribute="centerY" id="ndY-b5-GjK"/>
+                            <constraint firstItem="YkT-ib-rJY" firstAttribute="top" secondItem="rj2-8t-YtE" secondAttribute="bottom" constant="8" id="sBD-In-iLe"/>
                             <constraint firstItem="sVG-lL-PBq" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leadingMargin" constant="34" id="siI-Qh-uK4"/>
                             <constraint firstItem="4ZP-e0-onY" firstAttribute="centerX" secondItem="yjd-6r-qYO" secondAttribute="centerX" id="tXU-1R-pQT"/>
-                            <constraint firstAttribute="bottom" secondItem="sVG-lL-PBq" secondAttribute="bottom" constant="100" id="ttZ-gp-jCx"/>
+                            <constraint firstAttribute="bottom" secondItem="sVG-lL-PBq" secondAttribute="bottom" constant="95" id="ttZ-gp-jCx"/>
+                            <constraint firstItem="vrc-Ms-oCI" firstAttribute="leading" secondItem="yjd-6r-qYO" secondAttribute="leadingMargin" constant="7" id="txE-he-yDo"/>
+                            <constraint firstItem="4ZP-e0-onY" firstAttribute="top" secondItem="Hgh-3c-PSg" secondAttribute="bottom" constant="10" id="w2K-gy-wTA"/>
+                            <constraint firstItem="YkT-ib-rJY" firstAttribute="trailing" secondItem="yjd-6r-qYO" secondAttribute="trailingMargin" id="zeL-sK-F8e"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="comingSoon" destination="sVG-lL-PBq" id="mLt-SL-tQk"/>
+                        <outlet property="congratsLabel" destination="rj2-8t-YtE" id="TSk-yY-ZQF"/>
                         <outlet property="nextLevelButton" destination="bDg-1F-1C2" id="7QY-4D-lXx"/>
+                        <outlet property="pleaseAnswerAllLabel" destination="sP4-hq-YXq" id="oO2-Yc-2OD"/>
+                        <outlet property="shareByMailButton" destination="YkT-ib-rJY" id="cVJ-Nk-1Xt"/>
+                        <outlet property="shareFBButton" destination="vrc-Ms-oCI" id="CxS-ac-AMS"/>
                         <outlet property="yourResultLabel" destination="zjy-81-2ho" id="2bC-3J-oo7"/>
                     </connections>
                 </viewController>
@@ -458,10 +526,17 @@
                                     <action selector="gotoSite:" destination="e1U-WK-hmQ" eventType="touchUpInside" id="Lhy-fT-u7i"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18000 человек ответили так же" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkJ-cj-97c">
+                                <rect key="frame" x="38" y="130" width="244.5" height="17"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MKU-xw-yBF" firstAttribute="leading" secondItem="bKC-q3-1hh" secondAttribute="leading" id="B6I-vT-tQo"/>
+                            <constraint firstItem="RkJ-cj-97c" firstAttribute="top" secondItem="vXj-v7-S65" secondAttribute="top" constant="100" id="FBf-O9-j49"/>
                             <constraint firstAttribute="trailing" secondItem="MKU-xw-yBF" secondAttribute="trailing" id="FFb-f0-wQI"/>
                             <constraint firstAttribute="trailing" secondItem="vXj-v7-S65" secondAttribute="trailing" id="FdY-1h-EEG"/>
                             <constraint firstAttribute="trailing" secondItem="gCA-Au-vpn" secondAttribute="trailing" constant="20" id="I1R-YX-2wy"/>
@@ -472,6 +547,7 @@
                             <constraint firstItem="MKU-xw-yBF" firstAttribute="top" secondItem="bKC-q3-1hh" secondAttribute="top" id="QYK-we-7Wa"/>
                             <constraint firstItem="xUd-y5-IHO" firstAttribute="leading" secondItem="gCA-Au-vpn" secondAttribute="leading" id="TMF-Oe-Joc"/>
                             <constraint firstItem="RNd-f3-dsq" firstAttribute="top" secondItem="bKC-q3-1hh" secondAttribute="top" id="YMV-g5-VJJ"/>
+                            <constraint firstItem="RkJ-cj-97c" firstAttribute="centerX" secondItem="bKC-q3-1hh" secondAttribute="centerX" id="dUf-fj-cr7"/>
                             <constraint firstAttribute="trailing" secondItem="RNd-f3-dsq" secondAttribute="trailing" id="gmA-u0-HKT"/>
                             <constraint firstItem="xUd-y5-IHO" firstAttribute="top" secondItem="gCA-Au-vpn" secondAttribute="bottom" constant="5" id="hKv-A2-7bL"/>
                             <constraint firstAttribute="bottom" secondItem="MKU-xw-yBF" secondAttribute="bottom" id="mTz-Ae-EzI"/>
@@ -487,19 +563,20 @@
                     <connections>
                         <outlet property="correctOrNotLabel" destination="vXj-v7-S65" id="ipw-W6-nJq"/>
                         <outlet property="explanationLabel" destination="gCA-Au-vpn" id="gUu-Vy-KFG"/>
+                        <outlet property="howManyPeople" destination="RkJ-cj-97c" id="2mJ-C8-Z3E"/>
                         <outlet property="learnMoreButton" destination="xUd-y5-IHO" id="4X1-AD-ZrB"/>
                         <outlet property="skView" destination="RNd-f3-dsq" id="Hhw-fV-Ik8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNY-FE-g0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2370.4000000000001" y="-133.74384236453201"/>
+            <point key="canvasLocation" x="2370" y="-134.1549295774648"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="562" height="1218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gTW-zW-qVu"/>
+        <segue reference="VBE-O5-u9f"/>
     </inferredMetricsTieBreakers>
 </document>

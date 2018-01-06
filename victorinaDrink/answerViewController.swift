@@ -19,14 +19,22 @@ class answerViewController: UIViewController {
     
     @IBOutlet weak var learnMoreButton: UIButton!
     
+    
+    
+    @IBOutlet weak var howManyPeople: UILabel!
+    
     var kefirScene : SKScene!
     
     var glassesScene : SKScene!
     
+    var wasAnswerCorrect : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        wasAnswerCorrect = engine.wasAnswerCorrect(forQuestion: engine.currentQuestionNumber, optionChosen: engine.lastOptionChosen)
 
-        correctOrNotLabel.text = engine.wasAnswerCorrect(forQuestion: engine.currentQuestionNumber) ? "Верно!" : "Неверно!"
+        correctOrNotLabel.text =  wasAnswerCorrect ? "Верно!" : "Неверно!"
         
         explanationLabel.text = engine.shortExplanationForCurrentQuestion()
         
@@ -39,6 +47,12 @@ class answerViewController: UIViewController {
         glassesScene.scaleMode = .aspectFill
         
         skView.backgroundColor = UIColor.clear
+        
+        if let peopleNumber = engine.returnComparison(questionNumber: engine.currentQuestionNumber, optionNumber: engine.lastOptionChosen) {
+            howManyPeople.text = "\(peopleNumber) человек ответили так же"
+        } else {
+            howManyPeople.removeFromSuperview()
+        }
 
         
     }
@@ -78,7 +92,7 @@ class answerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        let scene = engine.wasAnswerCorrect(forQuestion: engine.currentQuestionNumber) ? glassesScene.copy() as! SKScene : kefirScene.copy() as! SKScene
+        let scene = wasAnswerCorrect ? glassesScene.copy() as! SKScene : kefirScene.copy() as! SKScene
         
         skView.presentScene(scene)
         

@@ -16,3 +16,26 @@ extension explanation {
         self.link = URL(string: link)
     }
 }
+
+extension engineClass {
+    func loadExplanations() {
+        if let path = Bundle.main.path(forResource: "explanations", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                
+                let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String:Any]]
+                
+                for oneObj in json! {
+                    if let oneExplanation = explanation(json: oneObj) {
+                        explanations.append(oneExplanation)
+                    }
+                }
+                
+            } catch {
+                print(error)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+    }
+}
