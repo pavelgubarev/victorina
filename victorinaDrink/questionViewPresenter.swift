@@ -22,13 +22,12 @@ class questionViewPresenter {
         view.setCurrentQuestion(withQuestion: model.getCurrentQuestion())
     }
     
-    func showAnswer() {
-        self.view.showAnswer()
-    }
-    
+
     func acceptSelectedAnswer(optionChosen: Int) {
         
         model.acceptSelectedAnswer(optionChosen: optionChosen)
+        
+        view.showAnswer()
         
     }
 

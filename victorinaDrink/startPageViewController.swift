@@ -14,10 +14,12 @@ class startPageViewController: UIViewController {
     
     let dev = false
     
+    var presenter : startPagePresenterProtocol!
+    
     @IBOutlet weak var skView: SKView!
     
     @IBAction func resetLevels(_ sender: Any) {
-        engine.resetLevels()
+        presenter.resetLevels()
     }
     
     @IBOutlet weak var resetButton: UIButton!
@@ -38,7 +40,9 @@ class startPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        level2Button.alpha = engine.accessToLevel2() ? 1 : 0.3
+        presenter = startPagePresenter()
+        
+        level2Button.alpha = presenter.accessToLevel2() ? 1 : 0.3
         
         skView.backgroundColor = UIColor.clear
         // Do any additional setup after loading the view.
@@ -61,7 +65,7 @@ class startPageViewController: UIViewController {
         
         skView.presentScene(scene)
        
-        engine.resetGame()
+        presenter.resetGame()
         
     }
     
@@ -69,7 +73,7 @@ class startPageViewController: UIViewController {
         
         var shouldWe = true
         if identifier == "gotoLevel2" {
-            shouldWe = engine.accessToLevel2()
+            shouldWe = presenter.accessToLevel2()
         }
         
         return shouldWe
@@ -80,10 +84,10 @@ class startPageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "nextQuestion")  {
-            engine.goToNextQuestion()
+            presenter.goToNextQuestionButtonTapped()
         }
         if (segue.identifier == "gotoLevel2")  {
-            engine.goToLevel2()
+            presenter.goToLevel2ButtonTapped()
         }
         
         

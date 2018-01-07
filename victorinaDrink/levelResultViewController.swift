@@ -11,8 +11,21 @@ import StoreKit
 import MessageUI
 
 
-class levelResultViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class levelResultViewController: UIViewController, levelResultViewProtocol, MFMailComposeViewControllerDelegate {
 
+    
+ 
+    var presenter : levelResultPresenterProtocol!
+
+
+    
+    var yourResultLabelText : String = ""
+    
+    var isThereNextLevel : Bool = false
+    
+    var wereAllQuestionsAnswered : Bool = false
+    
+    var isGameOver : Bool = false
     
     @IBOutlet weak var shareFBButton: UIButton!
     
@@ -28,7 +41,7 @@ class levelResultViewController: UIViewController, MFMailComposeViewControllerDe
     @IBOutlet weak var pleaseAnswerAllLabel: UILabel!
     
     @IBAction func share(_ sender: Any) {
-        engine.shareFB()
+        presenter.shareFB()
     }
     @IBAction func shareByMail(_ sender: Any) {
         let mailComposeViewController = configuredMailComposeViewController()
@@ -39,31 +52,39 @@ class levelResultViewController: UIViewController, MFMailComposeViewControllerDe
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setLevelResult() {
+        yourResultLabel.text = yourResultLabelText
         
-        yourResultLabel.text = "Ваш результат: \(engine.numberOfCorrectAnswersSoFar) из 7"
-
-        if (!engine.isThereNextLevel()) {
+        
+        if !isThereNextLevel {
             nextLevelButton.removeFromSuperview()
-            
         } else {
-                comingSoon.removeFromSuperview()
-            }
+            comingSoon.removeFromSuperview()
+        }
         
-       
-        nextLevelButton.alpha = engine.wereAllQuestionsAnswered() ? 1 : 0.3
+        nextLevelButton.alpha = wereAllQuestionsAnswered ? 1 : 0.3
         
-        if engine.wereAllQuestionsAnswered() || engine.currentLevel == 2 {
+        if isGameOver {
             pleaseAnswerAllLabel.removeFromSuperview()
         }
         
-        if !engine.wereAllQuestionsAnswered() {
+        if !wereAllQuestionsAnswered {
             shareFBButton.removeFromSuperview()
-            
             congratsLabel.removeFromSuperview()
             shareByMailButton.removeFromSuperview()
         }
+
+
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter = levelResultViewPresenter(withView: self, withModel: model)
+
+        setLevelResult()
+        
+       
     }
     
     
@@ -78,7 +99,7 @@ class levelResultViewController: UIViewController, MFMailComposeViewControllerDe
         var shouldWe = true
         
         if identifier == "nextLevel" {
-            shouldWe = engine.wereAllQuestionsAnswered()
+            shouldWe = wereAllQuestionsAnswered
         }
         return shouldWe
     }
@@ -86,26 +107,22 @@ class levelResultViewController: UIViewController, MFMailComposeViewControllerDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
         if segue.identifier == "nextLevel" {
-            if engine.wereAllQuestionsAnswered() {
-                engine.nextLevel()
-            }
+          presenter.nextLevelButtonTapped()
 
         }
         
         if segue.identifier == "restartLevel" {
-            engine.restartLevel()
+            presenter.restartLevelButtonTapped()
             
         }
     }
     
 
     override func viewDidAppear(_ animated: Bool) {
-         if (!engine.isThereNextLevel()) {
-            if engine.wereAllQuestionsAnswered() {
-                askForReviews()
-            }
-        }
+        presenter.viewDidAppearAskForReviews()
     }
+    
+    
 
     func askForReviews() {
         
@@ -115,6 +132,13 @@ class levelResultViewController: UIViewController, MFMailComposeViewControllerDe
             // Fallback on earlier versions
         }
         
+    }
+    
+    func shareFB() {
+        
+        let url = URL(string: "https://www.facebook.com/sharer/sharer.php?u=https://pohmelje.ru/victorinaShare/")!
+        
+        UIApplication.shared.open( url, options: [:], completionHandler: nil)
     }
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
@@ -137,4 +161,6 @@ class levelResultViewController: UIViewController, MFMailComposeViewControllerDe
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
+    
+
 }

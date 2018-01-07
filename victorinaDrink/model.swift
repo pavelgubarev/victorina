@@ -86,6 +86,10 @@ class modelClass {
         
     }
     
+    func goToNextQuestion() {
+        currentQuestionNumber = currentQuestionNumber + 1
+    }
+    
     func sendResultsForTheLevel() {
         
         let configuration = URLSessionConfiguration.default
@@ -145,6 +149,31 @@ class modelClass {
     func isThereNextLevel() -> Bool {
         return currentLevel + 1 == numberOfLevels
     }
+    
+    
+    func isLevelOver() -> Bool {
+        
+        return (currentQuestionNumber + 1) % numberOfQuestionsPerLevel == 0
+    }
+    
+    
+    func resetAnswers() {
+        numberOfCorrectAnswersSoFar = 0
+    }
+    
+    func resetGame() {
+        resetAnswers()
+        initUsersAnswers()
+        currentQuestionNumber = 0
+    }
+    
+    func initUsersAnswers() {
+        for i in 1...model.numberOfLevels {
+            model.currentUsersAnswers[i] = [Int]()
+        }
+    }
+    
+    
     
 
 }

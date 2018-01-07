@@ -10,4 +10,12 @@ import Foundation
 
 protocol answerViewPresenterProtocol {    
     func setAnswer()
+    
+    func showResultsForTheLevel()
+    
+    func goToNextQuestion()
+    
+    func nextQuestionButtonTapped()
+    
+    func gotoExplanationPage()
 }

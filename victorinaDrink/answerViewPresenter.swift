@@ -9,7 +9,7 @@
 import Foundation
 
 
-class answerViewPresenter {
+class answerViewPresenter : answerViewPresenterProtocol {
     private var view: answerViewProtocol
     private let model: modelClass
     
@@ -28,21 +28,32 @@ class answerViewPresenter {
         
         view.linkForCurrentQuestion = model.linkForCurrentQuestion()
         
+        view.isLevelOver = model.isLevelOver()
+        
         view.setAnswer()
     }
     
     func gotoExplanationPage() {
         view.gotoExplanationPage()
     }
+    
     func showResultsForTheLevel() {
         model.sendResultsForTheLevel()
         
         model.updateLevelPassedAndSave()
         
-        view.gotoLevelResults()
+        view.showResultsForTheLevel()
         
     }
     
+    func goToNextQuestion() {
+        model.goToNextQuestion()
+    }
     
+    func nextQuestionButtonTapped() {
+        if model.isLevelOver() {
+            self.showResultsForTheLevel()
+        }
+    }
 }
 

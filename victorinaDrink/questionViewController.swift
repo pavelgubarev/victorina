@@ -80,8 +80,7 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         presenter.acceptSelectedAnswer(optionChosen: indexPath.row)
-        
-      
+              
         
     }
     

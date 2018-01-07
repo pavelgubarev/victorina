@@ -10,13 +10,15 @@ import Foundation
 
 protocol answerViewProtocol {
     
-    var wasAnswerCorrect : Bool  { get set }
+    var wasAnswerCorrect : Bool!  { get set }
     
     var shortExplanation : String { get set }
     
     var peopleNumber : String? { get set }
     
     var linkForCurrentQuestion : URL { get set }
+    
+    var isLevelOver : Bool! { get set }
 
     func setAnswer()
     
@@ -24,5 +26,4 @@ protocol answerViewProtocol {
     
     func showResultsForTheLevel()
     
-    func gotoLevelResults()
 }

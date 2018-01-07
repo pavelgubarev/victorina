@@ -8,9 +8,33 @@
 
 import Foundation
 
-class startPagePresenterClass {
+class startPagePresenter : startPagePresenterProtocol {
     
     func startPuttonPressed() {
         
     }
+    
+    func resetLevels() {
+        model.resetLevels()
+    }
+    
+    func goToNextQuestionButtonTapped() {
+        
+    }
+    
+    func goToLevel2ButtonTapped() {
+            model.currentLevel = 2
+            
+            model.currentQuestionNumber = model.numberOfQuestionsPerLevel * (model.currentLevel - 1)
+        
+    }
+    
+    func resetGame() {
+        model.resetGame()
+    }
+    
+    func accessToLevel2() -> Bool {
+        return model.passedLevels > 0
+    }
+    
 }

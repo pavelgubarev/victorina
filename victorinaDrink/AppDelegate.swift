@@ -9,10 +9,6 @@
 import UIKit
 import SpriteKit
 
-var engine : engineClass!
-
-var questionPresenter : questionViewPresenter!
-
 var model = modelClass()
 
 var kefirScene : SKScene!

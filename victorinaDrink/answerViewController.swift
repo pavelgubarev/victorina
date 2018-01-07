@@ -10,13 +10,16 @@ import UIKit
 import SpriteKit
 
 class answerViewController: UIViewController, answerViewProtocol {
-    var linkForCurrentQuestion: URL
+  
+    var linkForCurrentQuestion: URL = URL(string: "https://pohmelje.ru")!
     
-    var wasAnswerCorrect: Bool = false
+    var wasAnswerCorrect: Bool! = false
     
     var shortExplanation : String = ""
     
     var peopleNumber : String?
+    
+    var isLevelOver: Bool!
 
     @IBOutlet weak var correctOrNotLabel: UILabel!
  
@@ -28,7 +31,7 @@ class answerViewController: UIViewController, answerViewProtocol {
     
     @IBOutlet weak var howManyPeople: UILabel!
     
-    var presenter : answerViewPresenter!
+    var presenter : answerViewPresenterProtocol!
     
     func setAnswer() {
         
@@ -42,8 +45,7 @@ class answerViewController: UIViewController, answerViewProtocol {
             howManyPeople.text = "\(peopleNumberString) человек ответили так же"
         } else {
             howManyPeople.removeFromSuperview()
-        }
-        
+        }        
 
     }
     
@@ -108,11 +110,9 @@ class answerViewController: UIViewController, answerViewProtocol {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         
         if (segue.identifier == "nextQuestion")  {
-            engine.goToNextQuestion()
+            presenter.goToNextQuestion()
         }
     }
     
@@ -120,19 +120,15 @@ class answerViewController: UIViewController, answerViewProtocol {
         
         var shouldWe = true
         if (identifier == "nextQuestion")  {
-            shouldWe = !engine.isLevelOver()
+            shouldWe = !isLevelOver
         }
         
-        if (!shouldWe) {
-            presenter.showResultsForTheLevel()
-            
-            
-        }
-        
+        presenter.nextQuestionButtonTapped()
+                
         return shouldWe
     }
     
-    func gotoLevelResults() {
+    func showResultsForTheLevel() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = storyBoard.instantiateViewController(withIdentifier: "levelResults")
         self.show(mainViewController, sender: self)
