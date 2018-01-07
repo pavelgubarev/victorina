@@ -17,7 +17,7 @@ extension explanation {
     }
 }
 
-extension engineClass {
+extension modelClass {
     func loadExplanations() {
         if let path = Bundle.main.path(forResource: "explanations", ofType: "json") {
             do {

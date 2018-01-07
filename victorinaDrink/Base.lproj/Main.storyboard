@@ -41,7 +41,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="g9P-rL-M4O" kind="show" identifier="gotoQuestion" animates="NO" id="Pf1-vN-Z3k"/>
+                                    <segue destination="g9P-rL-M4O" kind="show" identifier="I" animates="NO" id="Pf1-vN-Z3k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-kW-u0b">
@@ -303,7 +303,7 @@
                     </view>
                     <connections>
                         <outlet property="dynamicTVHeight" destination="DuH-KJ-YxU" id="qqD-Ei-Xhe"/>
-                        <outlet property="questionText" destination="dPN-qC-vwz" id="Ilu-ua-fR1"/>
+                        <outlet property="questionTextLabel" destination="dPN-qC-vwz" id="wZm-1t-ZqU"/>
                         <outlet property="tableView" destination="sfA-wp-ekb" id="5ys-Fg-CgV"/>
                     </connections>
                 </viewController>
@@ -577,6 +577,6 @@
         <image name="background" width="562" height="1218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VBE-O5-u9f"/>
+        <segue reference="Pf1-vN-Z3k"/>
     </inferredMetricsTieBreakers>
 </document>

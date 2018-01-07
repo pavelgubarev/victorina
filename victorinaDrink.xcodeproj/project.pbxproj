@@ -10,6 +10,14 @@
 		500B95E21FDFF8560038B00A /* levelResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B95E11FDFF8560038B00A /* levelResultViewController.swift */; };
 		500B95E41FDFFD8A0038B00A /* kefirfalling.sks in Resources */ = {isa = PBXBuildFile; fileRef = 500B95E31FDFFD8A0038B00A /* kefirfalling.sks */; };
 		500B95E61FE0053B0038B00A /* kefirFalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B95E51FE0053B0038B00A /* kefirFalling.swift */; };
+		5016F8BA200284B600CBA24C /* answerViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016F8B9200284B600CBA24C /* answerViewPresenter.swift */; };
+		5016F8BC200284D200CBA24C /* answerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016F8BB200284D200CBA24C /* answerViewProtocol.swift */; };
+		5016F8BE2002851000CBA24C /* answerViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016F8BD2002851000CBA24C /* answerViewPresenterProtocol.swift */; };
+		5018EB002000D868001B8EEC /* questionViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018EAFF2000D868001B8EEC /* questionViewPresenterProtocol.swift */; };
+		5018EB042000D895001B8EEC /* questionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018EB032000D895001B8EEC /* questionViewPresenter.swift */; };
+		5018EB062000DE4E001B8EEC /* questionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018EB052000DE4E001B8EEC /* questionViewProtocol.swift */; };
+		5018EB0B2000F1E9001B8EEC /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018EB0A2000F1E9001B8EEC /* model.swift */; };
+		5018EB0E2000FD36001B8EEC /* startPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018EB0D2000FD36001B8EEC /* startPagePresenter.swift */; };
 		505871EC1FE4387F0046F0B2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505871ED1FE4387F0046F0B2 /* Alamofire.framework */; };
 		505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C824C1FD835DF00C10BDE /* optionCell.swift */; };
 		505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C82501FD84FBB00C10BDE /* answerViewController.swift */; };
@@ -38,6 +46,14 @@
 		500B95E11FDFF8560038B00A /* levelResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = levelResultViewController.swift; sourceTree = "<group>"; };
 		500B95E31FDFFD8A0038B00A /* kefirfalling.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = kefirfalling.sks; sourceTree = "<group>"; };
 		500B95E51FE0053B0038B00A /* kefirFalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kefirFalling.swift; sourceTree = "<group>"; };
+		5016F8B9200284B600CBA24C /* answerViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewPresenter.swift; sourceTree = "<group>"; };
+		5016F8BB200284D200CBA24C /* answerViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewProtocol.swift; sourceTree = "<group>"; };
+		5016F8BD2002851000CBA24C /* answerViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		5018EAFF2000D868001B8EEC /* questionViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		5018EB032000D895001B8EEC /* questionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewPresenter.swift; sourceTree = "<group>"; };
+		5018EB052000DE4E001B8EEC /* questionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewProtocol.swift; sourceTree = "<group>"; };
+		5018EB0A2000F1E9001B8EEC /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		5018EB0D2000FD36001B8EEC /* startPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startPagePresenter.swift; sourceTree = "<group>"; };
 		505871ED1FE4387F0046F0B2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505C824C1FD835DF00C10BDE /* optionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionCell.swift; sourceTree = "<group>"; };
 		505C82501FD84FBB00C10BDE /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +103,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5018EAFE2000D832001B8EEC /* question */ = {
+			isa = PBXGroup;
+			children = (
+				50C5696E1FD6FF2800D88607 /* questionViewController.swift */,
+				5018EB052000DE4E001B8EEC /* questionViewProtocol.swift */,
+				5018EB032000D895001B8EEC /* questionViewPresenter.swift */,
+				5018EAFF2000D868001B8EEC /* questionViewPresenterProtocol.swift */,
+				50E1761E1FE83B47006FCF0C /* questions.json */,
+				50E176241FE83C29006FCF0C /* questions.swift */,
+			);
+			name = question;
+			sourceTree = "<group>";
+		};
+		5018EB0C2000F234001B8EEC /* answer */ = {
+			isa = PBXGroup;
+			children = (
+				50E1761C1FE81B5B006FCF0C /* explanations.json */,
+				505C82501FD84FBB00C10BDE /* answerViewController.swift */,
+				5016F8B9200284B600CBA24C /* answerViewPresenter.swift */,
+				5016F8BB200284D200CBA24C /* answerViewProtocol.swift */,
+				5016F8BD2002851000CBA24C /* answerViewPresenterProtocol.swift */,
+				50E176221FE83C14006FCF0C /* explanations.swift */,
+			);
+			name = answer;
+			sourceTree = "<group>";
+		};
 		5070014D1FE15A2000D66E8D /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,9 +145,7 @@
 		508448FC1FE83E4800A26F92 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				50C5696E1FD6FF2800D88607 /* questionViewController.swift */,
 				508448FD1FE83ED000A26F92 /* startPageViewController.swift */,
-				505C82501FD84FBB00C10BDE /* answerViewController.swift */,
 				500B95E11FDFF8560038B00A /* levelResultViewController.swift */,
 				5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */,
 			);
@@ -138,14 +178,16 @@
 				50C569381FD6EADD00D88607 /* AppDelegate.swift */,
 				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
 				505C824C1FD835DF00C10BDE /* optionCell.swift */,
+				5018EB0C2000F234001B8EEC /* answer */,
+				5018EAFE2000D832001B8EEC /* question */,
 				508448FC1FE83E4800A26F92 /* ViewControllers */,
 				50C569411FD6EADD00D88607 /* LaunchScreen.storyboard */,
 				5070014D1FE15A2000D66E8D /* Animations */,
 				50E176201FE83BDC006FCF0C /* Sources */,
 				50C5696C1FD6F64400D88607 /* engine.swift */,
+				5018EB0D2000FD36001B8EEC /* startPagePresenter.swift */,
+				5018EB0A2000F1E9001B8EEC /* model.swift */,
 				5069EFAA1FF40500009264C1 /* comparison.swift */,
-				50E176221FE83C14006FCF0C /* explanations.swift */,
-				50E176241FE83C29006FCF0C /* questions.swift */,
 				50C569441FD6EADD00D88607 /* Info.plist */,
 			);
 			path = victorinaDrink;
@@ -154,8 +196,6 @@
 		50E176201FE83BDC006FCF0C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				50E1761E1FE83B47006FCF0C /* questions.json */,
-				50E1761C1FE81B5B006FCF0C /* explanations.json */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -309,15 +349,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */,
+				5016F8BE2002851000CBA24C /* answerViewPresenterProtocol.swift in Sources */,
 				505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */,
 				5069EFAB1FF40500009264C1 /* comparison.swift in Sources */,
 				50E176251FE83C29006FCF0C /* questions.swift in Sources */,
+				5018EB062000DE4E001B8EEC /* questionViewProtocol.swift in Sources */,
 				50E176231FE83C14006FCF0C /* explanations.swift in Sources */,
 				508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */,
+				5018EB0B2000F1E9001B8EEC /* model.swift in Sources */,
 				5070014C1FE159E600D66E8D /* glasses.swift in Sources */,
 				5061AC601FE3E06D00A88C8C /* aboutViewController.swift in Sources */,
+				5018EB002000D868001B8EEC /* questionViewPresenterProtocol.swift in Sources */,
 				500B95E61FE0053B0038B00A /* kefirFalling.swift in Sources */,
+				5018EB0E2000FD36001B8EEC /* startPagePresenter.swift in Sources */,
+				5016F8BC200284D200CBA24C /* answerViewProtocol.swift in Sources */,
 				5061AC621FE3E32900A88C8C /* kefirFallingStart.swift in Sources */,
+				5018EB042000D895001B8EEC /* questionViewPresenter.swift in Sources */,
+				5016F8BA200284B600CBA24C /* answerViewPresenter.swift in Sources */,
 				500B95E21FDFF8560038B00A /* levelResultViewController.swift in Sources */,
 				50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */,
 				50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */,

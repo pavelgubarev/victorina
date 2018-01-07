@@ -7,8 +7,18 @@
 //
 
 import UIKit
+import SpriteKit
 
 var engine : engineClass!
+
+var questionPresenter : questionViewPresenter!
+
+var model = modelClass()
+
+var kefirScene : SKScene!
+
+var glassesScene : SKScene!
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func initApplication() {
-        engine = engineClass()
+        
+        kefirScene = kefirFalling(fileNamed: "kefirfalling")!
+        kefirScene.scaleMode = .aspectFill
+        
+        glassesScene = glasses(fileNamed: "glasses")!
+        glassesScene.scaleMode = .aspectFill
+
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -24,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         initApplication()
         
-        engine.loadData()
+        model.loadData()
         
         return true
     }
@@ -38,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
-        engine.saveData()
+        model.saveData()
         
     }
 
@@ -52,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        engine.saveData()
+        model.saveData()
 
     }
 

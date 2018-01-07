@@ -28,7 +28,7 @@ extension question {
     }
 }
 
-extension engineClass {
+extension modelClass {
     
     func loadQuestions() {
         if let path = Bundle.main.path(forResource: "questions", ofType: "json") {

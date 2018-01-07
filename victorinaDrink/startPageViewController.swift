@@ -75,6 +75,8 @@ class startPageViewController: UIViewController {
         return shouldWe
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "nextQuestion")  {
@@ -83,6 +85,8 @@ class startPageViewController: UIViewController {
         if (segue.identifier == "gotoLevel2")  {
             engine.goToLevel2()
         }
+        
+        
     }
     
     /*

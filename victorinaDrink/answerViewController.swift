@@ -9,7 +9,14 @@
 import UIKit
 import SpriteKit
 
-class answerViewController: UIViewController {
+class answerViewController: UIViewController, answerViewProtocol {
+    var linkForCurrentQuestion: URL
+    
+    var wasAnswerCorrect: Bool = false
+    
+    var shortExplanation : String = ""
+    
+    var peopleNumber : String?
 
     @IBOutlet weak var correctOrNotLabel: UILabel!
  
@@ -19,45 +26,45 @@ class answerViewController: UIViewController {
     
     @IBOutlet weak var learnMoreButton: UIButton!
     
-    
-    
     @IBOutlet weak var howManyPeople: UILabel!
     
-    var kefirScene : SKScene!
+    var presenter : answerViewPresenter!
     
-    var glassesScene : SKScene!
-    
-    var wasAnswerCorrect : Bool = false
+    func setAnswer() {
+        
+        correctOrNotLabel.text =  wasAnswerCorrect ? "Верно!" : "Неверно!"
+        
+        explanationLabel.text = shortExplanation
+        
+        explanationLabel.sizeToFit()
+
+        if let peopleNumberString = peopleNumber  {
+            howManyPeople.text = "\(peopleNumberString) человек ответили так же"
+        } else {
+            howManyPeople.removeFromSuperview()
+        }
+        
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        wasAnswerCorrect = engine.wasAnswerCorrect(forQuestion: engine.currentQuestionNumber, optionChosen: engine.lastOptionChosen)
+        presenter = answerViewPresenter(withView: self, withModel: model)
 
-        correctOrNotLabel.text =  wasAnswerCorrect ? "Верно!" : "Неверно!"
-        
-        explanationLabel.text = engine.shortExplanationForCurrentQuestion()
-        
-        explanationLabel.sizeToFit()
-        
-        kefirScene = kefirFalling(fileNamed: "kefirfalling")!
-        kefirScene.scaleMode = .aspectFill
-
-        glassesScene = glasses(fileNamed: "glasses")!
-        glassesScene.scaleMode = .aspectFill
+        presenter.setAnswer()
         
         skView.backgroundColor = UIColor.clear
         
-        if let peopleNumber = engine.returnComparison(questionNumber: engine.currentQuestionNumber, optionNumber: engine.lastOptionChosen) {
-            howManyPeople.text = "\(peopleNumber) человек ответили так же"
-        } else {
-            howManyPeople.removeFromSuperview()
-        }
-
         
     }
+    
+    func gotoExplanationPage() {
+        UIApplication.shared.open( linkForCurrentQuestion, options: [:], completionHandler: nil)
+    }
+    
     @IBAction func gotoSite(_ sender: Any) {
-        UIApplication.shared.open( engine.linkForCurrentQuestion(), options: [:], completionHandler: nil)
+        presenter.gotoExplanationPage()
     }
     
     func makePad() {
@@ -117,14 +124,18 @@ class answerViewController: UIViewController {
         }
         
         if (!shouldWe) {
-            engine.showResultsForTheLevel()
+            presenter.showResultsForTheLevel()
             
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let mainViewController = storyBoard.instantiateViewController(withIdentifier: "levelResults")
-            self.show(mainViewController, sender: self)
+            
         }
         
         return shouldWe
+    }
+    
+    func gotoLevelResults() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyBoard.instantiateViewController(withIdentifier: "levelResults")
+        self.show(mainViewController, sender: self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

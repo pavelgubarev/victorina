@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-extension engineClass {
+extension modelClass {
 
     func loadComparison() {
         
