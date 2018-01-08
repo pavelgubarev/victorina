@@ -13,13 +13,13 @@ public class modelClass {
     
     var comparisonData : NSDictionary?
     
-    var explanations = [explanation]()
+    public var explanations = [explanation]()
     
-    var questions = [question]()
+    public var questions = [question]()
     
     public let numberOfQuestionsPerLevel = 7
     
-    let numberOfLevels = 2
+    public let numberOfLevels = 2
     
     var currentUsersAnswers = [Int:[Int]]()
     

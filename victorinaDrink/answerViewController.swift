@@ -10,6 +10,8 @@ import UIKit
 import SpriteKit
 
 class answerViewController: UIViewController, answerViewProtocol {
+    
+    
   
     var linkForCurrentQuestion: URL = URL(string: "https://pohmelje.ru")!
     
@@ -61,7 +63,7 @@ class answerViewController: UIViewController, answerViewProtocol {
         
     }
     
-    func gotoExplanationPage() {
+    func gotoExplanationURL() {
         UIApplication.shared.open( linkForCurrentQuestion, options: [:], completionHandler: nil)
     }
     
@@ -128,7 +130,7 @@ class answerViewController: UIViewController, answerViewProtocol {
         return shouldWe
     }
     
-    func showResultsForTheLevel() {
+    func gotoResultsForTheLevel() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = storyBoard.instantiateViewController(withIdentifier: "levelResults")
         self.show(mainViewController, sender: self)

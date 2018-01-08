@@ -9,7 +9,7 @@
 import XCTest
 import victorinaDrink
 
-class appflow: XCTestCase {
+class appFlow: XCTestCase {
     
     var model = modelClass()
     

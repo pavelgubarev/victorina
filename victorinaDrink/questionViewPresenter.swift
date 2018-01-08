@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class questionViewPresenter {
+public class questionViewPresenter {
     private let view: questionViewProtocol
     private let model: modelClass
     
-    required init(withView: questionViewProtocol, withModel: modelClass) {
+    public required init(withView: questionViewProtocol, withModel: modelClass) {
         self.view = withView
         self.model = withModel
     }
@@ -23,7 +23,7 @@ class questionViewPresenter {
     }
     
 
-    func acceptSelectedAnswer(optionChosen: Int) {
+    public func acceptSelectedAnswer(optionChosen: Int) {
         
         model.acceptSelectedAnswer(optionChosen: optionChosen)
         

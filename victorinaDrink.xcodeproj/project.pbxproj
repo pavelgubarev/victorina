@@ -32,6 +32,8 @@
 		508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508448FD1FE83ED000A26F92 /* startPageViewController.swift */; };
 		5096583220039CA800FA2A35 /* victorinaDrinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583120039CA800FA2A35 /* victorinaDrinkTests.swift */; };
 		5096583A20039DC900FA2A35 /* appflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583920039DC900FA2A35 /* appflow.swift */; };
+		5096583C2003BAEF00FA2A35 /* dataRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583B2003BAEF00FA2A35 /* dataRead.swift */; };
+		5096583E2003BF1000FA2A35 /* viewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583D2003BF1000FA2A35 /* viewFlow.swift */; };
 		50C481981FE2E1E300A74B41 /* kefirfallingStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50C481971FE2E1E300A74B41 /* kefirfallingStart.sks */; };
 		50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C569381FD6EADD00D88607 /* AppDelegate.swift */; };
 		50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C5693C1FD6EADD00D88607 /* Main.storyboard */; };
@@ -86,6 +88,8 @@
 		5096583120039CA800FA2A35 /* victorinaDrinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = victorinaDrinkTests.swift; sourceTree = "<group>"; };
 		5096583320039CA800FA2A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5096583920039DC900FA2A35 /* appflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appflow.swift; sourceTree = "<group>"; };
+		5096583B2003BAEF00FA2A35 /* dataRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataRead.swift; sourceTree = "<group>"; };
+		5096583D2003BF1000FA2A35 /* viewFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewFlow.swift; sourceTree = "<group>"; };
 		50C481971FE2E1E300A74B41 /* kefirfallingStart.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = kefirfallingStart.sks; sourceTree = "<group>"; };
 		50C569351FD6EADD00D88607 /* victorinaDrink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victorinaDrink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C569381FD6EADD00D88607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 		5096583020039CA800FA2A35 /* victorinaDrinkTests */ = {
 			isa = PBXGroup;
 			children = (
+				5096583D2003BF1000FA2A35 /* viewFlow.swift */,
+				5096583B2003BAEF00FA2A35 /* dataRead.swift */,
 				5096583920039DC900FA2A35 /* appflow.swift */,
 				5096583120039CA800FA2A35 /* victorinaDrinkTests.swift */,
 				5096583320039CA800FA2A35 /* Info.plist */,
@@ -442,6 +448,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5096583E2003BF1000FA2A35 /* viewFlow.swift in Sources */,
+				5096583C2003BAEF00FA2A35 /* dataRead.swift in Sources */,
 				5096583220039CA800FA2A35 /* victorinaDrinkTests.swift in Sources */,
 				5096583A20039DC900FA2A35 /* appflow.swift in Sources */,
 			);

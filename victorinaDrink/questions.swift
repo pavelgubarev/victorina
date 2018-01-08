@@ -1,13 +1,13 @@
 import Foundation
 
-struct option {
-    var text : String = ""
+public struct option {
+    public var text : String = ""
     var isCorrect : Bool = false
 }
 
-struct question {
-    var text : String = ""
-    var options = [option]()
+public struct question {
+    public var text : String = ""
+    public var options = [option]()
 }
 
 extension question {

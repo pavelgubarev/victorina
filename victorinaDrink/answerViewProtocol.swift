@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol answerViewProtocol {
+public protocol answerViewProtocol {
     
     var wasAnswerCorrect : Bool!  { get set }
     
@@ -22,8 +22,8 @@ protocol answerViewProtocol {
 
     func setAnswer()
     
-    func gotoExplanationPage()
+    func gotoExplanationURL()
     
-    func showResultsForTheLevel()
+    func gotoResultsForTheLevel()
     
 }

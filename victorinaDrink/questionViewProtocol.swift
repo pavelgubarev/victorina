@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol questionViewProtocol : class {
+public protocol questionViewProtocol : class {
  
   func setCurrentQuestion(withQuestion: question)
     

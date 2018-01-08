@@ -1,6 +1,6 @@
 import Foundation
 
-struct explanation {
+public struct explanation {
     var shortText : String = ""
     var link : URL!
 }

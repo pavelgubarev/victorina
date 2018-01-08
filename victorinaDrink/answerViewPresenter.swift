@@ -9,16 +9,16 @@
 import Foundation
 
 
-class answerViewPresenter : answerViewPresenterProtocol {
+public class answerViewPresenter : answerViewPresenterProtocol {
     private var view: answerViewProtocol
     private let model: modelClass
     
-    required init(withView: answerViewProtocol, withModel: modelClass) {
+    public required init(withView: answerViewProtocol, withModel: modelClass) {
         self.view = withView
         self.model = withModel
     }
 
-    func setAnswer() {
+    public func setAnswer() {
         
         view.wasAnswerCorrect =  model.wasAnswerCorrect(forQuestion: model.currentQuestionNumber, optionChosen: model.lastOptionChosen)
         
@@ -34,7 +34,7 @@ class answerViewPresenter : answerViewPresenterProtocol {
     }
     
     func gotoExplanationPage() {
-        view.gotoExplanationPage()
+        view.gotoExplanationURL()
     }
     
     func showResultsForTheLevel() {
@@ -42,7 +42,7 @@ class answerViewPresenter : answerViewPresenterProtocol {
         
         model.updateLevelPassedAndSave()
         
-        view.showResultsForTheLevel()
+        view.gotoResultsForTheLevel()
         
     }
     
