@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class modelClass {
+public class modelClass {
     
     var comparisonData : NSDictionary?
     
@@ -17,7 +17,7 @@ class modelClass {
     
     var questions = [question]()
     
-    let numberOfQuestionsPerLevel = 7
+    public let numberOfQuestionsPerLevel = 7
     
     let numberOfLevels = 2
     
@@ -35,25 +35,32 @@ class modelClass {
     
     var sessionManager : SessionManager!
     
-    init() {
+    //MARK: init
+    public init() {
         loadQuestions()
         loadExplanations()
         
         loadComparison()
     }
     
-    
+    //MARK: save to disk
     func loadData() {
         let userDefaults = UserDefaults.standard
         
         self.passedLevels = userDefaults.integer(forKey: "passedLevels")
     }
     
+    func saveData() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(self.passedLevels, forKey: "passedLevels")
+    }
+    
+
+    //MARK: questions and answers
     func wasAnswerCorrect(forQuestion questionNumber : Int, optionChosen: Int) -> Bool {
         
         return questions[questionNumber].options[optionChosen].isCorrect
     }
-    
     
     
     func shortExplanationForCurrentQuestion() -> String {
@@ -64,17 +71,12 @@ class modelClass {
         return explanations[currentQuestionNumber].link
     }
 
-    func saveData() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(self.passedLevels, forKey: "passedLevels")
-    }
-    
     
     func getCurrentQuestion() -> question {        
         return questions[currentQuestionNumber]
     }
     
-    func acceptSelectedAnswer(optionChosen: Int) {
+    public func acceptSelectedAnswer(optionChosen: Int) {
         
         lastOptionChosen = optionChosen
         
@@ -86,7 +88,7 @@ class modelClass {
         
     }
     
-    func goToNextQuestion() {
+    public func goToNextQuestion() {
         currentQuestionNumber = currentQuestionNumber + 1
     }
     
@@ -126,7 +128,7 @@ class modelClass {
     
     func updateLevelPassedAndSave() {
         
-        if wereAllQuestionsAnswered() {
+        if wereAllQuestionsAnsweredCorrectly() {
             
             passedLevels = currentLevel
             
@@ -135,7 +137,7 @@ class modelClass {
         
     }
     
-    func wereAllQuestionsAnswered() -> Bool {
+    public func wereAllQuestionsAnsweredCorrectly() -> Bool {
         return numberOfCorrectAnswersSoFar == numberOfQuestionsPerLevel
     }
     
@@ -167,13 +169,13 @@ class modelClass {
         currentQuestionNumber = 0
     }
     
-    func initUsersAnswers() {
-        for i in 1...model.numberOfLevels {
-            model.currentUsersAnswers[i] = [Int]()
+    public func initUsersAnswers() {
+        for i in 1...self.numberOfLevels {
+            self.currentUsersAnswers[i] = [Int]()
         }
     }
     
-    func hasUserAccessToLevel2() -> Bool {
+    public func hasUserAccessToLevel2() -> Bool {
         return passedLevels > 0
     }
     

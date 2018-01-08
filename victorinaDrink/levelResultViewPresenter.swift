@@ -23,9 +23,9 @@ class levelResultViewPresenter : levelResultPresenterProtocol {
         
         view.isThereNextLevel = model.isThereNextLevel()
         
-        view.wereAllQuestionsAnswered = model.wereAllQuestionsAnswered()
+        view.wereAllQuestionsAnsweredCorrectly = model.wereAllQuestionsAnsweredCorrectly()
         
-        if model.wereAllQuestionsAnswered() || model.currentLevel == 2 {
+        if model.wereAllQuestionsAnsweredCorrectly() || model.currentLevel == 2 {
             view.isGameOver = true
         } else {
             view.isGameOver = false
@@ -35,7 +35,7 @@ class levelResultViewPresenter : levelResultPresenterProtocol {
     }
     
     func nextLevelButtonTapped() {
-        if model.wereAllQuestionsAnswered() {
+        if model.wereAllQuestionsAnsweredCorrectly() {
             nextLevel()
         }
     }
@@ -57,7 +57,7 @@ class levelResultViewPresenter : levelResultPresenterProtocol {
     
     func viewDidAppearAskForReviews() {
         if (!model.isThereNextLevel()) {
-            if model.wereAllQuestionsAnswered() {
+            if model.wereAllQuestionsAnsweredCorrectly() {
                 view.askForReviews()
             }
         }

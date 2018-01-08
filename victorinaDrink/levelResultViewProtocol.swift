@@ -14,7 +14,7 @@ protocol levelResultViewProtocol {
     
     var isThereNextLevel : Bool {get set}
     
-    var wereAllQuestionsAnswered : Bool {get set}
+    var wereAllQuestionsAnsweredCorrectly : Bool {get set}
     
     var isGameOver : Bool {get set}
     

@@ -24,7 +24,7 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     
     var isThereNextLevel : Bool = false
     
-    var wereAllQuestionsAnswered : Bool = false
+    var wereAllQuestionsAnsweredCorrectly : Bool = false
     
     var isGameOver : Bool = false
     
@@ -68,13 +68,13 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
             comingSoon.removeFromSuperview()
         }
         
-        nextLevelButton.alpha = wereAllQuestionsAnswered ? 1 : 0.3
+        nextLevelButton.alpha = wereAllQuestionsAnsweredCorrectly ? 1 : 0.3
         
         if isGameOver {
             pleaseAnswerAllLabel.removeFromSuperview()
         }
         
-        if !wereAllQuestionsAnswered {
+        if !wereAllQuestionsAnsweredCorrectly {
             shareFBButton.removeFromSuperview()
             congratsLabel.removeFromSuperview()
             shareByMailButton.removeFromSuperview()
@@ -105,7 +105,7 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
         var shouldWe = true
         
         if identifier == "nextLevel" {
-            shouldWe = wereAllQuestionsAnswered
+            shouldWe = wereAllQuestionsAnsweredCorrectly
         }
         return shouldWe
     }
