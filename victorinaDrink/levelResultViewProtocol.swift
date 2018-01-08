@@ -20,8 +20,10 @@ protocol levelResultViewProtocol {
     
     func askForReviews()
     
-    func setLevelResult()
+    func setLayout()
     
     func shareFB()
+    
+    func shareMail()
     
 }

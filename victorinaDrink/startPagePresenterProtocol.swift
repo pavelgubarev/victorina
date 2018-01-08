@@ -10,6 +10,8 @@ import Foundation
 
 protocol startPagePresenterProtocol {
     
+    func setStartPage()
+    
     func startPuttonPressed()
     
     func resetLevels()
@@ -20,5 +22,6 @@ protocol startPagePresenterProtocol {
     
     func resetGame()
     
-    func accessToLevel2() -> Bool
+    func ayPohmeljeButtonTapped()
+    
 }

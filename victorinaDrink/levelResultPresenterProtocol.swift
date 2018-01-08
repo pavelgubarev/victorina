@@ -17,5 +17,7 @@ protocol levelResultPresenterProtocol {
     
     func nextLevelButtonTapped()
     
-    func shareFB()
+    func shareByFBButtonTapped()
+    
+    func shareByMailButtonTapped()
 }

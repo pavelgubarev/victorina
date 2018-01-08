@@ -173,7 +173,9 @@ class modelClass {
         }
     }
     
-    
+    func hasUserAccessToLevel2() -> Bool {
+        return passedLevels > 0
+    }
     
 
 }

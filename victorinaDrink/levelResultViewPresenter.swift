@@ -31,7 +31,7 @@ class levelResultViewPresenter : levelResultPresenterProtocol {
             view.isGameOver = false
         }
         
-        view.setLevelResult()
+        view.setLayout()
     }
     
     func nextLevelButtonTapped() {
@@ -64,9 +64,12 @@ class levelResultViewPresenter : levelResultPresenterProtocol {
 
     }
     
-    func shareFB() {
-        
+    func shareByFBButtonTapped() {        
        view.shareFB()
+    }
+    
+    func shareByMailButtonTapped() {
+        view.shareMail()
     }
 
 }

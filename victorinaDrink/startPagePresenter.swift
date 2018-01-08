@@ -10,6 +10,18 @@ import Foundation
 
 class startPagePresenter : startPagePresenterProtocol {
     
+    private let view: startPageViewProtocol
+    private let model: modelClass
+    
+    required init(withView: startPageViewProtocol, withModel: modelClass) {
+        self.view = withView
+        self.model = withModel
+    }
+    
+    func setStartPage() {
+        view.hasUserAccessToLevel2 = model.hasUserAccessToLevel2()
+    }
+    
     func startPuttonPressed() {
         
     }
@@ -33,8 +45,8 @@ class startPagePresenter : startPagePresenterProtocol {
         model.resetGame()
     }
     
-    func accessToLevel2() -> Bool {
-        return model.passedLevels > 0
+    func ayPohmeljeButtonTapped() {
+        view.gotoAyPohmelje()
     }
     
 }

@@ -10,11 +10,13 @@ import UIKit
 import SpriteKit
 
 
-class startPageViewController: UIViewController {
+class startPageViewController: UIViewController, startPageViewProtocol {
     
     let dev = false
     
     var presenter : startPagePresenterProtocol!
+    
+    var hasUserAccessToLevel2 : Bool = false
     
     @IBOutlet weak var skView: SKView!
     
@@ -26,8 +28,11 @@ class startPageViewController: UIViewController {
     
     @IBOutlet weak var level2Button: UIButton!
     
-    @IBAction func ayPohmelje(_ sender: Any) {
-        
+    @IBAction func ayPohmelje(_ sender: Any) {        
+       presenter.ayPohmeljeButtonTapped()
+    }
+    
+    func gotoAyPohmelje() {
         if let url = URL(string: "itms-apps://itunes.apple.com/app/id476347173"),
             UIApplication.shared.canOpenURL(url)
         {
@@ -35,17 +40,19 @@ class startPageViewController: UIViewController {
             
         }
     }
+    
     @IBAction func backToMain(unwindSegue: UIStoryboardSegue) {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = startPagePresenter()
+        presenter = startPagePresenter(withView: self, withModel: model)
         
-        level2Button.alpha = presenter.accessToLevel2() ? 1 : 0.3
+        presenter.setStartPage()
+        
+        level2Button.alpha = hasUserAccessToLevel2 ? 1 : 0.3
         
         skView.backgroundColor = UIColor.clear
-        // Do any additional setup after loading the view.
         
         if !dev {
             resetButton.removeFromSuperview()
@@ -73,7 +80,7 @@ class startPageViewController: UIViewController {
         
         var shouldWe = true
         if identifier == "gotoLevel2" {
-            shouldWe = presenter.accessToLevel2()
+            shouldWe = hasUserAccessToLevel2
         }
         
         return shouldWe
@@ -92,15 +99,6 @@ class startPageViewController: UIViewController {
         
         
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+   
     
 }

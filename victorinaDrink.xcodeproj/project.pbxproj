@@ -36,6 +36,7 @@
 		50C569401FD6EADD00D88607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C5693F1FD6EADD00D88607 /* Assets.xcassets */; };
 		50C569431FD6EADD00D88607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C569411FD6EADD00D88607 /* LaunchScreen.storyboard */; };
 		50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5696E1FD6FF2800D88607 /* questionViewController.swift */; };
+		50D2071120038E3300C51932 /* startPageViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2071020038E3300C51932 /* startPageViewProtocol.swift */; };
 		50E1761D1FE81B5B006FCF0C /* explanations.json in Resources */ = {isa = PBXBuildFile; fileRef = 50E1761C1FE81B5B006FCF0C /* explanations.json */; };
 		50E1761F1FE83B47006FCF0C /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 50E1761E1FE83B47006FCF0C /* questions.json */; };
 		50E176231FE83C14006FCF0C /* explanations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176221FE83C14006FCF0C /* explanations.swift */; };
@@ -77,6 +78,7 @@
 		50C569421FD6EADD00D88607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50C569441FD6EADD00D88607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C5696E1FD6FF2800D88607 /* questionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
+		50D2071020038E3300C51932 /* startPageViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startPageViewProtocol.swift; sourceTree = "<group>"; };
 		50E1761C1FE81B5B006FCF0C /* explanations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = explanations.json; sourceTree = "<group>"; };
 		50E1761E1FE83B47006FCF0C /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		50E176221FE83C14006FCF0C /* explanations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = explanations.swift; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5016F8C520029C9500CBA24C /* levelResult */ = {
+		5016F8C520029C9500CBA24C /* Level Result */ = {
 			isa = PBXGroup;
 			children = (
 				500B95E11FDFF8560038B00A /* levelResultViewController.swift */,
@@ -117,12 +119,13 @@
 				5016F8C320029C8500CBA24C /* levelResultPresenterProtocol.swift */,
 				5016F8BF20029AA000CBA24C /* levelResultViewProtocol.swift */,
 			);
-			name = levelResult;
+			name = "Level Result";
 			sourceTree = "<group>";
 		};
-		5018EAFE2000D832001B8EEC /* question */ = {
+		5018EAFE2000D832001B8EEC /* Question */ = {
 			isa = PBXGroup;
 			children = (
+				505C824C1FD835DF00C10BDE /* optionCell.swift */,
 				50C5696E1FD6FF2800D88607 /* questionViewController.swift */,
 				5018EB052000DE4E001B8EEC /* questionViewProtocol.swift */,
 				5018EB032000D895001B8EEC /* questionViewPresenter.swift */,
@@ -130,12 +133,13 @@
 				50E1761E1FE83B47006FCF0C /* questions.json */,
 				50E176241FE83C29006FCF0C /* questions.swift */,
 			);
-			name = question;
+			name = Question;
 			sourceTree = "<group>";
 		};
-		5018EB0C2000F234001B8EEC /* answer */ = {
+		5018EB0C2000F234001B8EEC /* Answer */ = {
 			isa = PBXGroup;
 			children = (
+				5069EFAA1FF40500009264C1 /* comparison.swift */,
 				50E1761C1FE81B5B006FCF0C /* explanations.json */,
 				505C82501FD84FBB00C10BDE /* answerViewController.swift */,
 				5016F8BB200284D200CBA24C /* answerViewProtocol.swift */,
@@ -143,7 +147,7 @@
 				5016F8B9200284B600CBA24C /* answerViewPresenter.swift */,
 				50E176221FE83C14006FCF0C /* explanations.swift */,
 			);
-			name = answer;
+			name = Answer;
 			sourceTree = "<group>";
 		};
 		5070014D1FE15A2000D66E8D /* Animations */ = {
@@ -162,7 +166,6 @@
 		508448FC1FE83E4800A26F92 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -190,29 +193,37 @@
 			children = (
 				50F0E0AA1FED2B3400FC0390 /* victorinaDrink.entitlements */,
 				50C5693F1FD6EADD00D88607 /* Assets.xcassets */,
-				50C569381FD6EADD00D88607 /* AppDelegate.swift */,
-				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
-				505C824C1FD835DF00C10BDE /* optionCell.swift */,
-				5016F8C520029C9500CBA24C /* levelResult */,
-				5018EB0C2000F234001B8EEC /* answer */,
-				5018EAFE2000D832001B8EEC /* question */,
+				50D2070F20038D8F00C51932 /* Start Page */,
+				5018EAFE2000D832001B8EEC /* Question */,
+				5018EB0C2000F234001B8EEC /* Answer */,
+				5016F8C520029C9500CBA24C /* Level Result */,
 				508448FC1FE83E4800A26F92 /* ViewControllers */,
 				50C569411FD6EADD00D88607 /* LaunchScreen.storyboard */,
+				5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */,
 				5070014D1FE15A2000D66E8D /* Animations */,
 				50E176201FE83BDC006FCF0C /* Sources */,
-				5018EB0D2000FD36001B8EEC /* startPagePresenter.swift */,
-				5016F8C62002A2EC00CBA24C /* startPagePresenterProtocol.swift */,
-				508448FD1FE83ED000A26F92 /* startPageViewController.swift */,
-				5018EB0A2000F1E9001B8EEC /* model.swift */,
-				5069EFAA1FF40500009264C1 /* comparison.swift */,
 				50C569441FD6EADD00D88607 /* Info.plist */,
 			);
 			path = victorinaDrink;
 			sourceTree = "<group>";
 		};
+		50D2070F20038D8F00C51932 /* Start Page */ = {
+			isa = PBXGroup;
+			children = (
+				5018EB0D2000FD36001B8EEC /* startPagePresenter.swift */,
+				50D2071020038E3300C51932 /* startPageViewProtocol.swift */,
+				5016F8C62002A2EC00CBA24C /* startPagePresenterProtocol.swift */,
+				508448FD1FE83ED000A26F92 /* startPageViewController.swift */,
+			);
+			name = "Start Page";
+			sourceTree = "<group>";
+		};
 		50E176201FE83BDC006FCF0C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				50C569381FD6EADD00D88607 /* AppDelegate.swift */,
+				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
+				5018EB0A2000F1E9001B8EEC /* model.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -381,6 +392,7 @@
 				5018EB002000D868001B8EEC /* questionViewPresenterProtocol.swift in Sources */,
 				500B95E61FE0053B0038B00A /* kefirFalling.swift in Sources */,
 				5018EB0E2000FD36001B8EEC /* startPagePresenter.swift in Sources */,
+				50D2071120038E3300C51932 /* startPageViewProtocol.swift in Sources */,
 				5016F8BC200284D200CBA24C /* answerViewProtocol.swift in Sources */,
 				5061AC621FE3E32900A88C8C /* kefirFallingStart.swift in Sources */,
 				5018EB042000D895001B8EEC /* questionViewPresenter.swift in Sources */,

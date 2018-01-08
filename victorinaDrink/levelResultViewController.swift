@@ -13,6 +13,7 @@ import MessageUI
 
 class levelResultViewController: UIViewController, levelResultViewProtocol, MFMailComposeViewControllerDelegate {
 
+
     
  
     var presenter : levelResultPresenterProtocol!
@@ -41,9 +42,14 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     @IBOutlet weak var pleaseAnswerAllLabel: UILabel!
     
     @IBAction func share(_ sender: Any) {
-        presenter.shareFB()
+        presenter.shareByFBButtonTapped()
     }
+    
     @IBAction func shareByMail(_ sender: Any) {
+       presenter.shareByMailButtonTapped()
+    }
+    
+    func shareMail() {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: nil)
@@ -52,7 +58,7 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
         }
     }
     
-    func setLevelResult() {
+    func setLayout() {
         yourResultLabel.text = yourResultLabelText
         
         
@@ -82,7 +88,7 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
         
         presenter = levelResultViewPresenter(withView: self, withModel: model)
 
-        setLevelResult()
+        presenter.setLevelResult()
         
        
     }
@@ -125,7 +131,6 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     
 
     func askForReviews() {
-        
         if #available(iOS 10.3, *) {
             SKStoreReviewController.requestReview()
         } else {
@@ -135,7 +140,6 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     }
     
     func shareFB() {
-        
         let url = URL(string: "https://www.facebook.com/sharer/sharer.php?u=https://pohmelje.ru/victorinaShare/")!
         
         UIApplication.shared.open( url, options: [:], completionHandler: nil)
