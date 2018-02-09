@@ -33,9 +33,9 @@ public class answerViewPresenter : answerViewPresenterProtocol {
         view.setAnswer()
     }
     
-    func gotoExplanationPage() {
-        view.gotoExplanationURL()
-    }
+//    func gotoExplanationPage() {
+//        view.gotoExplanationURL()
+//    }
     
     func showResultsForTheLevel() {
         model.sendResultsForTheLevel()

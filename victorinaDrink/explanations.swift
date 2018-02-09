@@ -2,17 +2,20 @@ import Foundation
 
 public struct explanation {
     var shortText : String = ""
+    var longTextFile : String = ""
     var link : URL!
 }
 
 extension explanation {
     init?(json: [String: Any]) {
         guard let shortDescription = json["Short Description"] as? String,
+            let longDescription = json["Long Description"] as? String,
             let link = json["Link"] as?  String
             else {
                 return nil
         }
         self.shortText = shortDescription
+        self.longTextFile = longDescription
         self.link = URL(string: link)
     }
 }

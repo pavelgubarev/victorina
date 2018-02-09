@@ -523,7 +523,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="gotoSite:" destination="e1U-WK-hmQ" eventType="touchUpInside" id="Lhy-fT-u7i"/>
+                                    <segue destination="jqJ-KU-bKO" kind="popoverPresentation" popoverAnchorView="xUd-y5-IHO" id="U75-mZ-U8a">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18000 человек ответили так же" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkJ-cj-97c">
@@ -564,7 +566,7 @@
                         <outlet property="correctOrNotLabel" destination="vXj-v7-S65" id="ipw-W6-nJq"/>
                         <outlet property="explanationLabel" destination="gCA-Au-vpn" id="gUu-Vy-KFG"/>
                         <outlet property="howManyPeople" destination="RkJ-cj-97c" id="2mJ-C8-Z3E"/>
-                        <outlet property="learnMoreButton" destination="xUd-y5-IHO" id="4X1-AD-ZrB"/>
+                        <outlet property="learnMoreButton" destination="xUd-y5-IHO" id="zdg-oc-iAF"/>
                         <outlet property="skView" destination="RNd-f3-dsq" id="Hhw-fV-Ik8"/>
                     </connections>
                 </viewController>
@@ -572,11 +574,55 @@
             </objects>
             <point key="canvasLocation" x="2370" y="-134.1549295774648"/>
         </scene>
+        <!--More Explanation View Controller-->
+        <scene sceneID="1Ur-q2-Ntl">
+            <objects>
+                <viewController id="jqJ-KU-bKO" customClass="MoreExplanationViewController" customModule="victorinaDrink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aFl-jQ-Z7x"/>
+                        <viewControllerLayoutGuide type="bottom" id="8eI-6g-uIr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pgf-bk-UwK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b41-5s-vbI">
+                                <rect key="frame" x="16" y="28" width="288" height="470"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0N-5S-pS0">
+                                <rect key="frame" x="258" y="512" width="46" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="dismissThisView:" destination="jqJ-KU-bKO" eventType="touchUpInside" id="cDu-XG-810"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b41-5s-vbI" firstAttribute="trailing" secondItem="pgf-bk-UwK" secondAttribute="trailingMargin" id="3wd-Ig-bqD"/>
+                            <constraint firstItem="d0N-5S-pS0" firstAttribute="leading" secondItem="pgf-bk-UwK" secondAttribute="leadingMargin" constant="242" id="5nQ-kG-99K"/>
+                            <constraint firstItem="8eI-6g-uIr" firstAttribute="top" secondItem="d0N-5S-pS0" secondAttribute="bottom" constant="20" id="EZo-0g-hZm"/>
+                            <constraint firstItem="b41-5s-vbI" firstAttribute="leading" secondItem="pgf-bk-UwK" secondAttribute="leadingMargin" id="PlP-X8-VMK"/>
+                            <constraint firstItem="d0N-5S-pS0" firstAttribute="trailing" secondItem="pgf-bk-UwK" secondAttribute="trailingMargin" id="RiN-0g-yL5"/>
+                            <constraint firstItem="b41-5s-vbI" firstAttribute="top" secondItem="aFl-jQ-Z7x" secondAttribute="bottom" constant="8" id="Tec-4x-4oV"/>
+                            <constraint firstItem="d0N-5S-pS0" firstAttribute="top" secondItem="b41-5s-vbI" secondAttribute="bottom" constant="14" id="a40-vZ-LQa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="b41-5s-vbI" id="zMZ-FB-uKA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5J1-xA-08R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3078.75" y="-134.1549295774648"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background" width="562" height="1218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pf1-vN-Z3k"/>
+        <segue reference="VBE-O5-u9f"/>
     </inferredMetricsTieBreakers>
 </document>

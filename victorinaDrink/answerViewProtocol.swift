@@ -22,7 +22,7 @@ public protocol answerViewProtocol {
 
     func setAnswer()
     
-    func gotoExplanationURL()
+//    func gotoExplanationURL()
     
     func gotoResultsForTheLevel()
     

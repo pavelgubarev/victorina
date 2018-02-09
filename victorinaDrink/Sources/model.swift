@@ -67,6 +67,11 @@ public class modelClass {
         return explanations[currentQuestionNumber].shortText
     }
     
+    func longExplanationFileForCurrentQuestion() -> String {
+        return explanations[currentQuestionNumber].longTextFile
+    }
+    
+    
     func linkForCurrentQuestion() -> URL {
         return explanations[currentQuestionNumber].link
     }

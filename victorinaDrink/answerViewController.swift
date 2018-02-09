@@ -22,12 +22,14 @@ class answerViewController: UIViewController, answerViewProtocol {
     var peopleNumber : String?
     
     var isLevelOver: Bool!
+    
+    var alreadyShown = false
 
     @IBOutlet weak var correctOrNotLabel: UILabel!
  
     @IBOutlet weak var explanationLabel: UILabel!
     
-    @IBOutlet weak var skView: SKView!
+    @IBOutlet weak var skView: SKView?
     
     @IBOutlet weak var learnMoreButton: UIButton!
     
@@ -54,22 +56,23 @@ class answerViewController: UIViewController, answerViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
         presenter = answerViewPresenter(withView: self, withModel: model)
 
         presenter.setAnswer()
         
-        skView.backgroundColor = UIColor.clear
+        skView?.backgroundColor = UIColor.clear
         
         
     }
     
-    func gotoExplanationURL() {
-        UIApplication.shared.open( linkForCurrentQuestion, options: [:], completionHandler: nil)
-    }
+//    func gotoExplanationURL() {
+//        UIApplication.shared.open( linkForCurrentQuestion, options: [:], completionHandler: nil)
+//    }
     
-    @IBAction func gotoSite(_ sender: Any) {
-        presenter.gotoExplanationPage()
-    }
+//    @IBAction func gotoSite(_ sender: Any) {
+//        presenter.gotoExplanationPage()
+//    }
     
     func makePad() {
         let pad = UIView()
@@ -103,9 +106,14 @@ class answerViewController: UIViewController, answerViewProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        guard alreadyShown == false else {
+            return
+        }
+        alreadyShown = true
+
         let scene = wasAnswerCorrect ? glassesScene.copy() as! SKScene : kefirScene.copy() as! SKScene
         
-        skView.presentScene(scene)
+        skView?.presentScene(scene)
         
     }
 
@@ -137,7 +145,7 @@ class answerViewController: UIViewController, answerViewProtocol {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        skView.removeFromSuperview()
+        skView?.removeFromSuperview()
     }
     
 

@@ -17,5 +17,5 @@ protocol answerViewPresenterProtocol {
     
     func nextQuestionButtonTapped()
     
-    func gotoExplanationPage()
+//    func gotoExplanationPage()
 }

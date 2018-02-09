@@ -27,6 +27,8 @@
 		505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C82501FD84FBB00C10BDE /* answerViewController.swift */; };
 		5061AC601FE3E06D00A88C8C /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */; };
 		5061AC621FE3E32900A88C8C /* kefirFallingStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061AC611FE3E32900A88C8C /* kefirFallingStart.swift */; };
+		5067F444202DCAD50032D81C /* zakuska.html in Resources */ = {isa = PBXBuildFile; fileRef = 5067F443202DCAD50032D81C /* zakuska.html */; };
+		5067F446202DCFAC0032D81C /* moreExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067F445202DCFAC0032D81C /* moreExplanationViewController.swift */; };
 		5069EFAB1FF40500009264C1 /* comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EFAA1FF40500009264C1 /* comparison.swift */; };
 		5070014C1FE159E600D66E8D /* glasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070014B1FE159E600D66E8D /* glasses.swift */; };
 		508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508448FD1FE83ED000A26F92 /* startPageViewController.swift */; };
@@ -81,6 +83,8 @@
 		505C82501FD84FBB00C10BDE /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
 		5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
 		5061AC611FE3E32900A88C8C /* kefirFallingStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kefirFallingStart.swift; sourceTree = "<group>"; };
+		5067F443202DCAD50032D81C /* zakuska.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = zakuska.html; sourceTree = "<group>"; };
+		5067F445202DCFAC0032D81C /* moreExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = moreExplanationViewController.swift; path = victorinaDrink/moreExplanationViewController.swift; sourceTree = SOURCE_ROOT; };
 		5069EFAA1FF40500009264C1 /* comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comparison.swift; sourceTree = "<group>"; };
 		5070014B1FE159E600D66E8D /* glasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glasses.swift; sourceTree = "<group>"; };
 		508448FD1FE83ED000A26F92 /* startPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startPageViewController.swift; sourceTree = "<group>"; };
@@ -166,8 +170,10 @@
 		5018EB0C2000F234001B8EEC /* Answer */ = {
 			isa = PBXGroup;
 			children = (
+				5067F445202DCFAC0032D81C /* moreExplanationViewController.swift */,
 				5069EFAA1FF40500009264C1 /* comparison.swift */,
 				50E1761C1FE81B5B006FCF0C /* explanations.json */,
+				5067F443202DCAD50032D81C /* zakuska.html */,
 				505C82501FD84FBB00C10BDE /* answerViewController.swift */,
 				5016F8BB200284D200CBA24C /* answerViewProtocol.swift */,
 				5016F8BD2002851000CBA24C /* answerViewPresenterProtocol.swift */,
@@ -381,6 +387,7 @@
 				50C569431FD6EADD00D88607 /* LaunchScreen.storyboard in Resources */,
 				50E838D81FE08363008BF624 /* glasses.sks in Resources */,
 				50C569401FD6EADD00D88607 /* Assets.xcassets in Resources */,
+				5067F444202DCAD50032D81C /* zakuska.html in Resources */,
 				500B95E41FDFFD8A0038B00A /* kefirfalling.sks in Resources */,
 				50E1761F1FE83B47006FCF0C /* questions.json in Resources */,
 				50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */,
@@ -467,6 +474,7 @@
 				5069EFAB1FF40500009264C1 /* comparison.swift in Sources */,
 				50E176251FE83C29006FCF0C /* questions.swift in Sources */,
 				5018EB062000DE4E001B8EEC /* questionViewProtocol.swift in Sources */,
+				5067F446202DCFAC0032D81C /* moreExplanationViewController.swift in Sources */,
 				50E176231FE83C14006FCF0C /* explanations.swift in Sources */,
 				508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */,
 				5018EB0B2000F1E9001B8EEC /* model.swift in Sources */,
