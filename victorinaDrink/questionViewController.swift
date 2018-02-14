@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import ReactiveSwift
+import ReactiveCocoa
 
 class questionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, questionViewProtocol  {
+    
+    
     
     
     var currentQuestion: question!
@@ -18,8 +22,16 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
     func setCurrentQuestion(withQuestion: question) {
         currentQuestion = withQuestion
         
+        scoresLabel.reactive.text <~ currentQuestion.scoresString
+
+        bonusLabel.reactive.text <~ model.scores.bonusForTheCurrentQuesionString
+
         questionTextLabel.text = currentQuestion.text
     }
+    
+    @IBOutlet weak var scoresLabel: UILabel!
+    
+    @IBOutlet weak var bonusLabel: UILabel!
     
     
     @IBOutlet weak var questionTextLabel: UILabel!
@@ -38,7 +50,13 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
         
         presenter.showCurrentQuestion()
         
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        presenter.changeBonus()
     }
     
     override func didReceiveMemoryWarning() {

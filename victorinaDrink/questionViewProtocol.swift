@@ -14,4 +14,5 @@ public protocol questionViewProtocol : class {
     
   func showAnswer()
     
+    
 }

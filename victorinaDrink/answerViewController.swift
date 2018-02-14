@@ -24,7 +24,12 @@ class answerViewController: UIViewController, answerViewProtocol {
     var isLevelOver: Bool!
     
     var alreadyShown = false
+    
+    
 
+    @IBOutlet weak var scoresLabel: UILabel!
+    
+    
     @IBOutlet weak var correctOrNotLabel: UILabel!
  
     @IBOutlet weak var explanationLabel: UILabel!
@@ -40,6 +45,12 @@ class answerViewController: UIViewController, answerViewProtocol {
     func setAnswer() {
         
         correctOrNotLabel.text =  wasAnswerCorrect ? "Верно!" : "Неверно!"
+        
+        if !wasAnswerCorrect {
+            scoresLabel.removeFromSuperview()
+        } else {
+            scoresLabel.text = "+ \(model.scores.scoresForTheLastAnswer) очков!"
+        }
         
         explanationLabel.text = shortExplanation
         

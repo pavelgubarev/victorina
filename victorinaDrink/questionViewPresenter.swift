@@ -20,6 +20,19 @@ public class questionViewPresenter {
     
     func showCurrentQuestion() {
         view.setCurrentQuestion(withQuestion: model.getCurrentQuestion())
+        model.scores.resetBonus()
+    }
+    
+    func changeBonus() {
+        
+        self.model.scores.bonusForTheCurrentQuesion -= 0.3
+        
+        
+        delay(0.3) {
+            
+            guard (self.model.scores.bonusForTheCurrentQuesion > 0 ) else {return}
+            
+            self.changeBonus() }
     }
     
 

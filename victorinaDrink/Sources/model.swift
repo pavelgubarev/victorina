@@ -8,6 +8,8 @@
 
 import Foundation
 import Alamofire
+import ReactiveSwift
+
 
 public class modelClass {
     
@@ -35,8 +37,12 @@ public class modelClass {
     
     var sessionManager : SessionManager!
     
+    var scores = Scores()
+    
+   
     //MARK: init
     public init() {
+        
         loadQuestions()
         loadExplanations()
         

@@ -16,4 +16,6 @@ protocol questionViewPresenterProtocol {
     
     func showAnswer()
 
+    func changeBonus()
+
 }

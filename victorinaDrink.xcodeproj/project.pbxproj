@@ -32,6 +32,8 @@
 		5069EFAB1FF40500009264C1 /* comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EFAA1FF40500009264C1 /* comparison.swift */; };
 		5070014C1FE159E600D66E8D /* glasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070014B1FE159E600D66E8D /* glasses.swift */; };
 		508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508448FD1FE83ED000A26F92 /* startPageViewController.swift */; };
+		508CAB4F20349E0200477EFB /* tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAB4E20349E0200477EFB /* tools.swift */; };
+		508CAB512034BBD500477EFB /* scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAB502034BBD500477EFB /* scores.swift */; };
 		5096583220039CA800FA2A35 /* victorinaDrinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583120039CA800FA2A35 /* victorinaDrinkTests.swift */; };
 		5096583A20039DC900FA2A35 /* appflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583920039DC900FA2A35 /* appflow.swift */; };
 		5096583C2003BAEF00FA2A35 /* dataRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583B2003BAEF00FA2A35 /* dataRead.swift */; };
@@ -88,6 +90,8 @@
 		5069EFAA1FF40500009264C1 /* comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comparison.swift; sourceTree = "<group>"; };
 		5070014B1FE159E600D66E8D /* glasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glasses.swift; sourceTree = "<group>"; };
 		508448FD1FE83ED000A26F92 /* startPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startPageViewController.swift; sourceTree = "<group>"; };
+		508CAB4E20349E0200477EFB /* tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tools.swift; sourceTree = "<group>"; };
+		508CAB502034BBD500477EFB /* scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scores.swift; sourceTree = "<group>"; };
 		5096582F20039CA800FA2A35 /* victorinaDrinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = victorinaDrinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5096583120039CA800FA2A35 /* victorinaDrinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = victorinaDrinkTests.swift; sourceTree = "<group>"; };
 		5096583320039CA800FA2A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 			children = (
 				50C569381FD6EADD00D88607 /* AppDelegate.swift */,
 				50C5693C1FD6EADD00D88607 /* Main.storyboard */,
+				508CAB4E20349E0200477EFB /* tools.swift */,
+				508CAB502034BBD500477EFB /* scores.swift */,
 				5018EB0A2000F1E9001B8EEC /* model.swift */,
 			);
 			path = Sources;
@@ -420,10 +426,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-victorinaDrink/Pods-victorinaDrink-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -473,7 +485,9 @@
 				5016F8C220029BE700CBA24C /* levelResultViewPresenter.swift in Sources */,
 				5069EFAB1FF40500009264C1 /* comparison.swift in Sources */,
 				50E176251FE83C29006FCF0C /* questions.swift in Sources */,
+				508CAB4F20349E0200477EFB /* tools.swift in Sources */,
 				5018EB062000DE4E001B8EEC /* questionViewProtocol.swift in Sources */,
+				508CAB512034BBD500477EFB /* scores.swift in Sources */,
 				5067F446202DCFAC0032D81C /* moreExplanationViewController.swift in Sources */,
 				50E176231FE83C14006FCF0C /* explanations.swift in Sources */,
 				508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */,

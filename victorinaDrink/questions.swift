@@ -1,4 +1,5 @@
 import Foundation
+import ReactiveSwift
 
 public struct option {
     public var text : String = ""
@@ -8,12 +9,17 @@ public struct option {
 public struct question {
     public var text : String = ""
     public var options = [option]()
+    public var scores : Int = 0
+    public var scoresString : MutableProperty<String> {
+        return MutableProperty<String>("\(scores) очков")
+    }
 }
 
 extension question {
     init?(json: [String: Any]) {
         guard let text = json["text"] as? String,
-        let optionsJSON = json["options"] as?  [[String: Any]]
+        let optionsJSON = json["options"] as?  [[String: Any]],
+        let scores = json["scores"] as? Int
             else {
                 return nil
         }
@@ -25,6 +31,7 @@ extension question {
             self.options.append(newOption)
         }
         self.text = text
+        self.scores = scores
     }
 }
 

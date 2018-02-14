@@ -20,7 +20,12 @@ public class answerViewPresenter : answerViewPresenterProtocol {
 
     public func setAnswer() {
         
+        
         view.wasAnswerCorrect =  model.wasAnswerCorrect(forQuestion: model.currentQuestionNumber, optionChosen: model.lastOptionChosen)
+        
+        if view.wasAnswerCorrect {
+            model.scores.keepScoresForAnswer()
+        }
         
         view.shortExplanation = model.shortExplanationForCurrentQuestion()
         
