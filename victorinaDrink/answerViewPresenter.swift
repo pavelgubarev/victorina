@@ -43,8 +43,6 @@ public class answerViewPresenter : answerViewPresenterProtocol {
 //    }
     
     func showResultsForTheLevel() {
-        model.sendResultsForTheLevel()
-        
         model.updateLevelPassedAndSave()
         
         view.gotoResultsForTheLevel()

@@ -36,7 +36,7 @@ class answerViewController: UIViewController, answerViewProtocol {
     
     @IBOutlet weak var skView: SKView?
     
-    @IBOutlet weak var learnMoreButton: UIButton!
+    @IBOutlet weak var learnMoreButton : UIButton?
     
     @IBOutlet weak var howManyPeople: UILabel!
     
@@ -47,9 +47,9 @@ class answerViewController: UIViewController, answerViewProtocol {
         correctOrNotLabel.text =  wasAnswerCorrect ? "Верно!" : "Неверно!"
         
         if !wasAnswerCorrect {
-            scoresLabel.removeFromSuperview()
+            scoresLabel.text = "+0 очков"
         } else {
-            scoresLabel.text = "+ \(model.scores.scoresForTheLastAnswer) очков!"
+            scoresLabel.text = "+\(model.scores.scoresForTheLastAnswer) очков!"
         }
         
         explanationLabel.text = shortExplanation
@@ -74,7 +74,10 @@ class answerViewController: UIViewController, answerViewProtocol {
         
         skView?.backgroundColor = UIColor.clear
         
-        
+        if model.longExplanationFileForCurrentQuestion().count == 0 {
+            learnMoreButton!.removeFromSuperview()
+            learnMoreButton = nil
+        }
     }
     
 //    func gotoExplanationURL() {
@@ -89,7 +92,9 @@ class answerViewController: UIViewController, answerViewProtocol {
         let pad = UIView()
         var padFrame = explanationLabel.frame.insetBy(dx: -10.0, dy: -10.0)
         
-        padFrame.size = CGSize(width: padFrame.size.width, height: padFrame.size.height + 36)
+        let bottomMargin = learnMoreButton != nil ? 36.0 : 10.0
+        
+        padFrame.size = CGSize(width: padFrame.size.width, height: padFrame.size.height + CGFloat(bottomMargin))
         pad.frame = padFrame
         
         pad.backgroundColor = .white
@@ -99,7 +104,9 @@ class answerViewController: UIViewController, answerViewProtocol {
         self.view.addSubview(pad)
         self.view.bringSubview(toFront: explanationLabel)
         
-        self.view.bringSubview(toFront: learnMoreButton)
+        if learnMoreButton != nil {
+            self.view.bringSubview(toFront: learnMoreButton!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,6 +123,8 @@ class answerViewController: UIViewController, answerViewProtocol {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+   
         
         guard alreadyShown == false else {
             return
@@ -142,10 +151,10 @@ class answerViewController: UIViewController, answerViewProtocol {
         var shouldWe = true
         if (identifier == "nextQuestion")  {
             shouldWe = !isLevelOver
+            presenter.nextQuestionButtonTapped()
         }
         
-        presenter.nextQuestionButtonTapped()
-                
+        
         return shouldWe
     }
     

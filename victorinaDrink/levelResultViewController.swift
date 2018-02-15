@@ -9,16 +9,50 @@
 import UIKit
 import StoreKit
 import MessageUI
-
+import Alamofire
 
 class levelResultViewController: UIViewController, levelResultViewProtocol, MFMailComposeViewControllerDelegate {
 
 
     
- 
+    @IBOutlet weak var yourNameForm: UIView!
+    
+    
+    @IBOutlet weak var yourNameTextField: UITextField!
+    
+    @IBAction func skipYourName(_ sender: Any) {
+        dismissYourNameForm()
+    }
+    
+    @IBOutlet weak var yourNameSendButton: UIButton!
+    
+    
+    func dismissYourNameForm() {
+        yourNameForm.removeFromSuperview()
+        
+        model.sendResultsForTheLevel()
+        
+        presenter.viewDidAppearAskForReviews()
+        
+
+    }
+    
+    func showYourNameForm() {
+        self.view.addSubview(yourNameForm)
+    }
+    
+    @IBAction func yourNameSend(_ sender: Any) {
+        
+        
+        model.userName = yourNameTextField.text!
+            
+        dismissYourNameForm()
+        
+    }
     var presenter : levelResultPresenterProtocol!
 
 
+    @IBOutlet weak var levelScoresLabel: UILabel!
     
     var yourResultLabelText : String = ""
     
@@ -61,6 +95,8 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     func setLayout() {
         yourResultLabel.text = yourResultLabelText
         
+        levelScoresLabel.text = "Всего \(model.scores.totalScoresForGame) очков"
+        
         
         if !isThereNextLevel {
             nextLevelButton.removeFromSuperview()
@@ -85,6 +121,10 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        yourNameForm.alpha = 1
+        yourNameForm.removeFromSuperview()
+        
         
         presenter = levelResultViewPresenter(withView: self, withModel: model)
 
@@ -124,17 +164,14 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     }
     
 
-    override func viewDidAppear(_ animated: Bool) {
-        presenter.viewDidAppearAskForReviews()
-    }
-    
     
 
     func askForReviews() {
-        if #available(iOS 10.3, *) {
-            SKStoreReviewController.requestReview()
-        } else {
-            // Fallback on earlier versions
+        
+        delay(3) {
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            }
         }
         
     }
@@ -157,7 +194,7 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     }
     
     func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        let sendMailErrorAlert = UIAlertView(title: "Ой", message: "Не получилось отправить письмо. Проверьте настройки почтовой программы.", delegate: self, cancelButtonTitle: "OK")
         sendMailErrorAlert.show()
     }
     

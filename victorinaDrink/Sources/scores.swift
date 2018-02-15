@@ -34,17 +34,22 @@ struct Scores {
     
     var scoresForTheLastAnswer = 0.0
     
+    var scoresForOldLevels = [Double]()
+    
     mutating func resetBonus() {
         bonusForTheCurrentQuesion = 30.0
     }
     
     var totalScoresForLevel = 0.0
-    
+    var totalScoresForGame = 0.0
+
     mutating func keepScoresForAnswer() {
         
         scoresForTheLastAnswer = Double(model.getCurrentQuestion().scores) + bonusForTheCurrentQuesion
         
         self.totalScoresForLevel += scoresForTheLastAnswer
+        
+        self.totalScoresForGame += totalScoresForLevel
     }
     
 }

@@ -25,12 +25,15 @@ class levelResultViewPresenter : levelResultPresenterProtocol {
         
         view.wereAllQuestionsAnsweredCorrectly = model.wereAllQuestionsAnsweredCorrectly()
         
-        if model.wereAllQuestionsAnsweredCorrectly() || model.currentLevel == 2 {
+        if model.wereAllQuestionsAnsweredCorrectly() || model.currentLevel == model.numberOfLevels {
             view.isGameOver = true
         } else {
             view.isGameOver = false
         }
-        
+
+        if model.wereAllQuestionsAnsweredCorrectly() && model.currentLevel == model.numberOfLevels {
+            view.showYourNameForm()
+        }
         view.setLayout()
     }
     

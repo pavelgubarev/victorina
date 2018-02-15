@@ -32,6 +32,10 @@
 		5069EFAB1FF40500009264C1 /* comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EFAA1FF40500009264C1 /* comparison.swift */; };
 		5070014C1FE159E600D66E8D /* glasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070014B1FE159E600D66E8D /* glasses.swift */; };
 		508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508448FD1FE83ED000A26F92 /* startPageViewController.swift */; };
+		508665142035FDFB00435963 /* mix.html in Resources */ = {isa = PBXBuildFile; fileRef = 508665132035FDFB00435963 /* mix.html */; };
+		508665172035FE4100435963 /* lemon.html in Resources */ = {isa = PBXBuildFile; fileRef = 508665162035FE4100435963 /* lemon.html */; };
+		508665192035FE8700435963 /* whiskey.html in Resources */ = {isa = PBXBuildFile; fileRef = 508665182035FE8700435963 /* whiskey.html */; };
+		5086651B2035FF2A00435963 /* symptoms.html in Resources */ = {isa = PBXBuildFile; fileRef = 5086651A2035FF2A00435963 /* symptoms.html */; };
 		508CAB4F20349E0200477EFB /* tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAB4E20349E0200477EFB /* tools.swift */; };
 		508CAB512034BBD500477EFB /* scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAB502034BBD500477EFB /* scores.swift */; };
 		5096583220039CA800FA2A35 /* victorinaDrinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583120039CA800FA2A35 /* victorinaDrinkTests.swift */; };
@@ -90,6 +94,10 @@
 		5069EFAA1FF40500009264C1 /* comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comparison.swift; sourceTree = "<group>"; };
 		5070014B1FE159E600D66E8D /* glasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glasses.swift; sourceTree = "<group>"; };
 		508448FD1FE83ED000A26F92 /* startPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startPageViewController.swift; sourceTree = "<group>"; };
+		508665132035FDFB00435963 /* mix.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mix.html; sourceTree = "<group>"; };
+		508665162035FE4100435963 /* lemon.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lemon.html; sourceTree = "<group>"; };
+		508665182035FE8700435963 /* whiskey.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = whiskey.html; sourceTree = "<group>"; };
+		5086651A2035FF2A00435963 /* symptoms.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = symptoms.html; sourceTree = "<group>"; };
 		508CAB4E20349E0200477EFB /* tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tools.swift; sourceTree = "<group>"; };
 		508CAB502034BBD500477EFB /* scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scores.swift; sourceTree = "<group>"; };
 		5096582F20039CA800FA2A35 /* victorinaDrinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = victorinaDrinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,7 +185,7 @@
 				5067F445202DCFAC0032D81C /* moreExplanationViewController.swift */,
 				5069EFAA1FF40500009264C1 /* comparison.swift */,
 				50E1761C1FE81B5B006FCF0C /* explanations.json */,
-				5067F443202DCAD50032D81C /* zakuska.html */,
+				508665152035FE0B00435963 /* Long Explanations */,
 				505C82501FD84FBB00C10BDE /* answerViewController.swift */,
 				5016F8BB200284D200CBA24C /* answerViewProtocol.swift */,
 				5016F8BD2002851000CBA24C /* answerViewPresenterProtocol.swift */,
@@ -205,6 +213,18 @@
 			children = (
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		508665152035FE0B00435963 /* Long Explanations */ = {
+			isa = PBXGroup;
+			children = (
+				5067F443202DCAD50032D81C /* zakuska.html */,
+				508665182035FE8700435963 /* whiskey.html */,
+				508665162035FE4100435963 /* lemon.html */,
+				5086651A2035FF2A00435963 /* symptoms.html */,
+				508665132035FDFB00435963 /* mix.html */,
+			);
+			name = "Long Explanations";
 			sourceTree = "<group>";
 		};
 		5096583020039CA800FA2A35 /* victorinaDrinkTests */ = {
@@ -389,14 +409,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C481981FE2E1E300A74B41 /* kefirfallingStart.sks in Resources */,
+				508665172035FE4100435963 /* lemon.html in Resources */,
 				50E1761D1FE81B5B006FCF0C /* explanations.json in Resources */,
 				50C569431FD6EADD00D88607 /* LaunchScreen.storyboard in Resources */,
 				50E838D81FE08363008BF624 /* glasses.sks in Resources */,
 				50C569401FD6EADD00D88607 /* Assets.xcassets in Resources */,
 				5067F444202DCAD50032D81C /* zakuska.html in Resources */,
+				508665192035FE8700435963 /* whiskey.html in Resources */,
 				500B95E41FDFFD8A0038B00A /* kefirfalling.sks in Resources */,
+				508665142035FDFB00435963 /* mix.html in Resources */,
 				50E1761F1FE83B47006FCF0C /* questions.json in Resources */,
 				50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */,
+				5086651B2035FF2A00435963 /* symptoms.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,8 @@ public class modelClass {
     
     var scores = Scores()
     
+    var userName = ""
+    
    
     //MARK: init
     public init() {
@@ -54,11 +56,23 @@ public class modelClass {
         let userDefaults = UserDefaults.standard
         
         self.passedLevels = userDefaults.integer(forKey: "passedLevels")
+        
+        for dLevel in 1...numberOfLevels {
+            let oneScore = userDefaults.double(forKey: "scoreForLevel\(dLevel)")
+            
+                print("from memory", oneScore)
+                
+            self.scores.scoresForOldLevels.append(oneScore)
+        }
     }
     
     func saveData() {
         let userDefaults = UserDefaults.standard
         userDefaults.set(self.passedLevels, forKey: "passedLevels")
+        
+        userDefaults.set(self.scores.totalScoresForLevel, forKey: "scoreForLevel\(self.currentLevel)")
+
+        
     }
     
 
@@ -103,6 +117,7 @@ public class modelClass {
         currentQuestionNumber = currentQuestionNumber + 1
     }
     
+    //MARK: send results to server
     func sendResultsForTheLevel() {
         
         let configuration = URLSessionConfiguration.default
@@ -122,15 +137,15 @@ public class modelClass {
         }
         
         parameters["correct_answers"] = "\(numberOfCorrectAnswersSoFar)"
-        
+        parameters["scores_for_the_level"] = "\(scores.totalScoresForLevel)"
+        parameters["user_name"] = "\(model.userName)"
+
         //print(parameters)
         
         sessionManager =  Alamofire.SessionManager(configuration: configuration)
         
         sessionManager.request("https://pohmelje.ru/victorina/", method: .post, parameters: parameters).responseString { response in
-            
-            // print(response)
-            
+                        
         }
         
         
@@ -143,9 +158,9 @@ public class modelClass {
             
             passedLevels = currentLevel
             
-            saveData()
         }
         
+        saveData()
     }
     
     public func wereAllQuestionsAnsweredCorrectly() -> Bool {
