@@ -18,7 +18,7 @@ protocol startPagePresenterProtocol {
     
     func goToNextQuestionButtonTapped()
     
-    func goToLevel2ButtonTapped()
+    func goToTheNextLevelButtonTapped()
     
     func resetGame()
     

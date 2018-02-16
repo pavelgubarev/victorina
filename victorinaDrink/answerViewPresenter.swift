@@ -29,7 +29,9 @@ public class answerViewPresenter : answerViewPresenterProtocol {
         
         view.shortExplanation = model.shortExplanationForCurrentQuestion()
         
-        view.peopleNumber = model.returnComparison(questionNumber: model.currentQuestionNumber, optionNumber: model.lastOptionChosen)
+        if model.currentQuestionNumber < 14 {
+            view.peopleNumber = model.returnComparison(questionNumber: model.currentQuestionNumber, optionNumber: model.lastOptionChosen)
+        }
         
         view.linkForCurrentQuestion = model.linkForCurrentQuestion()
         

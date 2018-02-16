@@ -47,13 +47,16 @@ class levelResultViewPresenter : levelResultPresenterProtocol {
     func nextLevel() {
         model.resetAnswers()
         model.currentLevel += 1
-        
+        model.scores.totalScoresForLevel = 0
+
         model.goToNextQuestion()
         
     }
     
     func restartLevelButtonTapped() {
         model.resetAnswers()
+        model.scores.totalScoresForLevel = 0
+        model.scores.totalScoresForGame = 0
         model.currentUsersAnswers[model.currentLevel] = [Int]()
         model.currentQuestionNumber = (model.currentLevel - 1) * model.numberOfQuestionsPerLevel
     }

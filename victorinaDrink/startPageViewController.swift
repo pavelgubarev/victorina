@@ -50,8 +50,6 @@ class startPageViewController: UIViewController, startPageViewProtocol {
         
         presenter.setStartPage()
         
-        level2Button.alpha = hasUserAccessToLevel2 ? 1 : 0.3
-        
         skView.backgroundColor = UIColor.clear
         
         if !dev {
@@ -93,8 +91,8 @@ class startPageViewController: UIViewController, startPageViewProtocol {
         if (segue.identifier == "nextQuestion")  {
             presenter.goToNextQuestionButtonTapped()
         }
-        if (segue.identifier == "gotoLevel2")  {
-            presenter.goToLevel2ButtonTapped()
+        if (segue.identifier == "gotoNextLevel")  {
+            presenter.goToTheNextLevelButtonTapped()
         }
         
         

@@ -98,6 +98,8 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
         levelScoresLabel.text = "Всего \(model.scores.totalScoresForGame) очков"
         
         
+        print("isThereNextLevel", isThereNextLevel)
+        
         if !isThereNextLevel {
             nextLevelButton.removeFromSuperview()
         } else {

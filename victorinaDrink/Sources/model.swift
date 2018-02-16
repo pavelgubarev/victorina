@@ -19,9 +19,9 @@ public class modelClass {
     
     public var questions = [question]()
     
-    public let numberOfQuestionsPerLevel = 7
+    public let numberOfQuestionsPerLevel = 1
     
-    public let numberOfLevels = 2
+    public let numberOfLevels = 1
     
     var currentUsersAnswers = [Int:[Int]]()
     
@@ -70,7 +70,16 @@ public class modelClass {
         let userDefaults = UserDefaults.standard
         userDefaults.set(self.passedLevels, forKey: "passedLevels")
         
-        userDefaults.set(self.scores.totalScoresForLevel, forKey: "scoreForLevel\(self.currentLevel)")
+        let oldScore = self.scores.scoresForOldLevels[self.currentLevel - 1]
+        print("oldScore", oldScore)
+        
+        let newScore = self.scores.totalScoresForLevel
+        
+        print("newScore", newScore)
+        
+        if newScore > oldScore {
+            userDefaults.set(self.scores.totalScoresForLevel, forKey: "scoreForLevel\(self.currentLevel)")
+        }
 
         
     }
@@ -92,7 +101,7 @@ public class modelClass {
     }
     
     
-    func linkForCurrentQuestion() -> URL {
+    func linkForCurrentQuestion() -> URL? {
         return explanations[currentQuestionNumber].link
     }
 
@@ -175,7 +184,8 @@ public class modelClass {
     
     
     func isThereNextLevel() -> Bool {
-        return currentLevel + 1 == numberOfLevels
+        
+        return currentLevel + 1 <= numberOfLevels
     }
     
     

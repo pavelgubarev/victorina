@@ -34,8 +34,8 @@ class startPagePresenter : startPagePresenterProtocol {
         
     }
     
-    func goToLevel2ButtonTapped() {
-            model.currentLevel = 2
+    func goToTheNextLevelButtonTapped() {
+            model.currentLevel += 1
             
             model.currentQuestionNumber = model.numberOfQuestionsPerLevel * (model.currentLevel - 1)
         

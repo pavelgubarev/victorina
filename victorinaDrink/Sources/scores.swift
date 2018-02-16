@@ -49,7 +49,7 @@ struct Scores {
         
         self.totalScoresForLevel += scoresForTheLastAnswer
         
-        self.totalScoresForGame += totalScoresForLevel
+        self.totalScoresForGame += scoresForTheLastAnswer
     }
     
 }

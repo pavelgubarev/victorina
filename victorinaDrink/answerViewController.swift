@@ -13,7 +13,7 @@ class answerViewController: UIViewController, answerViewProtocol {
     
     
   
-    var linkForCurrentQuestion: URL = URL(string: "https://pohmelje.ru")!
+    var linkForCurrentQuestion: URL? = URL(string: "https://pohmelje.ru")!
     
     var wasAnswerCorrect: Bool! = false
     

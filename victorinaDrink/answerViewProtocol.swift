@@ -16,7 +16,7 @@ public protocol answerViewProtocol {
     
     var peopleNumber : String? { get set }
     
-    var linkForCurrentQuestion : URL { get set }
+    var linkForCurrentQuestion : URL? { get set }
     
     var isLevelOver : Bool! { get set }
 

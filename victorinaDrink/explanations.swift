@@ -3,7 +3,7 @@ import Foundation
 public struct explanation {
     var shortText : String = ""
     var longTextFile : String = ""
-    var link : URL!
+    var link : URL?
 }
 
 extension explanation {

@@ -22,6 +22,7 @@
 		5018EB062000DE4E001B8EEC /* questionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018EB052000DE4E001B8EEC /* questionViewProtocol.swift */; };
 		5018EB0B2000F1E9001B8EEC /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018EB0A2000F1E9001B8EEC /* model.swift */; };
 		5018EB0E2000FD36001B8EEC /* startPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018EB0D2000FD36001B8EEC /* startPagePresenter.swift */; };
+		5039765C2037491E00207764 /* victorinaDrinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5039765B2037491E00207764 /* victorinaDrinkUITests.swift */; };
 		505871EC1FE4387F0046F0B2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505871ED1FE4387F0046F0B2 /* Alamofire.framework */; };
 		505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C824C1FD835DF00C10BDE /* optionCell.swift */; };
 		505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C82501FD84FBB00C10BDE /* answerViewController.swift */; };
@@ -54,10 +55,18 @@
 		50E176231FE83C14006FCF0C /* explanations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176221FE83C14006FCF0C /* explanations.swift */; };
 		50E176251FE83C29006FCF0C /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176241FE83C29006FCF0C /* questions.swift */; };
 		50E838D81FE08363008BF624 /* glasses.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50E838D71FE08363008BF624 /* glasses.sks */; };
+		50FE470920375479002E2392 /* new.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE470820375479002E2392 /* new.swift */; };
 		A4859EE30DB61B4618389EBB /* Pods_victorinaDrink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5039765E2037491E00207764 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50C5692D1FD6EADD00D88607 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50C569341FD6EADD00D88607;
+			remoteInfo = victorinaDrink;
+		};
 		5096583420039CA800FA2A35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 50C5692D1FD6EADD00D88607 /* Project object */;
@@ -84,6 +93,9 @@
 		5018EB052000DE4E001B8EEC /* questionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewProtocol.swift; sourceTree = "<group>"; };
 		5018EB0A2000F1E9001B8EEC /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		5018EB0D2000FD36001B8EEC /* startPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startPagePresenter.swift; sourceTree = "<group>"; };
+		503976592037491D00207764 /* victorinaDrinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = victorinaDrinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5039765B2037491E00207764 /* victorinaDrinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = victorinaDrinkUITests.swift; sourceTree = "<group>"; };
+		5039765D2037491E00207764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		505871ED1FE4387F0046F0B2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505C824C1FD835DF00C10BDE /* optionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionCell.swift; sourceTree = "<group>"; };
 		505C82501FD84FBB00C10BDE /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
@@ -121,11 +133,19 @@
 		50E176241FE83C29006FCF0C /* questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
 		50E838D71FE08363008BF624 /* glasses.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = glasses.sks; sourceTree = "<group>"; };
 		50F0E0AA1FED2B3400FC0390 /* victorinaDrink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = victorinaDrink.entitlements; sourceTree = "<group>"; };
+		50FE470820375479002E2392 /* new.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = new.swift; sourceTree = "<group>"; };
 		95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_victorinaDrink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB696D4562F0BC9A09A2F4E8 /* Pods-victorinaDrink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-victorinaDrink.release.xcconfig"; path = "Pods/Target Support Files/Pods-victorinaDrink/Pods-victorinaDrink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		503976562037491D00207764 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5096582C20039CA800FA2A35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,6 +215,16 @@
 			name = Answer;
 			sourceTree = "<group>";
 		};
+		5039765A2037491E00207764 /* victorinaDrinkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5039765B2037491E00207764 /* victorinaDrinkUITests.swift */,
+				50FE470820375479002E2392 /* new.swift */,
+				5039765D2037491E00207764 /* Info.plist */,
+			);
+			path = victorinaDrinkUITests;
+			sourceTree = "<group>";
+		};
 		5070014D1FE15A2000D66E8D /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +274,7 @@
 			children = (
 				50C569371FD6EADD00D88607 /* victorinaDrink */,
 				5096583020039CA800FA2A35 /* victorinaDrinkTests */,
+				5039765A2037491E00207764 /* victorinaDrinkUITests */,
 				50C569361FD6EADD00D88607 /* Products */,
 				1041A0A167C78BFE631FCF25 /* Pods */,
 				EB38CDB8F6B6D21BCE9E5427 /* Frameworks */,
@@ -255,6 +286,7 @@
 			children = (
 				50C569351FD6EADD00D88607 /* victorinaDrink.app */,
 				5096582F20039CA800FA2A35 /* victorinaDrinkTests.xctest */,
+				503976592037491D00207764 /* victorinaDrinkUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,6 +345,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		503976582037491D00207764 /* victorinaDrinkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 503976602037491E00207764 /* Build configuration list for PBXNativeTarget "victorinaDrinkUITests" */;
+			buildPhases = (
+				503976552037491D00207764 /* Sources */,
+				503976562037491D00207764 /* Frameworks */,
+				503976572037491D00207764 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5039765F2037491E00207764 /* PBXTargetDependency */,
+			);
+			name = victorinaDrinkUITests;
+			productName = victorinaDrinkUITests;
+			productReference = 503976592037491D00207764 /* victorinaDrinkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		5096582E20039CA800FA2A35 /* victorinaDrinkTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5096583820039CA800FA2A35 /* Build configuration list for PBXNativeTarget "victorinaDrinkTests" */;
@@ -361,6 +411,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Pavel Gubarev";
 				TargetAttributes = {
+					503976582037491D00207764 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 50C569341FD6EADD00D88607;
+					};
 					5096582E20039CA800FA2A35 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -392,11 +447,19 @@
 			targets = (
 				50C569341FD6EADD00D88607 /* victorinaDrink */,
 				5096582E20039CA800FA2A35 /* victorinaDrinkTests */,
+				503976582037491D00207764 /* victorinaDrinkUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		503976572037491D00207764 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5096582D20039CA800FA2A35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,6 +550,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		503976552037491D00207764 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50FE470920375479002E2392 /* new.swift in Sources */,
+				5039765C2037491E00207764 /* victorinaDrinkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5096582B20039CA800FA2A35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,6 +609,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5039765F2037491E00207764 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50C569341FD6EADD00D88607 /* victorinaDrink */;
+			targetProxy = 5039765E2037491E00207764 /* PBXContainerItemProxy */;
+		};
 		5096583520039CA800FA2A35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 50C569341FD6EADD00D88607 /* victorinaDrink */;
@@ -564,6 +641,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		503976612037491E00207764 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6L9C7TASC4;
+				INFOPLIST_FILE = victorinaDrinkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pavelgubarev.victorinaDrinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = victorinaDrink;
+			};
+			name = Debug;
+		};
+		503976622037491E00207764 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6L9C7TASC4;
+				INFOPLIST_FILE = victorinaDrinkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pavelgubarev.victorinaDrinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = victorinaDrink;
+			};
+			name = Release;
+		};
 		5096583620039CA800FA2A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -744,6 +851,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		503976602037491E00207764 /* Build configuration list for PBXNativeTarget "victorinaDrinkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				503976612037491E00207764 /* Debug */,
+				503976622037491E00207764 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5096583820039CA800FA2A35 /* Build configuration list for PBXNativeTarget "victorinaDrinkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
