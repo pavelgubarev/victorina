@@ -160,8 +160,17 @@ class answerViewController: UIViewController, answerViewProtocol {
     
     func gotoResultsForTheLevel() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = storyBoard.instantiateViewController(withIdentifier: "levelResults")
-        self.show(mainViewController, sender: self)
+        
+        if !model.isThereNextLevel() && model.wereAllQuestionsAnsweredCorrectly() {
+            
+            let yourNameViewController = storyBoard.instantiateViewController(withIdentifier: "yourName")
+            self.show(yourNameViewController, sender: self)
+            
+        } else {
+            
+            let levelResultsViewController = storyBoard.instantiateViewController(withIdentifier: "levelResults")
+            self.show(levelResultsViewController, sender: self)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -31,9 +31,7 @@ class levelResultViewPresenter : levelResultPresenterProtocol {
             view.isGameOver = false
         }
 
-        if model.wereAllQuestionsAnsweredCorrectly() && model.currentLevel == model.numberOfLevels {
-            view.showYourNameForm()
-        }
+       
         view.setLayout()
     }
     

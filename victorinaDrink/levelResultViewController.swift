@@ -15,40 +15,7 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
 
 
     
-    @IBOutlet weak var yourNameForm: UIView!
-    
-    
-    @IBOutlet weak var yourNameTextField: UITextField!
-    
-    @IBAction func skipYourName(_ sender: Any) {
-        dismissYourNameForm()
-    }
-    
-    @IBOutlet weak var yourNameSendButton: UIButton!
-    
-    
-    func dismissYourNameForm() {
-        yourNameForm.removeFromSuperview()
-        
-        model.sendResultsForTheLevel()
-        
-        presenter.viewDidAppearAskForReviews()
-        
 
-    }
-    
-    func showYourNameForm() {
-        self.view.addSubview(yourNameForm)
-    }
-    
-    @IBAction func yourNameSend(_ sender: Any) {
-        
-        
-        model.userName = yourNameTextField.text!
-            
-        dismissYourNameForm()
-        
-    }
     var presenter : levelResultPresenterProtocol!
 
 
@@ -124,8 +91,6 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        yourNameForm.alpha = 1
-        yourNameForm.removeFromSuperview()
         
         
         presenter = levelResultViewPresenter(withView: self, withModel: model)
@@ -133,6 +98,13 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
         presenter.setLevelResult()
         
        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        model.sendResultsForTheLevel()
+        
+        presenter.viewDidAppearAskForReviews()
+        
     }
     
     

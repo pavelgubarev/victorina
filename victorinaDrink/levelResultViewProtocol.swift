@@ -25,7 +25,5 @@ protocol levelResultViewProtocol {
     func shareFB()
     
     func shareMail()
-    
-    func showYourNameForm()
-    
+        
 }

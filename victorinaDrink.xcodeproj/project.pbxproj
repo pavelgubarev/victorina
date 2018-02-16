@@ -54,6 +54,7 @@
 		50E1761F1FE83B47006FCF0C /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 50E1761E1FE83B47006FCF0C /* questions.json */; };
 		50E176231FE83C14006FCF0C /* explanations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176221FE83C14006FCF0C /* explanations.swift */; };
 		50E176251FE83C29006FCF0C /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176241FE83C29006FCF0C /* questions.swift */; };
+		50E1AF8F2037643E0043AFB2 /* YourNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1AF8E2037643E0043AFB2 /* YourNameViewController.swift */; };
 		50E838D81FE08363008BF624 /* glasses.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50E838D71FE08363008BF624 /* glasses.sks */; };
 		50FE470920375479002E2392 /* new.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE470820375479002E2392 /* new.swift */; };
 		A4859EE30DB61B4618389EBB /* Pods_victorinaDrink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AF22AA6AF543619DF804B6 /* Pods_victorinaDrink.framework */; };
@@ -131,6 +132,7 @@
 		50E1761E1FE83B47006FCF0C /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		50E176221FE83C14006FCF0C /* explanations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = explanations.swift; sourceTree = "<group>"; };
 		50E176241FE83C29006FCF0C /* questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
+		50E1AF8E2037643E0043AFB2 /* YourNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourNameViewController.swift; sourceTree = "<group>"; };
 		50E838D71FE08363008BF624 /* glasses.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = glasses.sks; sourceTree = "<group>"; };
 		50F0E0AA1FED2B3400FC0390 /* victorinaDrink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = victorinaDrink.entitlements; sourceTree = "<group>"; };
 		50FE470820375479002E2392 /* new.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = new.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		5016F8C520029C9500CBA24C /* Level Result */ = {
 			isa = PBXGroup;
 			children = (
+				50E1AF8E2037643E0043AFB2 /* YourNameViewController.swift */,
 				500B95E11FDFF8560038B00A /* levelResultViewController.swift */,
 				5016F8C120029BE700CBA24C /* levelResultViewPresenter.swift */,
 				5016F8C320029C8500CBA24C /* levelResultPresenterProtocol.swift */,
@@ -586,6 +589,7 @@
 				508CAB512034BBD500477EFB /* scores.swift in Sources */,
 				5067F446202DCFAC0032D81C /* moreExplanationViewController.swift in Sources */,
 				50E176231FE83C14006FCF0C /* explanations.swift in Sources */,
+				50E1AF8F2037643E0043AFB2 /* YourNameViewController.swift in Sources */,
 				508448FE1FE83ED000A26F92 /* startPageViewController.swift in Sources */,
 				5018EB0B2000F1E9001B8EEC /* model.swift in Sources */,
 				5070014C1FE159E600D66E8D /* glasses.swift in Sources */,
