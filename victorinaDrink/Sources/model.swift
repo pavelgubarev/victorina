@@ -19,9 +19,9 @@ public class modelClass {
     
     public var questions = [question]()
     
-    public let numberOfQuestionsPerLevel = 1
+    public let numberOfQuestionsPerLevel = 7
     
-    public let numberOfLevels = 1
+    public let numberOfLevels = 3
     
     var currentUsersAnswers = [Int:[Int]]()
     
@@ -60,7 +60,7 @@ public class modelClass {
         for dLevel in 1...numberOfLevels {
             let oneScore = userDefaults.double(forKey: "scoreForLevel\(dLevel)")
             
-                print("from memory", oneScore)
+              //  print("from memory", oneScore)
                 
             self.scores.scoresForOldLevels.append(oneScore)
         }
@@ -134,26 +134,30 @@ public class modelClass {
         
         var parameters = Parameters()
         
-        var i = 0
+        var i = (currentLevel - 1) * numberOfQuestionsPerLevel
         for answer in currentUsersAnswers[currentLevel]! {
             var value = "\(answer),"
             let wascorrect = wasAnswerCorrect(forQuestion: i, optionChosen: answer) ? "YES" : "NO"
-            i += 1
             
-            let qNumberToSend = i + currentLevel * numberOfQuestionsPerLevel
             value += wascorrect
-            parameters["q\(qNumberToSend)"] = value
+            parameters["q\(i)"] = value
+            i += 1
         }
         
         parameters["correct_answers"] = "\(numberOfCorrectAnswersSoFar)"
         parameters["scores_for_the_level"] = "\(scores.totalScoresForLevel)"
+        parameters["scores_for_the_game"] = "\(scores.totalScoresForGame)"
         parameters["user_name"] = "\(model.userName)"
 
         //print(parameters)
         
         sessionManager =  Alamofire.SessionManager(configuration: configuration)
         
+        print(parameters)
+        
         sessionManager.request("https://pohmelje.ru/victorina/", method: .post, parameters: parameters).responseString { response in
+            
+            print(response)
                         
         }
         

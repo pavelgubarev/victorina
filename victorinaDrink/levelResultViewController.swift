@@ -9,11 +9,9 @@
 import UIKit
 import StoreKit
 import MessageUI
-import Alamofire
+
 
 class levelResultViewController: UIViewController, levelResultViewProtocol, MFMailComposeViewControllerDelegate {
-
-
     
 
     var presenter : levelResultPresenterProtocol!
@@ -38,7 +36,12 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     
     @IBOutlet weak var nextLevelButton: UIButton!
     
-    @IBOutlet weak var comingSoon: UILabel!
+    @IBOutlet weak var leaderBoard: UITableView!
+    @IBOutlet weak var leaderBoardHeader: UILabel!
+
+    var leaderBoardTableLink : UITableView!
+    
+    let leaderBoardController = LeaderBoardController()
     
     @IBOutlet weak var pleaseAnswerAllLabel: UILabel!
     
@@ -69,8 +72,13 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
         
         if !isThereNextLevel {
             nextLevelButton.removeFromSuperview()
+            
+            leaderBoard.dataSource = leaderBoardController
+            leaderBoard.delegate = leaderBoardController
+            
         } else {
-            comingSoon.removeFromSuperview()
+            leaderBoard.removeFromSuperview()
+            leaderBoardHeader.alpha = 0
         }
         
         nextLevelButton.alpha = wereAllQuestionsAnsweredCorrectly ? 1 : 0.3
@@ -91,7 +99,8 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        leaderBoardTableLink = leaderBoard
+        leaderBoard.removeFromSuperview()
         
         presenter = levelResultViewPresenter(withView: self, withModel: model)
 
@@ -105,6 +114,11 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
         
         presenter.viewDidAppearAskForReviews()
         
+       
+        if !isThereNextLevel {
+            leaderBoardController.owner = self
+            leaderBoardController.loadData()
+        }
     }
     
     

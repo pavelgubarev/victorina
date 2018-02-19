@@ -28,6 +28,8 @@
 		505C82511FD84FBB00C10BDE /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C82501FD84FBB00C10BDE /* answerViewController.swift */; };
 		5061AC601FE3E06D00A88C8C /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */; };
 		5061AC621FE3E32900A88C8C /* kefirFallingStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061AC611FE3E32900A88C8C /* kefirFallingStart.swift */; };
+		50645EF4203ACF7D009EB23F /* leaderBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50645EF3203ACF7D009EB23F /* leaderBoardController.swift */; };
+		50645EF6203AD1F3009EB23F /* LeaderBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50645EF5203AD1F3009EB23F /* LeaderBoardCell.swift */; };
 		5067F444202DCAD50032D81C /* zakuska.html in Resources */ = {isa = PBXBuildFile; fileRef = 5067F443202DCAD50032D81C /* zakuska.html */; };
 		5067F446202DCFAC0032D81C /* moreExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067F445202DCFAC0032D81C /* moreExplanationViewController.swift */; };
 		5069EFAB1FF40500009264C1 /* comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EFAA1FF40500009264C1 /* comparison.swift */; };
@@ -102,6 +104,8 @@
 		505C82501FD84FBB00C10BDE /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
 		5061AC5F1FE3E06D00A88C8C /* aboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
 		5061AC611FE3E32900A88C8C /* kefirFallingStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kefirFallingStart.swift; sourceTree = "<group>"; };
+		50645EF3203ACF7D009EB23F /* leaderBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaderBoardController.swift; sourceTree = "<group>"; };
+		50645EF5203AD1F3009EB23F /* LeaderBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardCell.swift; sourceTree = "<group>"; };
 		5067F443202DCAD50032D81C /* zakuska.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = zakuska.html; sourceTree = "<group>"; };
 		5067F445202DCFAC0032D81C /* moreExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = moreExplanationViewController.swift; path = victorinaDrink/moreExplanationViewController.swift; sourceTree = SOURCE_ROOT; };
 		5069EFAA1FF40500009264C1 /* comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comparison.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				50E1AF8E2037643E0043AFB2 /* YourNameViewController.swift */,
 				500B95E11FDFF8560038B00A /* levelResultViewController.swift */,
 				5016F8C120029BE700CBA24C /* levelResultViewPresenter.swift */,
+				50645EF3203ACF7D009EB23F /* leaderBoardController.swift */,
+				50645EF5203AD1F3009EB23F /* LeaderBoardCell.swift */,
 				5016F8C320029C8500CBA24C /* levelResultPresenterProtocol.swift */,
 				5016F8BF20029AA000CBA24C /* levelResultViewProtocol.swift */,
 			);
@@ -582,6 +588,7 @@
 				5016F8BE2002851000CBA24C /* answerViewPresenterProtocol.swift in Sources */,
 				505C824D1FD835DF00C10BDE /* optionCell.swift in Sources */,
 				5016F8C220029BE700CBA24C /* levelResultViewPresenter.swift in Sources */,
+				50645EF6203AD1F3009EB23F /* LeaderBoardCell.swift in Sources */,
 				5069EFAB1FF40500009264C1 /* comparison.swift in Sources */,
 				50E176251FE83C29006FCF0C /* questions.swift in Sources */,
 				508CAB4F20349E0200477EFB /* tools.swift in Sources */,
@@ -605,6 +612,7 @@
 				5016F8C020029AA000CBA24C /* levelResultViewProtocol.swift in Sources */,
 				500B95E21FDFF8560038B00A /* levelResultViewController.swift in Sources */,
 				50C569391FD6EADD00D88607 /* AppDelegate.swift in Sources */,
+				50645EF4203ACF7D009EB23F /* leaderBoardController.swift in Sources */,
 				50C5696F1FD6FF2800D88607 /* questionViewController.swift in Sources */,
 				5016F8C420029C8500CBA24C /* levelResultPresenterProtocol.swift in Sources */,
 			);

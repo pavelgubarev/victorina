@@ -83,7 +83,10 @@ class new: XCTestCase {
         button.tap()
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Нигде не копятся."]/*[[".cells.staticTexts[\"Нигде не копятся.\"]",".staticTexts[\"Нигде не копятся.\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         button.tap()
+        app.buttons["Пропустить"].tap()
         
+        sleep(10)
+
     }
     
     
