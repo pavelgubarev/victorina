@@ -41,6 +41,7 @@
 		5086651B2035FF2A00435963 /* symptoms.html in Resources */ = {isa = PBXBuildFile; fileRef = 5086651A2035FF2A00435963 /* symptoms.html */; };
 		508CAB4F20349E0200477EFB /* tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAB4E20349E0200477EFB /* tools.swift */; };
 		508CAB512034BBD500477EFB /* scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAB502034BBD500477EFB /* scores.swift */; };
+		5093C016203C53BE00F78964 /* vitamins.html in Resources */ = {isa = PBXBuildFile; fileRef = 5093C015203C53BE00F78964 /* vitamins.html */; };
 		5096583220039CA800FA2A35 /* victorinaDrinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583120039CA800FA2A35 /* victorinaDrinkTests.swift */; };
 		5096583A20039DC900FA2A35 /* appflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583920039DC900FA2A35 /* appflow.swift */; };
 		5096583C2003BAEF00FA2A35 /* dataRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096583B2003BAEF00FA2A35 /* dataRead.swift */; };
@@ -117,6 +118,7 @@
 		5086651A2035FF2A00435963 /* symptoms.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = symptoms.html; sourceTree = "<group>"; };
 		508CAB4E20349E0200477EFB /* tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tools.swift; sourceTree = "<group>"; };
 		508CAB502034BBD500477EFB /* scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scores.swift; sourceTree = "<group>"; };
+		5093C015203C53BE00F78964 /* vitamins.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = vitamins.html; sourceTree = "<group>"; };
 		5096582F20039CA800FA2A35 /* victorinaDrinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = victorinaDrinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5096583120039CA800FA2A35 /* victorinaDrinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = victorinaDrinkTests.swift; sourceTree = "<group>"; };
 		5096583320039CA800FA2A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				5067F443202DCAD50032D81C /* zakuska.html */,
+				5093C015203C53BE00F78964 /* vitamins.html */,
 				508665182035FE8700435963 /* whiskey.html */,
 				508665162035FE4100435963 /* lemon.html */,
 				5086651A2035FF2A00435963 /* symptoms.html */,
@@ -489,6 +492,7 @@
 				5067F444202DCAD50032D81C /* zakuska.html in Resources */,
 				508665192035FE8700435963 /* whiskey.html in Resources */,
 				500B95E41FDFFD8A0038B00A /* kefirfalling.sks in Resources */,
+				5093C016203C53BE00F78964 /* vitamins.html in Resources */,
 				508665142035FDFB00435963 /* mix.html in Resources */,
 				50E1761F1FE83B47006FCF0C /* questions.json in Resources */,
 				50C5693E1FD6EADD00D88607 /* Main.storyboard in Resources */,
@@ -763,7 +767,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -814,7 +818,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

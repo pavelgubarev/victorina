@@ -16,6 +16,12 @@ class LeaderBoardController: NSObject, UITableViewDelegate, UITableViewDataSourc
     
     weak var owner : levelResultViewController?
     
+    var sessionManager : SessionManager!
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return leaderBoardTableData == nil ? 0 : 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -27,8 +33,16 @@ class LeaderBoardController: NSObject, UITableViewDelegate, UITableViewDataSourc
         
         let data = leaderBoardTableData![indexPath.row] as! NSDictionary
         
-        cell.userNameLabel.text = data["user_name"]! as? String
+        var userName = data["user_name"]! as? String
+        
+        if userName == "" {
+            userName = "---"
+        }
+        
+        cell.userNameLabel.text = userName
+        
         cell.scoreLabel.text = data["scores_for_the_game"]! as? String
+        
         
         return cell
         
@@ -36,7 +50,9 @@ class LeaderBoardController: NSObject, UITableViewDelegate, UITableViewDataSourc
     
     func showLeaderBoard() {
         
-        self.owner!.view.addSubview(self.owner!.leaderBoardTableLink)
+        self.owner!.leaderBoard.reloadData()
+        
+        self.owner!.leaderBoard.alpha = 1
         
         self.owner!.leaderBoardHeader.alpha = 1
         
@@ -45,12 +61,17 @@ class LeaderBoardController: NSObject, UITableViewDelegate, UITableViewDataSourc
     
     func loadData() {
         
+        let configuration = URLSessionConfiguration.default
+        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
+        configuration.urlCache = nil
+        sessionManager =  Alamofire.SessionManager(configuration: configuration)
+
         
-        Alamofire.request("https://pohmelje.ru/victorinaLeaderboard/", method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
+        sessionManager.request("https://pohmelje.ru/victorinaLeaderboard/", method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
             
             if let result = response.result.value {
                 
-                print(result)
+            print(result)
                 
                 self.leaderBoardTableData = result as? NSArray
                 

@@ -39,8 +39,6 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     @IBOutlet weak var leaderBoard: UITableView!
     @IBOutlet weak var leaderBoardHeader: UILabel!
 
-    var leaderBoardTableLink : UITableView!
-    
     let leaderBoardController = LeaderBoardController()
     
     @IBOutlet weak var pleaseAnswerAllLabel: UILabel!
@@ -68,7 +66,7 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
         levelScoresLabel.text = "Всего \(model.scores.totalScoresForGame) очков"
         
         
-        print("isThereNextLevel", isThereNextLevel)
+       // print("isThereNextLevel", isThereNextLevel)
         
         if !isThereNextLevel {
             nextLevelButton.removeFromSuperview()
@@ -77,7 +75,7 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
             leaderBoard.delegate = leaderBoardController
             
         } else {
-            leaderBoard.removeFromSuperview()
+            leaderBoard.alpha = 0
             leaderBoardHeader.alpha = 0
         }
         
@@ -99,8 +97,7 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        leaderBoardTableLink = leaderBoard
-        leaderBoard.removeFromSuperview()
+        leaderBoard.alpha = 0
         
         presenter = levelResultViewPresenter(withView: self, withModel: model)
 

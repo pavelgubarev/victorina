@@ -71,11 +71,11 @@ public class modelClass {
         userDefaults.set(self.passedLevels, forKey: "passedLevels")
         
         let oldScore = self.scores.scoresForOldLevels[self.currentLevel - 1]
-        print("oldScore", oldScore)
+       // print("oldScore", oldScore)
         
         let newScore = self.scores.totalScoresForLevel
         
-        print("newScore", newScore)
+       // print("newScore", newScore)
         
         if newScore > oldScore {
             userDefaults.set(self.scores.totalScoresForLevel, forKey: "scoreForLevel\(self.currentLevel)")
@@ -153,11 +153,11 @@ public class modelClass {
         
         sessionManager =  Alamofire.SessionManager(configuration: configuration)
         
-        print(parameters)
+        //print(parameters)
         
         sessionManager.request("https://pohmelje.ru/victorina/", method: .post, parameters: parameters).responseString { response in
             
-            print(response)
+           // print(response)
                         
         }
         

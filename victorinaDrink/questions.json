@@ -270,7 +270,7 @@
   }
   ,
   {
-  "scores" : 40,
+  "scores" : 20,
   "options" : [
                {
                "isCorrect" : true,
@@ -288,7 +288,7 @@
   "text" : "Чтобы раскрыть вкус виски, его лучше пить"
   },
   {
-  "scores" : 40,
+  "scores" : 60,
   "options" : [
                {
                "isCorrect" : false,
@@ -307,7 +307,7 @@
   }
   ,
   {
-  "scores" : 40,
+  "scores" : 50,
   "options" : [
                {
                "isCorrect" : false,
