@@ -71,7 +71,7 @@ class LeaderBoardController: NSObject, UITableViewDelegate, UITableViewDataSourc
             
             if let result = response.result.value {
                 
-            print(result)
+            //print(result)
                 
                 self.leaderBoardTableData = result as? NSArray
                 

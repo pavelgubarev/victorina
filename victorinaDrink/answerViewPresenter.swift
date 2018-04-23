@@ -25,6 +25,8 @@ public class answerViewPresenter : answerViewPresenterProtocol {
         
         if view.wasAnswerCorrect {
             model.scores.keepScoresForAnswer()
+        } else {
+            model.scores.setZeroForTheWrongAnswer()
         }
         
         view.shortExplanation = model.shortExplanationForCurrentQuestion()
@@ -59,6 +61,10 @@ public class answerViewPresenter : answerViewPresenterProtocol {
         if model.isLevelOver() {
             self.showResultsForTheLevel()
         }
+    }
+    
+    func gotoLongExplanationTapped() {
+        model.scores.addScoresForReading()
     }
 }
 

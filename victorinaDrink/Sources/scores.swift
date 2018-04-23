@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ReactiveSwift
 
 
 struct Scores {
@@ -25,12 +24,12 @@ struct Scores {
             
             numberToDisplay /= 100
             
-            self.bonusForTheCurrentQuesionString.value = "\(numberToDisplay) бонусов"
+            self.bonusForTheCurrentQuesionString = "\(numberToDisplay) бонусов"
             
         }
     }
     
-    var bonusForTheCurrentQuesionString = MutableProperty<String>("")
+    var bonusForTheCurrentQuesionString = ""
     
     var scoresForTheLastAnswer = 0.0
     
@@ -46,6 +45,19 @@ struct Scores {
     mutating func keepScoresForAnswer() {
         
         scoresForTheLastAnswer = Double(model.getCurrentQuestion().scores) + bonusForTheCurrentQuesion
+        
+        self.totalScoresForLevel += scoresForTheLastAnswer
+        
+        self.totalScoresForGame += scoresForTheLastAnswer
+    }
+    
+    mutating func setZeroForTheWrongAnswer() {
+        scoresForTheLastAnswer = 0
+    }
+    
+    mutating func addScoresForReading() {
+        
+        scoresForTheLastAnswer += 10
         
         self.totalScoresForLevel += scoresForTheLastAnswer
         

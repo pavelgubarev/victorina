@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
-class MoreExplanationViewController : UIViewController {
+class MoreExplanationViewController : UIViewController, UIWebViewDelegate {
+    
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     
     @IBAction func dismissThisView(_ sender: Any) {
         
@@ -40,9 +43,13 @@ class MoreExplanationViewController : UIViewController {
         let baseUrl = URL(fileURLWithPath: file)
         webView.loadHTMLString(contents as String, baseURL: baseUrl)
 
+        webView?.delegate = self
         
         
-        
+    }
+    
+    func webViewDidFinishLoad(_ webView : UIWebView) {
+        loadingIndicator.removeFromSuperview()
     }
     
 }

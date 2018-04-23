@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import ReactiveSwift
-import ReactiveCocoa
 
 class questionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, questionViewProtocol  {
     
@@ -22,11 +20,15 @@ class questionViewController: UIViewController, UITableViewDelegate, UITableView
     func setCurrentQuestion(withQuestion: question) {
         currentQuestion = withQuestion
         
-        scoresLabel.reactive.text <~ currentQuestion.scoresString
+        scoresLabel.text = "\(currentQuestion.scoresString)"
 
-        bonusLabel.reactive.text <~ model.scores.bonusForTheCurrentQuesionString
+        bonusLabel.text = "\(model.scores.bonusForTheCurrentQuesionString)" 
 
         questionTextLabel.text = currentQuestion.text
+    }
+    
+    func updateBonusScoresDisplay() {
+        bonusLabel.text = "\(model.scores.bonusForTheCurrentQuesionString)"
     }
     
     @IBOutlet weak var scoresLabel: UILabel!

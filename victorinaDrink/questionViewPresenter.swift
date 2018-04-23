@@ -27,6 +27,7 @@ public class questionViewPresenter {
         
         self.model.scores.bonusForTheCurrentQuesion -= 0.3
         
+        view.updateBonusScoresDisplay()
         
         delay(0.3) {
             

@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import ReactiveSwift
 
 
 public class modelClass {
@@ -145,8 +144,13 @@ public class modelClass {
         }
         
         parameters["correct_answers"] = "\(numberOfCorrectAnswersSoFar)"
+        
         parameters["scores_for_the_level"] = "\(scores.totalScoresForLevel)"
+        
         parameters["scores_for_the_game"] = "\(scores.totalScoresForGame)"
+
+        parameters["level_number"] = "\(currentLevel)"
+
         parameters["user_name"] = "\(model.userName)"
 
         //print(parameters)

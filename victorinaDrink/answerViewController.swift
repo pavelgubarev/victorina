@@ -42,15 +42,18 @@ class answerViewController: UIViewController, answerViewProtocol {
     
     var presenter : answerViewPresenterProtocol!
     
+    func updateScoresLabel() {
+        scoresLabel.text = "+\(model.scores.scoresForTheLastAnswer) очков!"
+
+    }
+    
+    
     func setAnswer() {
+        
+        updateScoresLabel()
         
         correctOrNotLabel.text =  wasAnswerCorrect ? "Верно!" : "Неверно!"
         
-        if !wasAnswerCorrect {
-            scoresLabel.text = "+0 очков"
-        } else {
-            scoresLabel.text = "+\(model.scores.scoresForTheLastAnswer) очков!"
-        }
         
         explanationLabel.text = shortExplanation
         
@@ -124,7 +127,7 @@ class answerViewController: UIViewController, answerViewProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         
-   
+        updateScoresLabel() 
         
         guard alreadyShown == false else {
             return
@@ -141,8 +144,12 @@ class answerViewController: UIViewController, answerViewProtocol {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if (segue.identifier == "nextQuestion")  {
+        if segue.identifier == "nextQuestion"  {
             presenter.goToNextQuestion()
+        }
+        
+        if segue.identifier == "longExplanation" {
+            presenter.gotoLongExplanationTapped()
         }
     }
     

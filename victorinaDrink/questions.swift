@@ -1,5 +1,4 @@
 import Foundation
-import ReactiveSwift
 
 public struct option {
     public var text : String = ""
@@ -10,8 +9,8 @@ public struct question {
     public var text : String = ""
     public var options = [option]()
     public var scores : Int = 0
-    public var scoresString : MutableProperty<String> {
-        return MutableProperty<String>("\(scores) очков")
+    public var scoresString : String {
+        return "Вопрос на \(scores) очков"
     }
 }
 

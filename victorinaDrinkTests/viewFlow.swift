@@ -21,6 +21,7 @@ class mockQuestionView : questionViewProtocol {
 
 class mockAnswerView : answerViewProtocol {
     
+    
     var wasAnswerCorrect: Bool! = false
     
     var shortExplanation: String  = ""

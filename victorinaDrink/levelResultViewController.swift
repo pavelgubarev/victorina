@@ -79,11 +79,11 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
             leaderBoardHeader.alpha = 0
         }
         
-        nextLevelButton.alpha = wereAllQuestionsAnsweredCorrectly ? 1 : 0.3
+       // nextLevelButton.alpha = wereAllQuestionsAnsweredCorrectly ? 1 : 0.3
         
-        if isGameOver {
+        //if isGameOver {
             pleaseAnswerAllLabel.removeFromSuperview()
-        }
+        //}
         
         if !wereAllQuestionsAnsweredCorrectly {
             shareFBButton.removeFromSuperview()
@@ -125,15 +125,15 @@ class levelResultViewController: UIViewController, levelResultViewProtocol, MFMa
         // Dispose of any resources that can be recreated.
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        var shouldWe = true
-        
-        if identifier == "nextLevel" {
-            shouldWe = wereAllQuestionsAnsweredCorrectly
-        }
-        return shouldWe
-    }
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//        
+//        var shouldWe = true
+//        
+//        if identifier == "nextLevel" {
+//            shouldWe = wereAllQuestionsAnsweredCorrectly
+//        }
+//        return shouldWe
+//    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        

@@ -223,7 +223,7 @@
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="optionCellID" id="0SB-HI-DmN" customClass="optionCell" customModule="victorinaDrink" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="optionCellID" id="0SB-HI-DmN" customClass="optionCell" customModule="victorinaDrink" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0SB-HI-DmN" id="ZE8-w3-jOS">
@@ -273,15 +273,15 @@
                                     <outlet property="delegate" destination="g9P-rL-M4O" id="IED-cs-wFq"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 очков" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJK-9d-Yso">
-                                <rect key="frame" x="20" y="36" width="87" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вопрос на 20 очков" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJK-9d-Yso">
+                                <rect key="frame" x="20" y="36" width="225" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30.00 бонусов" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc3-Lc-HDq">
-                                <rect key="frame" x="20" y="64" width="146" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+30.00 бонусов за время" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc3-Lc-HDq">
+                                <rect key="frame" x="20" y="64" width="249" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -640,14 +640,14 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-y5-IHO">
-                                <rect key="frame" x="20" y="376.5" width="134" height="32"/>
+                                <rect key="frame" x="20" y="377" width="276" height="32"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="bWH-TQ-EKQ"/>
-                                    <constraint firstAttribute="width" constant="134" id="jfM-Hn-6oU"/>
+                                    <constraint firstAttribute="width" constant="276" id="jfM-Hn-6oU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                <state key="normal" title="Узнать больше">
+                                <state key="normal" title="Узнать больше (+10 очков!)">
                                     <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -656,7 +656,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="jqJ-KU-bKO" kind="popoverPresentation" popoverAnchorView="xUd-y5-IHO" id="U75-mZ-U8a">
+                                    <segue destination="jqJ-KU-bKO" kind="popoverPresentation" identifier="longExplanation" popoverAnchorView="xUd-y5-IHO" id="U75-mZ-U8a">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -740,6 +740,10 @@
                                     <action selector="dismissThisView:" destination="jqJ-KU-bKO" eventType="touchUpInside" id="cDu-XG-810"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4ba-qB-Ug7">
+                                <rect key="frame" x="150" y="245" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -753,6 +757,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="4ba-qB-Ug7" id="bgq-EB-hZ9"/>
                         <outlet property="webView" destination="b41-5s-vbI" id="zMZ-FB-uKA"/>
                     </connections>
                 </viewController>
@@ -766,6 +771,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pGt-Fp-54M"/>
-        <segue reference="kWL-96-7rd"/>
+        <segue reference="VBE-O5-u9f"/>
     </inferredMetricsTieBreakers>
 </document>

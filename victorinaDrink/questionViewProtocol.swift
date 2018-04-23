@@ -15,4 +15,6 @@ public protocol questionViewProtocol : class {
   func showAnswer()
     
     
+  func updateBonusScoresDisplay()
+    
 }
